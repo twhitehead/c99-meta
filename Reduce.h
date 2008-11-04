@@ -27,18 +27,17 @@
 //       f_##t0##...##tN with tc0,...,tcN (push tcN,...,tc0 onto the stack and
 //       tail-call f_##t0##...##tN).  This is like the STG's case expression.
 //
-//   Apply(f,x0,...,xN,__VA_ARGS__)
+//   Continue(f,__VA_ARGS__)
 //
-//     - Apply f to x0,...,xN (push xN,...x0 onto the stack and tail call f).
-//       This is like the STG's function application.  Except where it is
-//       desired to go through the recursion system, invoke f directly instead.
+//     - Continue with f (expand f onto the stack and tail call it). This
+//       is like the STG's function application.  It is more efficient to, but
+//       maybe not advised, to invoke f directly when there is no recursion.
 //
 //   Return(x,__VA_ARGS__)
 //
-//     - Return the results of an evaluation (pop the continuation off the top
-//       of the stack, pushing the type and closure for x onto the the stack,
-//       and tail call the continuation).  This is like the STG's constructor
-//       application.
+//     - Return the basic type x (pop the continuation off the top, push the
+//       type and closure for x, and tail call the continuation).  This is like
+//       the STG's constructor application.
 //
 //   Output(o,f,__VA_ARGS__)
 //
@@ -90,7 +89,7 @@
 
 #define reduce_Return(x,f,...) Recurse,(f,_reduce_first x,_reduce_rest x,__VA_ARGS__)
 
-#define reduce_Apply(f,...)    Recurse,(f,__VA_ARGS__)
+#define reduce_Continue(f,...) Recurse,(f,__VA_ARGS__)
 
 #define reduce_Output(o,f,...) Output,o,(f,__VA_ARGS__)
 
@@ -106,10 +105,10 @@
   #define Force4 reduce_Force4
   #define Force5 reduce_Force5
 
-  #define Return reduce_Return
-  #define Reply  reduce_Reply
-  #define Output reduce_Output
-  #define Error  reduce_Error
+  #define Continue reduce_Continue
+  #define Return   reduce_Return
+  #define Output   reduce_Output
+  #define Error    reduce_Error
 #endif // REDUCE_QUALIFIED_ONLY
 
 
