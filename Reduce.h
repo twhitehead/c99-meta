@@ -89,7 +89,7 @@
 
 #define reduce_Return(x,f,...) Recurse,(f,_reduce_first x,_reduce_rest x,__VA_ARGS__)
 
-#define reduce_Continue(f,...) Recurse,(f,__VA_ARGS__)
+#define reduce_Continue(x,...) Recurse,(_reduce_expand x,__VA_ARGS__)
 
 #define reduce_Output(o,f,...) Output,o,(f,__VA_ARGS__)
 
