@@ -56,38 +56,43 @@
 #define _reduce_rest(x,...)  (__VA_ARGS__)
 
 
-#define reduce_eval(...)      recurse_recurse(__VA_ARGS__,reduce_eval0)
-#define _reduce_eval0(...)    _reduce_eval1(__VA_ARGS__)
-#define _reduce_eval1(t,tc,_) Quit,("RESULT: "#t#tc)
+#define reduce_eval(...)   recurse_recurse(__VA_ARGS__,reduce_eval0)
+#define _reduce_eval0(...) _reduce_eval1(__VA_ARGS__)
+#define _reduce_eval1(x,_) Quit,("RESULT: "#x)
 
 
-#define reduce_Force1(f,x0,...)        _reduce_Force10(f,,x0,__VA_ARGS__)
-#define _reduce_Force10(f,ft,x0,...)   Recurse,(_reduce_expand x0,reduce_Force11,f,ft,__VA_ARGS__)
-#define _reduce_Force11(t,tc,f,ft,...) _reduce_Force12(f,ft,t,_reduce_expand tc,__VA_ARGS__)
-#define _reduce_Force12(f,ft,t,...)    _##f##_##t##ft (__VA_ARGS__)
+#define reduce_Force1(f,x0,...)      _reduce_Force10(f,,x0,__VA_ARGS__)
+#define _reduce_Force10(f,ft,x0,...) Recurse,(_reduce_expand x0,reduce_Force11,f,ft,__VA_ARGS__)
+#define _reduce_Force11(x0,f,ft,...) _reduce_Force12(f,ft,_reduce_expand x0,__VA_ARGS__)
+#define _reduce_Force12(...)         _reduce_Force13(__VA_ARGS__)
+#define _reduce_Force13(f,ft,t,...)  _##f##_##t##ft (__VA_ARGS__)
 
-#define reduce_Force2(f,x0,x1,...)        _reduce_Force20(f,,x1,x0,__VA_ARGS__)
-#define _reduce_Force20(f,ft,x1,...)      Recurse,(_reduce_expand x1,reduce_Force21,f,ft,__VA_ARGS__)
-#define _reduce_Force21(t,tc,f,ft,x0,...) _reduce_Force22(f,ft,t,x0,_reduce_expand tc,__VA_ARGS__)
-#define _reduce_Force22(f,ft,t,...)       _reduce_Force10(f,t##ft,__VA_ARGS__)
+#define reduce_Force2(f,x0,x1,...)      _reduce_Force20(f,,x1,x0,__VA_ARGS__)
+#define _reduce_Force20(f,ft,x1,...)    Recurse,(_reduce_expand x1,reduce_Force21,f,ft,__VA_ARGS__)
+#define _reduce_Force21(x1,f,ft,x0,...) _reduce_Force22(f,ft,x0,_reduce_expand x1,__VA_ARGS__)
+#define _reduce_Force22(...)            _reduce_Force23(__VA_ARGS__)
+#define _reduce_Force23(f,ft,x0,t,...)  _reduce_Force10(f,t##ft,x0,__VA_ARGS__)
 
-#define reduce_Force3(f,x0,x1,x2,...)        _reduce_Force30(f,,x2,x1,x0,__VA_ARGS__)
-#define _reduce_Force30(f,ft,x2,...)         Recurse,(_reduce_expand x2,reduce_Force31,f,ft,__VA_ARGS__)
-#define _reduce_Force31(t,tc,f,ft,x1,x0,...) _reduce_Force32(f,ft,t,x1,x0,_reduce_expand tc,__VA_ARGS__)
-#define _reduce_Force32(f,ft,t,...)          _reduce_Force20(f,t##ft,__VA_ARGS__)
+#define reduce_Force3(f,x0,x1,x2,...)      _reduce_Force30(f,,x2,x1,x0,__VA_ARGS__)
+#define _reduce_Force30(f,ft,x2,...)       Recurse,(_reduce_expand x2,reduce_Force31,f,ft,__VA_ARGS__)
+#define _reduce_Force31(x2,f,ft,x1,x0,...) _reduce_Force32(f,ft,x1,x0,_reduce_expand x2,__VA_ARGS__)
+#define _reduce_Force32(...)               _reduce_Force33(__VA_ARGS__)
+#define _reduce_Force33(f,ft,x1,x0,t,...)  _reduce_Force20(f,t##ft,x1,x0,__VA_ARGS__)
 
-#define reduce_Force4(f,x0,x1,x2,x3,...)        _reduce_Force40(f,,x3,x2,x1,x0,__VA_ARGS__)
-#define _reduce_Force40(f,ft,x3,...)            Recurse,(_reduce_expand x3,reduce_Force41,f,ft,__VA_ARGS__)
-#define _reduce_Force41(t,tc,f,ft,x2,x1,x0,...) _reduce_Force42(f,ft,t,x2,x1,x0,_reduce_expand tc,__VA_ARGS__)
-#define _reduce_Force42(f,ft,t,...)             _reduce_Force30(f,t##ft,__VA_ARGS__)
+#define reduce_Force4(f,x0,x1,x2,x3,...)      _reduce_Force40(f,,x3,x2,x1,x0,__VA_ARGS__)
+#define _reduce_Force40(f,ft,x3,...)          Recurse,(_reduce_expand x3,reduce_Force41,f,ft,__VA_ARGS__)
+#define _reduce_Force41(x3,f,ft,x2,x1,x0,...) _reduce_Force42(f,ft,t,x2,x1,x0,_reduce_expand x3,__VA_ARGS__)
+#define _reduce_Force42(...)                  _reduce_Force43(__VA_ARGS__)
+#define _reduce_Force43(f,ft,x2,x1,x0,t,...)  _reduce_Force30(f,t##ft,x2,x1,x0,__VA_ARGS__)
 
-#define reduce_Force5(f,x0,x1,x2,x3,x4,...)        _reduce_Force50(f,,x4,x3,x2,x1,x0,__VA_ARGS__)
-#define _reduce_Force50(f,ft,x4,...)               Recurse,(_reduce_expand x3,reduce_Force51,f,ft,__VA_ARGS__)
-#define _reduce_Force51(t,tc,f,ft,x3,x2,x1,x0,...) _reduce_Force52(f,ft,t,x3,x2,x1,x0,_reduce_expand tc,__VA_ARGS__)
-#define _reduce_Force52(f,ft,t,...)                _reduce_Force40(f,t##ft,__VA_ARGS__)
+#define reduce_Force5(f,x0,x1,x2,x3,x4,...)      _reduce_Force50(f,,x4,x3,x2,x1,x0,__VA_ARGS__)
+#define _reduce_Force50(f,ft,x4,...)             Recurse,(_reduce_expand x3,reduce_Force51,f,ft,__VA_ARGS__)
+#define _reduce_Force51(x4,f,ft,x3,x2,x1,x0,...) _reduce_Force52(f,ft,x3,x2,x1,x0,_reduce_expand x4,__VA_ARGS__)
+#define _reduce_Force52(...)                     _reduce_Force53(__VA_ARGS__)
+#define _reduce_Force53(f,ft,x3,x2,x1,x0,t,...)  _reduce_Force40(f,t##ft,x3,x2,x1,x0,__VA_ARGS__)
 
 
-#define reduce_Return(x,f,...) Recurse,(f,_reduce_first x,_reduce_rest x,__VA_ARGS__)
+#define reduce_Return(x,f,...) Recurse,(f,x,__VA_ARGS__)
 
 #define reduce_Continue(x,...) Recurse,(_reduce_expand x,__VA_ARGS__)
 
