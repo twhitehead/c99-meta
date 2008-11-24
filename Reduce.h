@@ -12,108 +12,188 @@
 #define REDUCE_H_INCLUDED
 
 #include "Recurse.h"
+#include "Tupple.h"
 
 // This implements a friendlier interface to build with on top of the recursion
 // system.  It looks like a lazy functional programming language (something
 // like the spineless tagless G (STG) machine) being reduced implemented on a
 // stack (something like forth).
 //
-// The basic primitive operations provided are:
+// The basic reduction operations provided are:
 //
-//   ForceN(f,x0,...,xN,__VA_ARGS__)
+//   Eager(f,x1,...,xN,__VA_ARGS__)
 //
-//     - Evaluate x0,...,xN to (t0,tc0),...,(t0,tcN) (for each one, push a
-//       continuation and it onto the stack and tail call it) and call
-//       f_##t0##...##tN with tc0,...,tcN (push tcN,...,tc0 onto the stack and
-//       tail-call f_##t0##...##tN).  This is like the STG's case expression.
+//     Push x1,...,xN and tail call f.
 //
-//   Continue(f,__VA_ARGS__)
+//   EagerCaseN(f,x1,...,xN,__VA_ARGS__)
 //
-//     - Continue with f (expand f onto the stack and tail call it). This
-//       is like the STG's function application.  It is more efficient to, but
-//       maybe not advised, to invoke f directly when there is no recursion.
+//     Push ..._t1,...,..._tN, where x1,...,xN are in the form (t1,..._t1),...,
+//     (tN,..._tN), and tail call f_##t1##..._##tN.
+//
+//   LazyN(f,x1,...,xN,__VA_ARGS__)
+//
+//     Evaluate x1,...,xN (for each one, push its continuation and tail call
+//     it), push the results, and tail call f.
+//
+//   LazyCaseN(f,x1,...,xN,__VA_ARGS__)
+//
+//     Evaluate x1,...,xN to (t1,..._t1),...,(tN,..._tN) (for each one, push its
+//     continuation and call it), push ..._t1,...,..._tN, and tail call
+//     f_##t1##..._##tN.  This is like the STG's case expression.
 //
 //   Return(x,__VA_ARGS__)
 //
-//     - Return the basic type x (pop the continuation off the top, push the
-//       type and closure for x, and tail call the continuation).  This is like
-//       the STG's constructor application.
+//     Continue with x (expand x onto the stack and tail call it).  This is like
+//     the STG's function application.  It is more efficient, but maybe not
+//     advised, to invoke f directly when there is no recursion.
+//
+//   Construct(x,__VA_ARGS__)
+//
+//     Return the basic type x (pop off the continuation, push x, push the
+//     continuation, and tail call it).  This is like the STG's constructor
+//     application.
 //
 //   Output(o,f,__VA_ARGS__)
 //
-//     - Output o and then tail call f.
+//     Output o and then tail call f.
 //
 //   Error(o)
 //
-//     - Output error o and then quit.
+//     Output error o and then quit.
+//
+// There is also a Mixed((k1,...,kN),f,x1,...,xN), where xi is treated as in
+// Eager, EagerCase, Lazy, or LazyCase when ki is respecively E, EC, L, or LC.
 //
 // There is no equivalent of the STG's let expression, as there is no heap
 // (while one could be simulated, it is likely the cost of copying expressions
 // and duplicating some reductions is much less).
 
-#define _reduce_expand(...) __VA_ARGS__
-#define _reduce_first(x,...) x
-#define _reduce_rest(x,...)  (__VA_ARGS__)
 
-
-#define reduce_eval(...)   recurse_recurse(__VA_ARGS__,reduce_eval0)
+#define reduce_eval(...) recurse_recurse(__VA_ARGS__,(reduce_eval0))
 #define _reduce_eval0(...) _reduce_eval1(__VA_ARGS__)
 #define _reduce_eval1(x,_) Quit,("RESULT: "#x)
 
 
-#define reduce_Force1(f,x0,...)      _reduce_Force10(f,,x0,__VA_ARGS__)
-#define _reduce_Force10(f,ft,x0,...) Recurse,(_reduce_expand x0,reduce_Force11,f,ft,__VA_ARGS__)
-#define _reduce_Force11(x0,f,ft,...) _reduce_Force12(f,ft,_reduce_expand x0,__VA_ARGS__)
-#define _reduce_Force12(...)         _reduce_Force13(__VA_ARGS__)
-#define _reduce_Force13(f,ft,t,...)  _##f##_##t##ft (__VA_ARGS__)
-
-#define reduce_Force2(f,x0,x1,...)      _reduce_Force20(f,,x1,x0,__VA_ARGS__)
-#define _reduce_Force20(f,ft,x1,...)    Recurse,(_reduce_expand x1,reduce_Force21,f,ft,__VA_ARGS__)
-#define _reduce_Force21(x1,f,ft,x0,...) _reduce_Force22(f,ft,x0,_reduce_expand x1,__VA_ARGS__)
-#define _reduce_Force22(...)            _reduce_Force23(__VA_ARGS__)
-#define _reduce_Force23(f,ft,x0,t,...)  _reduce_Force10(f,t##ft,x0,__VA_ARGS__)
-
-#define reduce_Force3(f,x0,x1,x2,...)      _reduce_Force30(f,,x2,x1,x0,__VA_ARGS__)
-#define _reduce_Force30(f,ft,x2,...)       Recurse,(_reduce_expand x2,reduce_Force31,f,ft,__VA_ARGS__)
-#define _reduce_Force31(x2,f,ft,x1,x0,...) _reduce_Force32(f,ft,x1,x0,_reduce_expand x2,__VA_ARGS__)
-#define _reduce_Force32(...)               _reduce_Force33(__VA_ARGS__)
-#define _reduce_Force33(f,ft,x1,x0,t,...)  _reduce_Force20(f,t##ft,x1,x0,__VA_ARGS__)
-
-#define reduce_Force4(f,x0,x1,x2,x3,...)      _reduce_Force40(f,,x3,x2,x1,x0,__VA_ARGS__)
-#define _reduce_Force40(f,ft,x3,...)          Recurse,(_reduce_expand x3,reduce_Force41,f,ft,__VA_ARGS__)
-#define _reduce_Force41(x3,f,ft,x2,x1,x0,...) _reduce_Force42(f,ft,t,x2,x1,x0,_reduce_expand x3,__VA_ARGS__)
-#define _reduce_Force42(...)                  _reduce_Force43(__VA_ARGS__)
-#define _reduce_Force43(f,ft,x2,x1,x0,t,...)  _reduce_Force30(f,t##ft,x2,x1,x0,__VA_ARGS__)
-
-#define reduce_Force5(f,x0,x1,x2,x3,x4,...)      _reduce_Force50(f,,x4,x3,x2,x1,x0,__VA_ARGS__)
-#define _reduce_Force50(f,ft,x4,...)             Recurse,(_reduce_expand x3,reduce_Force51,f,ft,__VA_ARGS__)
-#define _reduce_Force51(x4,f,ft,x3,x2,x1,x0,...) _reduce_Force52(f,ft,x3,x2,x1,x0,_reduce_expand x4,__VA_ARGS__)
-#define _reduce_Force52(...)                     _reduce_Force53(__VA_ARGS__)
-#define _reduce_Force53(f,ft,x3,x2,x1,x0,t,...)  _reduce_Force40(f,t##ft,x3,x2,x1,x0,__VA_ARGS__)
+#define reduce_Eager(...) Recurse,(__VA_ARGS__)
+#define _reduce_Eager(...) Recurse,(__VA_ARGS__)
 
 
-#define reduce_Return(x,f,...) Recurse,(f,x,__VA_ARGS__)
+#define reduce_EagerCase1(f,x0,...) Recurse,(_expand_id2(f,_,_expand_just1(x0)),_expand_drop1Merge(_expand_all(x0),__VA_ARGS__))
+#define reduce_EagerCase2(f,x0,x1,...) _reduce_EagerCase10(f,_expand_id1(_,_expand_just1(x1)),x0,_expand_drop1Merge(_expand_all(x1),__VA_ARGS__))
+#define reduce_EagerCase3(f,x0,x1,x2,...) _reduce_EagerCase20(f,_expand_id1(_,_expand_just1(x2)),x0,x1,_expand_drop1Merge(_expand_all(x2),__VA_ARGS__))
+#define reduce_EagerCase4(f,x0,x1,x2,x3,...) _reduce_EagerCase30(f,_expand_id1(_,_expand_just1(x3)),x0,x1,x2,_expand_drop1Merge(_expand_all(x3),__VA_ARGS__))
+#define reduce_EagerCase5(f,x0,x1,x2,x3,x4,...) _reduce_EagerCase40(f,_expand_id1(_,_expand_just1(x4)),x0,x1,x2,x3,_expand_drop1Merge(_expand_all(x4),__VA_ARGS__))
 
-#define reduce_Continue(x,...) Recurse,(_reduce_expand x,__VA_ARGS__)
+#define _reduce_EagerCase1(f,x0,...)     Recurse,(_expand_id2(f,_,_expand_just1(x0)),_expand_drop1Merge(_expand_all(x0),__VA_ARGS__))
+#define _reduce_EagerCase10(f,ft,x0,...) Recurse,(_expand_id3(f,_,_expand_just1(x0),ft),_expand_drop1Merge(_expand_all(x0),__VA_ARGS__))
+#define _reduce_EagerCase2(f,x0,x1,...)     _reduce_EagerCase10(f,_expand_id1(_,_expand_just1(x1)),x0,_expand_drop1Merge(_expand_all(x1),__VA_ARGS__))
+#define _reduce_EagerCase20(f,ft,x0,x1,...) _reduce_EagerCase10(f,_expand_id2(_,_expand_just1(x1),ft),x0,_expand_drop1Merge(_expand_all(x1),__VA_ARGS__))
+#define _reduce_EagerCase3(f,x0,x1,x2,...)     _reduce_EagerCase20(f,_expand_id1(_,_expand_just1(x2)),x0,x1,_expand_drop1Merge(_expand_all(x2),__VA_ARGS__))
+#define _reduce_EagerCase30(f,ft,x0,x1,x2,...) _reduce_EagerCase20(f,_expand_id2(_,_expand_just1(x2),ft),x0,x1,_expand_drop1Merge(_expand_all(x2),__VA_ARGS__))
+#define _reduce_EagerCase4(f,x0,x1,x2,x3,...)     _reduce_EagerCase30(f,_expand_id1(_,_expand_just1(x3)),x0,x1,x2,_expand_drop1Merge(_expand_all(x3),__VA_ARGS__))
+#define _reduce_EagerCase40(f,ft,x0,x1,x2,x3,...) _reduce_EagerCase30(f,_expand_id2(_,_expand_just1(x3),ft),x0,x1,x2,_expand_drop1Merge(_expand_all(x3),__VA_ARGS__))
+#define _reduce_EagerCase5(f,x0,x1,x2,x3,x4,...)     _reduce_EagerCase40(f,_expand_id1(_,_expand_just1(x4)),x0,x1,x2,x3,_expand_drop1Merge(_expand_all(x4),__VA_ARGS__))
+#define _reduce_EagerCase50(f,ft,x0,x1,x2,x3,x4,...) _reduce_EagerCase40(f,_expand_id2(_,_expand_just1(x4),ft),x0,x1,x2,x3,_expand_drop1Merge(_expand_all(x4),__VA_ARGS__))
 
-#define reduce_Output(o,f,...) Output,o,(f,__VA_ARGS__)
 
-#define reduce_Error(o,...)    Quit,("ERROR: "#o)
+#define reduce_Lazy1(f,x0,...) Recurse,(_expand_all(x0),(f),__VA_ARGS__)
+#define reduce_Lazy2(f,x0,x1,...) Recurse,(_expand_all(x1),(reduce_Lazy20,f,x0),__VA_ARGS__)
+#define reduce_Lazy3(f,x0,x1,x2,...) Recurse,(_expand_all(x2),(reduce_Lazy30,f,x0,x1),__VA_ARGS__)
+#define reduce_Lazy4(f,x0,x1,x2,x3,...) Recurse,(_expand_all(x3),(reduce_Lazy40,f,x0,x1,x2),__VA_ARGS__)
+#define reduce_Lazy5(f,x0,x1,x2,x3,x4,...) Recurse,(_expand_all(x4),(reduce_Lazy50,f,x0,x1,x2,x3),__VA_ARGS__)
+
+#define _reduce_Lazy1(f,x0,...)  Recurse,(_expand_all(x0),(f),__VA_ARGS__)
+#define _reduce_Lazy2(f,x0,x1,...)  Recurse,(_expand_all(x1),(reduce_Lazy20,f,x0),__VA_ARGS__)
+#define _reduce_Lazy20(f,x0,y1,...) reduce_Lazy1(f,x0,y1,__VA_ARGS__)
+#define _reduce_Lazy3(f,x0,x1,x2,...)  Recurse,(_expand_all(x2),(reduce_Lazy30,f,x0,x1),__VA_ARGS__)
+#define _reduce_Lazy30(f,x0,x1,y2,...) reduce_Lazy2(f,x0,x1,y2,__VA_ARGS__)
+#define _reduce_Lazy4(f,x0,x1,x2,x3,...)  Recurse,(_expand_all(x3),(reduce_Lazy40,f,x0,x1,x2),__VA_ARGS__)
+#define _reduce_Lazy40(f,x0,x1,x2,y3,...) reduce_Lazy3(f,x0,x1,x2,y3,__VA_ARGS__)
+#define _reduce_Lazy5(f,x0,x1,x2,x3,x4,...)  Recurse,(_expand_all(x4),(reduce_Lazy50,f,x0,x1,x2,x3),__VA_ARGS__)
+#define _reduce_Lazy50(f,x0,x1,x2,x3,y4,...) reduce_Lazy4(f,x0,x1,x2,x3,y4,__VA_ARGS__)
+
+
+#define reduce_LazyCase1(f,x0,...) Recurse,(_expand_all(x0),(reduce_LazyCase10,f,),__VA_ARGS__)
+#define reduce_LazyCase2(f,x0,x1,...) Recurse,(_expand_all(x1),(reduce_LazyCase20,f,,x0),__VA_ARGS__)
+#define reduce_LazyCase3(f,x0,x1,x2,...) Recurse,(_expand_all(x2),(reduce_LazyCase30,f,,x0,x1),__VA_ARGS__)
+#define reduce_LazyCase4(f,x0,x1,x2,x3,...) Recurse,(_expand_all(x3),(reduce_LazyCase40,f,,x0,x1,x2),__VA_ARGS__)
+#define reduce_LazyCase5(f,x0,x1,x2,x3,x4,...) Recurse,(_expand_all(x4),(reduce_LazyCase50,f,,x0,x1,x2,x3),__VA_ARGS__)
+
+#define _reduce_LazyCase1(f,x0,...)     Recurse,(_expand_all(x0),(reduce_LazyCase10,f,),__VA_ARGS__)
+#define _reduce_LazyCase10(f,ft,y0,...) Recurse,(_expand_id3(f,_,_expand_just1(y0),ft),_expand_drop1Merge(_expand_all(y0),__VA_ARGS__))
+#define _reduce_LazyCase2(f,x0,x1,...)     Recurse,(_expand_all(x1),(reduce_LazyCase20,f,,x0),__VA_ARGS__)
+#define _reduce_LazyCase20(f,ft,x0,y1,...) Recurse,(_expand_all(x0),(reduce_LazyCase10,f,_expand_id2(_,_expand_just1(y1),ft)),_expand_drop1Merge(_expand_all(y1),__VA_ARGS__))
+#define _reduce_LazyCase3(f,x0,x1,x2,...)     Recurse,(_expand_all(x2),(reduce_LazyCase30,f,,x0,x1),__VA_ARGS__)
+#define _reduce_LazyCase30(f,ft,x0,x1,y2,...) Recurse,(_expand_all(x1),(reduce_LazyCase20,f,_expand_id2(_,_expand_just1(y2),ft),x0),_expand_drop1Merge(_expand_all(y2),__VA_ARGS__))
+#define _reduce_LazyCase4(f,x0,x1,x2,x3,...)     Recurse,(_expand_all(x3),(reduce_LazyCase40,f,,x0,x1,x2),__VA_ARGS__)
+#define _reduce_LazyCase40(f,ft,x0,x1,x2,y3,...) Recurse,(_expand_all(x2),(reduce_LazyCase30,f,_expand_id2(_,_expand_just1(y3),ft),x0,x1),_expand_drop1Merge(_expand_all(y3),__VA_ARGS__))
+#define _reduce_LazyCase5(f,x0,x1,x2,x3,x4,...)     Recurse,(_expand_all(x4),(reduce_LazyCase50,f,,x0,x1,x2,x3),__VA_ARGS__)
+#define _reduce_LazyCase50(f,ft,x0,x1,x2,x3,y4,...) Recurse,(_expand_all(x3),(reduce_LazyCase40,f,_expand_id2(_,_expand_just1(y4),ft),x0,x1,x2),_expand_drop1Merge(_expand_all(y4),__VA_ARGS__))
+
+
+#define reduce_Mixed(a,f,...)      Recurse,(_expand_id2(reduce_Mixed,_,_expand_just1(a)),_tupple_drop1(a),f,(reduce_Mixed2),__VA_ARGS__)
+
+#define _reduce_Mixed(a,f,...)     Recurse,(_expand_id2(reduce_Mixed,_,_expand_just1(a)),_tupple_drop1(a),f,(reduce_Mixed2),__VA_ARGS__)
+#define _reduce_Mixed1(a,f,c,...)  Recurse,(_expand_id2(reduce_Mixed,_,_expand_just1(a)),_tupple_drop1(a),f,c,__VA_ARGS__)
+#define _reduce_Mixed2(f,ft,c,...) Recurse,(_expand_id1(f,ft),_expand_all(c))
+#define _reduce_Mixed_(a,f,c,...)  Recurse,(_expand_just1(c),f,,(__VA_ARGS__),_expand_drop1(c))
+
+#define _reduce_Mixed_E(a,f,c,x,...)     _reduce_Mixed1(a,f,(reduce_Mixed_E0,x,_expand_all(c)),__VA_ARGS__)
+#define _reduce_Mixed_E0(f,ft,c,x,g,...) Recurse,(g,f,ft,_tupple_insert1((x),c),__VA_ARGS__)
+#define _reduce_Mixed_EC(a,f,c,x,...)     _reduce_Mixed1(a,f,(reduce_Mixed_EC0,x,_expand_all(c)),__VA_ARGS__)
+#define _reduce_Mixed_EC0(f,ft,c,x,g,...) Recurse,(g,f,_expand_id2(_,_expand_just1(x),ft),_expand_drop1Merge(_expand_all(x),_expand_all(c)),__VA_ARGS__)
+
+#define _reduce_Mixed_L(a,f,c,x,...)     _reduce_Mixed1(a,f,(reduce_Mixed_L0,x,_expand_all(c)),__VA_ARGS__)
+#define _reduce_Mixed_L0(f,ft,c,x,...)   Recurse,(_expand_all(x),(reduce_Mixed_L1,f,ft,c),__VA_ARGS__)
+#define _reduce_Mixed_L1(f,ft,c,y,g,...) _##g(f,ft,_tupple_insert1((y),c),__VA_ARGS__)
+
+#define _reduce_Mixed_LC(a,f,c,x,...)     _reduce_Mixed1(a,f,(reduce_Mixed_LC0,x,_expand_all(c)),__VA_ARGS__)
+#define _reduce_Mixed_LC0(f,ft,c,x,...)   Recurse,(_expand_all(x),(reduce_Mixed_LC1,f,ft,c),__VA_ARGS__)
+#define _reduce_Mixed_LC1(f,ft,c,y,g,...) _##g(f,_expand_id2(_,_expand_just1(y),ft),_expand_drop1Merge(_expand_all(y),_expand_all(c)),__VA_ARGS__)
+
+
+#define reduce_Return(x,...)  Recurse,(_expand_all(x),__VA_ARGS__)
+#define _reduce_Return(x,...) Recurse,(_expand_all(x),__VA_ARGS__)
+
+#define reduce_Construct(x,f,...)  Recurse,(_expand_all(f),x,__VA_ARGS__)
+#define _reduce_Construct(x,f,...) Recurse,(_expand_all(f),x,__VA_ARGS__)
+
+#define reduce_Output(o,f,...)  Output,o,(_expand_all(f),__VA_ARGS__)
+#define _reduce_Output(o,f,...) Output,o,(_expand_all(f),__VA_ARGS__)
+
+#define reduce_Error(o,...)  Quit,("ERROR: "#o)
+#define _reduce_Error(o,...) Quit,("ERROR: "#o)
 
 
 #ifndef REDUCE_QUALIFIED_ONLY
   #define eval   reduce_eval
 
-  #define Force1 reduce_Force1
-  #define Force2 reduce_Force2
-  #define Force3 reduce_Force3
-  #define Force4 reduce_Force4
-  #define Force5 reduce_Force5
+  #define Eager reduce_Eager
 
-  #define Continue reduce_Continue
-  #define Return   reduce_Return
-  #define Output   reduce_Output
-  #define Error    reduce_Error
+  #define EagerCase1 reduce_EagerCase1
+  #define EagerCase2 reduce_EagerCase2
+  #define EagerCase3 reduce_EagerCase3
+  #define EagerCase4 reduce_EagerCase4
+  #define EagerCase5 reduce_EagerCase5
+
+  #define Lazy1 reduce_Lazy1
+  #define Lazy2 reduce_Lazy2
+  #define Lazy3 reduce_Lazy3
+  #define Lazy4 reduce_Lazy4
+  #define Lazy5 reduce_Lazy5
+
+  #define LazyCase1 reduce_LazyCase1
+  #define LazyCase2 reduce_LazyCase2
+  #define LazyCase3 reduce_LazyCase3
+  #define LazyCase4 reduce_LazyCase4
+  #define LazyCase5 reduce_LazyCase5
+
+  #define Mixed reduce_Mixed
+
+  #define Return    return_Return
+  #define Construct reduce_Construct
+  #define Output    reduce_Output
+  #define Error     reduce_Error
 #endif // REDUCE_QUALIFIED_ONLY
 
 
