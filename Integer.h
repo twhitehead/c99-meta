@@ -44,47 +44,47 @@
 
 #define _numeric_add_integer_Integer_integer_Integer(x,y,...) reduce_Lazy1(integer_Integer,(integer_add_,x,y),__VA_ARGS__)
 
-#define _integer_add_(x,y,...) reduce_EagerCase3(integer_add,_tupple_just2(x),_tupple_just2(y),(0),(I),(I),(I),_tupple_drop2(x),_tupple_drop2(y),_tupple_just1(x),_tupple_just1(y),__VA_ARGS__)
+#define _integer_add_(x,y,...) reduce_EagerCase3(integer_add,_raw_just2(x),_raw_just2(y),(0),(I),(I),(I),_raw_drop2(x),_raw_drop2(y),_raw_just1(x),_raw_just1(y),__VA_ARGS__)
 
-#define _integer_add_0_0_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_tupple_just1(x),_tupple_just1(y),(0),_tupple_append((0),z),zp,_tupple_append((0),z),_tupple_drop1(x),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_add_0_0_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_tupple_just1(x),_tupple_just1(y),(0),_tupple_append((1),z),_tupple_append((1),z),zn,_tupple_drop1(x),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_add_0_1_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_tupple_just1(x),_tupple_just1(y),(0),_tupple_append((1),z),_tupple_append((1),z),zn,_tupple_drop1(x),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_add_0_1_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_tupple_just1(x),_tupple_just1(y),(1),_tupple_append((0),z),zp,_tupple_append((0),z),_tupple_drop1(x),_tupple_drop1(y),__VA_ARGS__)
+#define _integer_add_0_0_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_raw_just1(x),_raw_just1(y),(0),_raw_concatenate2(z,(0)),zp,_raw_concatenate2(z,(0)),_raw_drop1(x),_raw_drop1(y),__VA_ARGS__)
+#define _integer_add_0_0_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_raw_just1(x),_raw_just1(y),(0),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,_raw_drop1(x),_raw_drop1(y),__VA_ARGS__)
+#define _integer_add_0_1_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_raw_just1(x),_raw_just1(y),(0),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,_raw_drop1(x),_raw_drop1(y),__VA_ARGS__)
+#define _integer_add_0_1_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_raw_just1(x),_raw_just1(y),(1),_raw_concatenate2(z,(0)),zp,_raw_concatenate2(z,(0)),_raw_drop1(x),_raw_drop1(y),__VA_ARGS__)
 
-#define _integer_add_0_P_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1(xs,_tupple_deliminate((0),z,x)),__VA_ARGS__)
-#define _integer_add_0_P_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_tupple_just1(x),(P),(0),_tupple_append((1),z),_tupple_append((1),z),zn,_tupple_drop1(x),(),__VA_ARGS__)
-#define _integer_add_0_N_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_tupple_just1(x),(N),(0),_tupple_append((1),z),_tupple_append((1),z),zn,_tupple_drop1(x),(),__VA_ARGS__)
-#define _integer_add_0_N_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_tupple_just1(x),(N),(1),_tupple_append((0),z),zp,_tupple_append((0),z),_tupple_drop1(x),(),__VA_ARGS__)
+#define _integer_add_0_P_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1(xs,_raw_concatenate3(z,(0),x)),__VA_ARGS__)
+#define _integer_add_0_P_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_raw_just1(x),(P),(0),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,_raw_drop1(x),(),__VA_ARGS__)
+#define _integer_add_0_N_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_raw_just1(x),(N),(0),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,_raw_drop1(x),(),__VA_ARGS__)
+#define _integer_add_0_N_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_raw_just1(x),(N),(1),_raw_concatenate2(z,(0)),zp,_raw_concatenate2(z,(0)),_raw_drop1(x),(),__VA_ARGS__)
 
-#define _integer_add_1_0_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_tupple_just1(x),_tupple_just1(y),(0),_tupple_append((1),z),_tupple_append((1),z),zn,_tupple_drop1(x),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_add_1_0_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_tupple_just1(x),_tupple_just1(y),(1),_tupple_append((0),z),zp,_tupple_append((0),z),_tupple_drop1(x),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_add_1_1_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_tupple_just1(x),_tupple_just1(y),(1),_tupple_append((0),z),zp,_tupple_append((0),z),_tupple_drop1(x),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_add_1_1_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_tupple_just1(x),_tupple_just1(y),(1),_tupple_append((1),z),_tupple_append((1),z),zn,_tupple_drop1(x),_tupple_drop1(y),__VA_ARGS__)
+#define _integer_add_1_0_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_raw_just1(x),_raw_just1(y),(0),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,_raw_drop1(x),_raw_drop1(y),__VA_ARGS__)
+#define _integer_add_1_0_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_raw_just1(x),_raw_just1(y),(1),_raw_concatenate2(z,(0)),zp,_raw_concatenate2(z,(0)),_raw_drop1(x),_raw_drop1(y),__VA_ARGS__)
+#define _integer_add_1_1_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_raw_just1(x),_raw_just1(y),(1),_raw_concatenate2(z,(0)),zp,_raw_concatenate2(z,(0)),_raw_drop1(x),_raw_drop1(y),__VA_ARGS__)
+#define _integer_add_1_1_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_raw_just1(x),_raw_just1(y),(1),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,_raw_drop1(x),_raw_drop1(y),__VA_ARGS__)
 
-#define _integer_add_1_P_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1(xs,_tupple_deliminate((1),z,x)),__VA_ARGS__)
-#define _integer_add_1_P_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_tupple_just1(x),(P),(1),_tupple_append((0),z),zp,_tupple_append((0),z),_tupple_drop1(x),(),__VA_ARGS__)
-#define _integer_add_1_N_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_tupple_just1(x),(N),(1),_tupple_append((0),z),zp,_tupple_append((0),z),_tupple_drop1(x),(),__VA_ARGS__)
-#define _integer_add_1_N_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_tupple_just1(x),(N),(1),_tupple_append((1),z),_tupple_append((1),z),zn,_tupple_drop1(x),(),__VA_ARGS__)
+#define _integer_add_1_P_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1(xs,_raw_concatenate3(z,(1),x)),__VA_ARGS__)
+#define _integer_add_1_P_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_raw_just1(x),(P),(1),_raw_concatenate2(z,(0)),zp,_raw_concatenate2(z,(0)),_raw_drop1(x),(),__VA_ARGS__)
+#define _integer_add_1_N_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_raw_just1(x),(N),(1),_raw_concatenate2(z,(0)),zp,_raw_concatenate2(z,(0)),_raw_drop1(x),(),__VA_ARGS__)
+#define _integer_add_1_N_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,_raw_just1(x),(N),(1),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,_raw_drop1(x),(),__VA_ARGS__)
 
-#define _integer_add_P_0_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1(ys,_tupple_deliminate((0),z,y)),__VA_ARGS__)
-#define _integer_add_P_0_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,(P),_tupple_just1(y),(0),_tupple_append((1),z),_tupple_append((1),z),zn,(),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_add_P_1_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1(ys,_tupple_deliminate((1),z,y)),__VA_ARGS__)
-#define _integer_add_P_1_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,(P),_tupple_just1(y),(1),_tupple_append((0),z),zp,_tupple_append((0),z),(),_tupple_drop1(y),__VA_ARGS__)
+#define _integer_add_P_0_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1(ys,_raw_concatenate3(z,(0),y)),__VA_ARGS__)
+#define _integer_add_P_0_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,(P),_raw_just1(y),(0),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,(),_raw_drop1(y),__VA_ARGS__)
+#define _integer_add_P_1_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1(ys,_raw_concatenate3(z,(1),y)),__VA_ARGS__)
+#define _integer_add_P_1_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,(P),_raw_just1(y),(1),_raw_concatenate2(z,(0)),zp,_raw_concatenate2(z,(0)),(),_raw_drop1(y),__VA_ARGS__)
 
-#define _integer_add_P_P_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1((P),_tupple_append((P),zp)),__VA_ARGS__)
-#define _integer_add_P_P_1(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1((P),_tupple_concatenate(z,(1,P))),__VA_ARGS__)
-#define _integer_add_P_N_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1((N),_tupple_append((N),zn)),__VA_ARGS__)
-#define _integer_add_P_N_1(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1((P),_tupple_append((P),zp)),__VA_ARGS__)
+#define _integer_add_P_P_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1((P),_raw_concatenate2(zp,(P))),__VA_ARGS__)
+#define _integer_add_P_P_1(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1((P),_raw_concatenate2(z,(1,P))),__VA_ARGS__)
+#define _integer_add_P_N_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1((N),_raw_concatenate2(zn,(N))),__VA_ARGS__)
+#define _integer_add_P_N_1(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1((P),_raw_concatenate2(zp,(P))),__VA_ARGS__)
 
-#define _integer_add_N_0_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,(N),_tupple_just1(y),(0),_tupple_append((1),z),_tupple_append((1),z),zn,(),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_add_N_0_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,(N),_tupple_just1(y),(1),_tupple_append((0),z),zp,_tupple_append((0),z),(),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_add_N_1_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,(N),_tupple_just1(y),(1),_tupple_append((0),z),zp,_tupple_append((0),z),(),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_add_N_1_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,(N),_tupple_just1(y),(1),_tupple_append((1),z),_tupple_append((1),z),zn,(),_tupple_drop1(y),__VA_ARGS__)
+#define _integer_add_N_0_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,(N),_raw_just1(y),(0),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,(),_raw_drop1(y),__VA_ARGS__)
+#define _integer_add_N_0_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,(N),_raw_just1(y),(1),_raw_concatenate2(z,(0)),zp,_raw_concatenate2(z,(0)),(),_raw_drop1(y),__VA_ARGS__)
+#define _integer_add_N_1_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,(N),_raw_just1(y),(1),_raw_concatenate2(z,(0)),zp,_raw_concatenate2(z,(0)),(),_raw_drop1(y),__VA_ARGS__)
+#define _integer_add_N_1_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_add,(N),_raw_just1(y),(1),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,(),_raw_drop1(y),__VA_ARGS__)
 
-#define _integer_add_N_P_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1((N),_tupple_append((N),zn)),__VA_ARGS__)
-#define _integer_add_N_P_1(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1((P),_tupple_append((P),zp)),__VA_ARGS__)
-#define _integer_add_N_N_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1((N),_tupple_concatenate(z,(0,N))),__VA_ARGS__)
-#define _integer_add_N_N_1(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1((N),_tupple_append((N),zn)),__VA_ARGS__)
+#define _integer_add_N_P_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1((N),_raw_concatenate2(zn,(N))),__VA_ARGS__)
+#define _integer_add_N_P_1(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1((P),_raw_concatenate2(zp,(P))),__VA_ARGS__)
+#define _integer_add_N_N_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1((N),_raw_concatenate2(z,(0,N))),__VA_ARGS__)
+#define _integer_add_N_N_1(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1((N),_raw_concatenate2(zn,(N))),__VA_ARGS__)
 
 
 // Subtraction is implemented via a standard ripple-borrow subtractor.  The
@@ -94,47 +94,47 @@
 #define _numeric_subtract_integer_Integer_integer_Integer(x,y,...) reduce_Lazy1(integer_Integer,(integer_subtract_,x,y),__VA_ARGS__)
 #define _numeric_negate_integer_Integer(x,...)                     reduce_Lazy1(integer_Integer,(integer_subtract_,(P,P),x),__VA_ARGS__)
 
-#define _integer_subtract_(x,y,...) reduce_EagerCase3(integer_subtract,_tupple_just2(x),_tupple_just2(y),(0),(I),(I),(I),_tupple_drop2(x),_tupple_drop2(y),_tupple_just1(x),_tupple_just1(y),__VA_ARGS__)
+#define _integer_subtract_(x,y,...) reduce_EagerCase3(integer_subtract,_raw_just2(x),_raw_just2(y),(0),(I),(I),(I),_raw_drop2(x),_raw_drop2(y),_raw_just1(x),_raw_just1(y),__VA_ARGS__)
 
-#define _integer_subtract_0_0_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_tupple_just1(x),_tupple_just1(y),(0),_tupple_append((0),z),zp,_tupple_append((0),z),_tupple_drop1(x),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_subtract_0_0_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_tupple_just1(x),_tupple_just1(y),(1),_tupple_append((1),z),_tupple_append((1),z),zn,_tupple_drop1(x),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_subtract_0_1_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_tupple_just1(x),_tupple_just1(y),(1),_tupple_append((1),z),_tupple_append((1),z),zn,_tupple_drop1(x),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_subtract_0_1_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_tupple_just1(x),_tupple_just1(y),(1),_tupple_append((0),z),zp,_tupple_append((0),z),_tupple_drop1(x),_tupple_drop1(y),__VA_ARGS__)
+#define _integer_subtract_0_0_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_raw_just1(x),_raw_just1(y),(0),_raw_concatenate2(z,(0)),zp,_raw_concatenate2(z,(0)),_raw_drop1(x),_raw_drop1(y),__VA_ARGS__)
+#define _integer_subtract_0_0_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_raw_just1(x),_raw_just1(y),(1),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,_raw_drop1(x),_raw_drop1(y),__VA_ARGS__)
+#define _integer_subtract_0_1_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_raw_just1(x),_raw_just1(y),(1),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,_raw_drop1(x),_raw_drop1(y),__VA_ARGS__)
+#define _integer_subtract_0_1_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_raw_just1(x),_raw_just1(y),(1),_raw_concatenate2(z,(0)),zp,_raw_concatenate2(z,(0)),_raw_drop1(x),_raw_drop1(y),__VA_ARGS__)
 
-#define _integer_subtract_0_P_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1(xs,_tupple_deliminate((0),z,x)),__VA_ARGS__)
-#define _integer_subtract_0_P_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_tupple_just1(x),(P),(1),_tupple_append((1),z),_tupple_append((1),z),zn,_tupple_drop1(x),(),__VA_ARGS__)
-#define _integer_subtract_0_N_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_tupple_just1(x),(N),(1),_tupple_append((1),z),_tupple_append((1),z),zn,_tupple_drop1(x),(),__VA_ARGS__)
-#define _integer_subtract_0_N_1(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1(xs,_tupple_deliminate((0),z,x)),__VA_ARGS__)
+#define _integer_subtract_0_P_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1(xs,_raw_concatenate3(z,(0),x)),__VA_ARGS__)
+#define _integer_subtract_0_P_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_raw_just1(x),(P),(1),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,_raw_drop1(x),(),__VA_ARGS__)
+#define _integer_subtract_0_N_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_raw_just1(x),(N),(1),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,_raw_drop1(x),(),__VA_ARGS__)
+#define _integer_subtract_0_N_1(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1(xs,_raw_concatenate3(z,(0),x)),__VA_ARGS__)
 
-#define _integer_subtract_1_0_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_tupple_just1(x),_tupple_just1(y),(0),_tupple_append((1),z),_tupple_append((1),z),zn,_tupple_drop1(x),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_subtract_1_0_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_tupple_just1(x),_tupple_just1(y),(0),_tupple_append((0),z),zp,_tupple_append((0),z),_tupple_drop1(x),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_subtract_1_1_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_tupple_just1(x),_tupple_just1(y),(0),_tupple_append((0),z),zp,_tupple_append((0),z),_tupple_drop1(x),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_subtract_1_1_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_tupple_just1(x),_tupple_just1(y),(1),_tupple_append((1),z),_tupple_append((1),z),zn,_tupple_drop1(x),_tupple_drop1(y),__VA_ARGS__)
+#define _integer_subtract_1_0_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_raw_just1(x),_raw_just1(y),(0),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,_raw_drop1(x),_raw_drop1(y),__VA_ARGS__)
+#define _integer_subtract_1_0_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_raw_just1(x),_raw_just1(y),(0),_raw_concatenate2(z,(0)),zp,_raw_concatenate2(z,(0)),_raw_drop1(x),_raw_drop1(y),__VA_ARGS__)
+#define _integer_subtract_1_1_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_raw_just1(x),_raw_just1(y),(0),_raw_concatenate2(z,(0)),zp,_raw_concatenate2(z,(0)),_raw_drop1(x),_raw_drop1(y),__VA_ARGS__)
+#define _integer_subtract_1_1_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_raw_just1(x),_raw_just1(y),(1),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,_raw_drop1(x),_raw_drop1(y),__VA_ARGS__)
 
-#define _integer_subtract_1_P_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1(xs,_tupple_deliminate((1),z,x)),__VA_ARGS__)
-#define _integer_subtract_1_P_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_tupple_just1(x),(P),(0),_tupple_append((0),z),zp,_tupple_append((0),z),_tupple_drop1(x),(),__VA_ARGS__)
-#define _integer_subtract_1_N_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_tupple_just1(x),(N),(0),_tupple_append((0),z),zp,_tupple_append((0),z),_tupple_drop1(x),(),__VA_ARGS__)
-#define _integer_subtract_1_N_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_tupple_just1(x),(N),(1),_tupple_append((1),z),_tupple_append((1),z),zn,_tupple_drop1(x),(),__VA_ARGS__)
+#define _integer_subtract_1_P_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1(xs,_raw_concatenate3(z,(1),x)),__VA_ARGS__)
+#define _integer_subtract_1_P_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_raw_just1(x),(P),(0),_raw_concatenate2(z,(0)),zp,_raw_concatenate2(z,(0)),_raw_drop1(x),(),__VA_ARGS__)
+#define _integer_subtract_1_N_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_raw_just1(x),(N),(0),_raw_concatenate2(z,(0)),zp,_raw_concatenate2(z,(0)),_raw_drop1(x),(),__VA_ARGS__)
+#define _integer_subtract_1_N_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,_raw_just1(x),(N),(1),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,_raw_drop1(x),(),__VA_ARGS__)
 
-#define _integer_subtract_P_0_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,(P),_tupple_just1(y),(0),_tupple_append((0),z),zp,_tupple_append((0),z),(),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_subtract_P_0_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,(P),_tupple_just1(y),(1),_tupple_append((1),z),_tupple_append((1),z),zn,(),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_subtract_P_1_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,(P),_tupple_just1(y),(1),_tupple_append((1),z),_tupple_append((1),z),zn,(),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_subtract_P_1_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,(P),_tupple_just1(y),(1),_tupple_append((0),z),zp,_tupple_append((0),z),(),_tupple_drop1(y),__VA_ARGS__)
+#define _integer_subtract_P_0_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,(P),_raw_just1(y),(0),_raw_concatenate2(z,(0)),zp,_raw_concatenate2(z,(0)),(),_raw_drop1(y),__VA_ARGS__)
+#define _integer_subtract_P_0_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,(P),_raw_just1(y),(1),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,(),_raw_drop1(y),__VA_ARGS__)
+#define _integer_subtract_P_1_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,(P),_raw_just1(y),(1),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,(),_raw_drop1(y),__VA_ARGS__)
+#define _integer_subtract_P_1_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,(P),_raw_just1(y),(1),_raw_concatenate2(z,(0)),zp,_raw_concatenate2(z,(0)),(),_raw_drop1(y),__VA_ARGS__)
 
-#define _integer_subtract_P_P_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1((P),_tupple_append((P),zp)),__VA_ARGS__)
-#define _integer_subtract_P_P_1(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1((N),_tupple_append((N),zn)),__VA_ARGS__)
-#define _integer_subtract_P_N_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1((P),_tupple_concatenate(z,(1,P))),__VA_ARGS__)
-#define _integer_subtract_P_N_1(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1((P),_tupple_append((P),zp)),__VA_ARGS__)
+#define _integer_subtract_P_P_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1((P),_raw_concatenate2(zp,(P))),__VA_ARGS__)
+#define _integer_subtract_P_P_1(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1((N),_raw_concatenate2(zn,(N))),__VA_ARGS__)
+#define _integer_subtract_P_N_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1((P),_raw_concatenate2(z,(1,P))),__VA_ARGS__)
+#define _integer_subtract_P_N_1(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1((P),_raw_concatenate2(zp,(P))),__VA_ARGS__)
 
-#define _integer_subtract_N_0_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,(N),_tupple_just1(y),(0),_tupple_append((1),z),_tupple_append((1),z),zn,(),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_subtract_N_0_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,(N),_tupple_just1(y),(0),_tupple_append((0),z),zp,_tupple_append((0),z),(),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_subtract_N_1_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,(N),_tupple_just1(y),(0),_tupple_append((0),z),zp,_tupple_append((0),z),(),_tupple_drop1(y),__VA_ARGS__)
-#define _integer_subtract_N_1_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,(N),_tupple_just1(y),(1),_tupple_append((1),z),_tupple_append((1),z),zn,(),_tupple_drop1(y),__VA_ARGS__)
+#define _integer_subtract_N_0_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,(N),_raw_just1(y),(0),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,(),_raw_drop1(y),__VA_ARGS__)
+#define _integer_subtract_N_0_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,(N),_raw_just1(y),(0),_raw_concatenate2(z,(0)),zp,_raw_concatenate2(z,(0)),(),_raw_drop1(y),__VA_ARGS__)
+#define _integer_subtract_N_1_0(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,(N),_raw_just1(y),(0),_raw_concatenate2(z,(0)),zp,_raw_concatenate2(z,(0)),(),_raw_drop1(y),__VA_ARGS__)
+#define _integer_subtract_N_1_1(z,zp,zn,x,y,...)       reduce_EagerCase3(integer_subtract,(N),_raw_just1(y),(1),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,(),_raw_drop1(y),__VA_ARGS__)
 
-#define _integer_subtract_N_P_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1((N),_tupple_append((N),zn)),__VA_ARGS__)
-#define _integer_subtract_N_P_1(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1((N),_tupple_concatenate(z,(0,N))),__VA_ARGS__)
-#define _integer_subtract_N_N_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1((P),_tupple_append((P),zp)),__VA_ARGS__)
-#define _integer_subtract_N_N_1(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_tupple_replace1((N),_tupple_append((N),zn)),__VA_ARGS__)
+#define _integer_subtract_N_P_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1((N),_raw_concatenate2(zn,(N))),__VA_ARGS__)
+#define _integer_subtract_N_P_1(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1((N),_raw_concatenate2(z,(0,N))),__VA_ARGS__)
+#define _integer_subtract_N_N_0(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1((P),_raw_concatenate2(zp,(P))),__VA_ARGS__)
+#define _integer_subtract_N_N_1(z,zp,zn,x,y,xs,ys,...) reduce_Construct(_raw_replace1((N),_raw_concatenate2(zn,(N))),__VA_ARGS__)
 
 
 // Multiplication is implemented via a standard shift adder.  Again, both
@@ -147,24 +147,24 @@
 
 #define _numeric_multiply_integer_Integer_integer_Integer(x,y,...) reduce_Lazy1(integer_Integer,(integer_multiply_,x,y),__VA_ARGS__)
 
-#define _integer_multiply_(x,y,...) reduce_EagerCase1(integer_multiply,_tupple_just2(y),(P,P),(I),(I),(I),x,_tupple_drop2(y),__VA_ARGS__)
+#define _integer_multiply_(x,y,...) reduce_EagerCase1(integer_multiply,_raw_just2(y),(P,P),(I),(I),(I),x,_raw_drop2(y),__VA_ARGS__)
 
-#define _integer_multiply_0(z1,z0,zp,zn,x,y,...)  reduce_EagerCase1(integer_multiply,_tupple_just1(y),_integer_multiply_shift(z1,z0,zp,zn),x,_tupple_drop1(y),__VA_ARGS__)
+#define _integer_multiply_0(z1,z0,zp,zn,x,y,...)  reduce_EagerCase1(integer_multiply,_raw_just1(y),_integer_multiply_shift(z1,z0,zp,zn),x,_raw_drop1(y),__VA_ARGS__)
 #define _integer_multiply_1(z1,z0,zp,zn,x,y,...)  reduce_Lazy1(integer_multiply_0,(integer_add_,z1,x),z0,zp,zn,x,y,__VA_ARGS__)
 #define _integer_multiply_P(z1,z0,zp,zn,x,y,...)  reduce_Construct(_integer_multiply_finish(z1,z0,zp,zn),__VA_ARGS__)
 #define _integer_multiply_N(z1,z0,zp,zn,x,y,...)  reduce_Lazy1(integer_multiply_P,(integer_subtract_,z1,x),z0,zp,zn,x,y,__VA_ARGS__)
 
-#define _integer_multiply_shift(z1,z0,zp,zn)   _integer_case1(integer_multiply_shift,_expand_just2(z1),z1,z0,zp,zn)
-#define _integer_multiply_shift_0(z1,z0,zp,zn) _tupple_delete2(z1),_tupple_append((0),z0),zp,_tupple_append((0),z0)
-#define _integer_multiply_shift_1(z1,z0,zp,zn) _tupple_delete2(z1),_tupple_append((1),z0),_tupple_append((1),z0),zn
-#define _integer_multiply_shift_P(z1,z0,zp,zn) (P,P),_tupple_append((0),z0),zp,_tupple_append((0),z0)
-#define _integer_multiply_shift_N(z1,z0,zp,zn) (N,N),_tupple_append((1),z0),_tupple_append((1),z0),zn
+#define _integer_multiply_shift(z1,z0,zp,zn)   _integer_case1(integer_multiply_shift,_raw_expandJust2(z1),z1,z0,zp,zn)
+#define _integer_multiply_shift_0(z1,z0,zp,zn) _raw_delete2(z1),_raw_concatenate2(z0,(0)),zp,_raw_concatenate2(z0,(0))
+#define _integer_multiply_shift_1(z1,z0,zp,zn) _raw_delete2(z1),_raw_concatenate2(z0,(1)),_raw_concatenate2(z0,(1)),zn
+#define _integer_multiply_shift_P(z1,z0,zp,zn) (P,P),_raw_concatenate2(z0,(0)),zp,_raw_concatenate2(z0,(0))
+#define _integer_multiply_shift_N(z1,z0,zp,zn) (N,N),_raw_concatenate2(z0,(1)),_raw_concatenate2(z0,(1)),zn
 
-#define _integer_multiply_finish(z1,z0,zp,zn) _integer_case1(integer_multiply_finish,_expand_just2(z1),_tupple_just1(z1),_tupple_concatenate(z0,_tupple_drop1(z1)),_tupple_append((P),zp),_tupple_append((N),zn))
-#define _integer_multiply_finish_0(s,z,zp,zn) _tupple_replace1(s,z)
-#define _integer_multiply_finish_1(s,z,zp,zn) _tupple_replace1(s,z)
-#define _integer_multiply_finish_P(s,z,zp,zn) _tupple_replace1(s,zp)
-#define _integer_multiply_finish_N(s,z,zp,zn) _tupple_replace1(s,zn)
+#define _integer_multiply_finish(z1,z0,zp,zn) _integer_case1(integer_multiply_finish,_raw_expandJust2(z1),_raw_just1(z1),_raw_replace1(z0,z1),_raw_concatenate2(zp,(P)),_raw_concatenate2(zn,(N)))
+#define _integer_multiply_finish_0(s,z,zp,zn) _raw_replace1(s,z)
+#define _integer_multiply_finish_1(s,z,zp,zn) _raw_replace1(s,z)
+#define _integer_multiply_finish_P(s,z,zp,zn) _raw_replace1(s,zp)
+#define _integer_multiply_finish_N(s,z,zp,zn) _raw_replace1(s,zn)
 
 
 // Division is implemented via the standard non-restoring long-division method.
@@ -182,7 +182,7 @@
 #define _integral_quotientRemainder_integer_Integer_integer_Integer(x,y,...)  reduce_Lazy1(integer_quotientRemainder_wrap,(integer_quotientRemainder_,x,y),__VA_ARGS__)
 
 #define _integer_quotientRemainder_(x,y,...) reduce_LazyCase2(integer_quotientRemainder,(integer_sign_,x,(N),(P),(P)),(integer_sign_,y,(N),(0),(P)),x,y,__VA_ARGS__)
-#define _integer_quotientRemainder_wrap(y,...) reduce_Construct((tupple_Tupple2,(integer_Integer,_expand_just1(y)),(integer_Integer,_expand_just2(y))),__VA_ARGS__)
+#define _integer_quotientRemainder_wrap(y,...) reduce_Construct((tupple_Tupple2,(integer_Integer,_raw_expandJust1(y)),(integer_Integer,_raw_expandJust2(y))),__VA_ARGS__)
 
 #define _integer_quotientRemainder_N_N(x,y,...) reduce_Lazy2(integer_quotientRemainder0,(integer_subtract_,(N,N),y),(reduce_Lazy1,integer_quotientRemainder_reverse,(integer_subtract_,x,(P,1,P))),(P,P),y,integer_add_,integer_subtract_,0,1,__VA_ARGS__)
 #define _integer_quotientRemainder_N_0(x,y,...) reduce_Error("integer_quotientRemainder_: division by zero")
@@ -191,39 +191,39 @@
 #define _integer_quotientRemainder_P_0(x,y,...) reduce_Error("integer_quotientRemainder_: division by zero")
 #define _integer_quotientRemainder_P_P(x,y,...) reduce_Lazy2(integer_quotientRemainder0,(integer_subtract_,(P,P),y),(              integer_quotientRemainder_reverse,x),                            (P,P),y,integer_subtract_,integer_add_,1,0,__VA_ARGS__)
 
-#define _integer_quotientRemainder0(r,x,q,y,cp,cn,p,n,...) reduce_EagerCase2(integer_quotientRemainder1,_tupple_just1(r),_tupple_just1(x),r,q,x,y,cp,cn,p,n,__VA_ARGS__)
-#define _integer_quotientRemainder1(r,q,x,y,cp,cn,p,n,...) reduce_EagerCase2(integer_quotientRemainder1,_tupple_just1(r),_tupple_just1(x),r,q,x,y,cp,cn,p,n,__VA_ARGS__)
+#define _integer_quotientRemainder0(r,x,q,y,cp,cn,p,n,...) reduce_EagerCase2(integer_quotientRemainder1,_raw_just1(r),_raw_just1(x),r,q,x,y,cp,cn,p,n,__VA_ARGS__)
+#define _integer_quotientRemainder1(r,q,x,y,cp,cn,p,n,...) reduce_EagerCase2(integer_quotientRemainder1,_raw_just1(r),_raw_just1(x),r,q,x,y,cp,cn,p,n,__VA_ARGS__)
 
 #define _integer_quotientRemainder1_N_N(r,q,x,y,cp,cn,p,n,...) reduce_Lazy1(integer_quotientRemainder_finish,(integer_add_,r,(P,1,P)),_integer_quotientRemainder_shift(n,q),__VA_ARGS__)
-#define _integer_quotientRemainder1_N_0(r,q,x,y,cp,cn,p,n,...) reduce_Lazy1(integer_quotientRemainder1,(cn,_integer_quotientRemainder_shift(0,r),y),_integer_quotientRemainder_shift(n,q),_tupple_drop1(x),y,cp,cn,p,n,__VA_ARGS__)
-#define _integer_quotientRemainder1_N_1(r,q,x,y,cp,cn,p,n,...) reduce_Lazy1(integer_quotientRemainder1,(cn,_integer_quotientRemainder_shift(1,r),y),_integer_quotientRemainder_shift(n,q),_tupple_drop1(x),y,cp,cn,p,n,__VA_ARGS__)
+#define _integer_quotientRemainder1_N_0(r,q,x,y,cp,cn,p,n,...) reduce_Lazy1(integer_quotientRemainder1,(cn,_integer_quotientRemainder_shift(0,r),y),_integer_quotientRemainder_shift(n,q),_raw_drop1(x),y,cp,cn,p,n,__VA_ARGS__)
+#define _integer_quotientRemainder1_N_1(r,q,x,y,cp,cn,p,n,...) reduce_Lazy1(integer_quotientRemainder1,(cn,_integer_quotientRemainder_shift(1,r),y),_integer_quotientRemainder_shift(n,q),_raw_drop1(x),y,cp,cn,p,n,__VA_ARGS__)
 #define _integer_quotientRemainder1_N_P(r,q,x,y,cp,cn,p,n,...) reduce_Lazy1(integer_quotientRemainder_finish,(cn,r,y),_integer_quotientRemainder_shift(n,q) ,__VA_ARGS__)
 
 #define _integer_quotientRemainder1_P_N(r,q,x,y,cp,cn,p,n,...) reduce_Lazy1(integer_quotientRemainder_finish,(reduce_Lazy1,integer_add_,(cp,r,y),(P,1,P)),_integer_quotientRemainder_shift(p,q),__VA_ARGS__)
-#define _integer_quotientRemainder1_P_0(r,q,x,y,cp,cn,p,n,...) reduce_Lazy1(integer_quotientRemainder1,(cp,_integer_quotientRemainder_shift(0,r),y),_integer_quotientRemainder_shift(p,q),_tupple_drop1(x),y,cp,cn,p,n,__VA_ARGS__)
-#define _integer_quotientRemainder1_P_1(r,q,x,y,cp,cn,p,n,...) reduce_Lazy1(integer_quotientRemainder1,(cp,_integer_quotientRemainder_shift(1,r),y),_integer_quotientRemainder_shift(p,q),_tupple_drop1(x),y,cp,cn,p,n,__VA_ARGS__)
+#define _integer_quotientRemainder1_P_0(r,q,x,y,cp,cn,p,n,...) reduce_Lazy1(integer_quotientRemainder1,(cp,_integer_quotientRemainder_shift(0,r),y),_integer_quotientRemainder_shift(p,q),_raw_drop1(x),y,cp,cn,p,n,__VA_ARGS__)
+#define _integer_quotientRemainder1_P_1(r,q,x,y,cp,cn,p,n,...) reduce_Lazy1(integer_quotientRemainder1,(cp,_integer_quotientRemainder_shift(1,r),y),_integer_quotientRemainder_shift(p,q),_raw_drop1(x),y,cp,cn,p,n,__VA_ARGS__)
 #define _integer_quotientRemainder1_P_P(r,q,x,y,cp,cn,p,n,...) reduce_Eager(integer_quotientRemainder_finish,r,_integer_quotientRemainder_shift(p,q),__VA_ARGS__)
 
-#define _integer_quotientRemainder_shift(b,x) _integer_case2(integer_quotientRemainder_shift,b,_expand_just2(x),x)
-#define _integer_quotientRemainder_shift_0_0(x) _tupple_insert2((0),x)
-#define _integer_quotientRemainder_shift_0_1(x) _tupple_insert2((0),x)
+#define _integer_quotientRemainder_shift(b,x) _integer_case2(integer_quotientRemainder_shift,b,_raw_expandJust2(x),x)
+#define _integer_quotientRemainder_shift_0_0(x) _raw_insert2((0),x)
+#define _integer_quotientRemainder_shift_0_1(x) _raw_insert2((0),x)
 #define _integer_quotientRemainder_shift_0_P(x) x
-#define _integer_quotientRemainder_shift_0_N(x) _tupple_insert2((0),x)
-#define _integer_quotientRemainder_shift_1_0(x) _tupple_insert2((1),x)
-#define _integer_quotientRemainder_shift_1_1(x) _tupple_insert2((1),x)
-#define _integer_quotientRemainder_shift_1_P(x) _tupple_insert2((1),x)
+#define _integer_quotientRemainder_shift_0_N(x) _raw_insert2((0),x)
+#define _integer_quotientRemainder_shift_1_0(x) _raw_insert2((1),x)
+#define _integer_quotientRemainder_shift_1_1(x) _raw_insert2((1),x)
+#define _integer_quotientRemainder_shift_1_P(x) _raw_insert2((1),x)
 #define _integer_quotientRemainder_shift_1_N(x) x
 
 #define _integer_quotientRemainder_finish(r,q,...) reduce_LazyCase1(integer_quotientRemainder_finish,(integer_sign_,q,(N),(P),(P)),q,r,__VA_ARGS__)
-#define _integer_quotientRemainder_finish_N(q,r,...) reduce_Lazy1(tupple_tupple2_,(integer_add_,q,(P,1,P)),r,__VA_ARGS__)
+#define _integer_quotientRemainder_finish_N(q,r,...) reduce_Lazy1(integer_quotientRemainder_finish_P,(integer_add_,q,(P,1,P)),r,__VA_ARGS__)
 #define _integer_quotientRemainder_finish_P(q,r,...) reduce_Construct((q,r),__VA_ARGS__)
 
-#define _integer_quotientRemainder_reverse(x,...) reduce_EagerCase1(integer_quotientRemainder_reverse,_tupple_just2(x),(_expand_just1(x),_expand_just1(x)),_tupple_drop2(x),__VA_ARGS__)
+#define _integer_quotientRemainder_reverse(x,...) reduce_EagerCase1(integer_quotientRemainder_reverse,_raw_just2(x),(_raw_expandJust1(x),_raw_expandJust1(x)),_raw_drop2(x),__VA_ARGS__)
 
-#define _integer_quotientRemainder_reverse_0(z,x,...) reduce_EagerCase1(integer_quotientRemainder_reverse,_tupple_just1(x),_tupple_insert2((0),z),_tupple_drop1(x),__VA_ARGS__)
-#define _integer_quotientRemainder_reverse_1(z,x,...) reduce_EagerCase1(integer_quotientRemainder_reverse,_tupple_just1(x),_tupple_insert2((1),z),_tupple_drop1(x),__VA_ARGS__)
-#define _integer_quotientRemainder_reverse_P(z,x,...) reduce_Construct(_tupple_drop1(z),__VA_ARGS__)
-#define _integer_quotientRemainder_reverse_N(z,x,...) reduce_Construct(_tupple_drop1(z),__VA_ARGS__)
+#define _integer_quotientRemainder_reverse_0(z,x,...) reduce_EagerCase1(integer_quotientRemainder_reverse,_raw_just1(x),_raw_insert2((0),z),_raw_drop1(x),__VA_ARGS__)
+#define _integer_quotientRemainder_reverse_1(z,x,...) reduce_EagerCase1(integer_quotientRemainder_reverse,_raw_just1(x),_raw_insert2((1),z),_raw_drop1(x),__VA_ARGS__)
+#define _integer_quotientRemainder_reverse_P(z,x,...) reduce_Construct(_raw_drop1(z),__VA_ARGS__)
+#define _integer_quotientRemainder_reverse_N(z,x,...) reduce_Construct(_raw_drop1(z),__VA_ARGS__)
 
 
 // Comparison is as would be expected, with a seperate equal/not equal check
@@ -232,20 +232,20 @@
 #define _equal_equal_integer_Integer_integer_Integer(x,y,...)    reduce_Return((integer_equal_,x,y,(bool_True),(bool_False)),__VA_ARGS__)
 #define _equal_notequal_integer_Integer_integer_Integer(x,y,...) reduce_Return((integer_equal_,x,y,(bool_False),(bool_True)),__VA_ARGS__)
 
-#define _integer_equal_(x,y,t,f,...) reduce_EagerCase2(integer_equal,_tupple_just1(x),_tupple_just1(y),_tupple_drop1(x),_tupple_drop1(y),t,f,__VA_ARGS__)
+#define _integer_equal_(x,y,t,f,...) reduce_EagerCase2(integer_equal,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),t,f,__VA_ARGS__)
 
-#define _integer_equal_P_P(x,y,t,f,...)  reduce_EagerCase2(integer_equal_,_tupple_just1(x),_tupple_just1(y),_tupple_drop1(x),_tupple_drop1(y),t,f,__VA_ARGS__)
+#define _integer_equal_P_P(x,y,t,f,...)  reduce_EagerCase2(integer_equal_,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),t,f,__VA_ARGS__)
 #define _integer_equal_P_N(x,y,t,f,...)  reduce_Construct(f,__VA_ARGS__)
 #define _integer_equal_N_P(x,y,t,f,...)  reduce_Construct(f,__VA_ARGS__)
-#define _integer_equal_N_N(x,y,t,f,...)  reduce_EagerCase2(integer_equal_,_tupple_just1(x),_tupple_just1(y),_tupple_drop1(x),_tupple_drop1(y),t,f,__VA_ARGS__)
+#define _integer_equal_N_N(x,y,t,f,...)  reduce_EagerCase2(integer_equal_,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),t,f,__VA_ARGS__)
 
-#define _integer_equal__0_0(x,y,t,f,...) reduce_EagerCase2(integer_equal_,_tupple_just1(x),_tupple_just1(y),_tupple_drop1(x),_tupple_drop1(y),t,f,__VA_ARGS__)
+#define _integer_equal__0_0(x,y,t,f,...) reduce_EagerCase2(integer_equal_,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),t,f,__VA_ARGS__)
 #define _integer_equal__0_1(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
 #define _integer_equal__0_P(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
 #define _integer_equal__0_N(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
 
 #define _integer_equal__1_0(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
-#define _integer_equal__1_1(x,y,t,f,...) reduce_EagerCase2(integer_equal_,_tupple_just1(x),_tupple_just1(y),_tupple_drop1(x),_tupple_drop1(y),t,f,__VA_ARGS__)
+#define _integer_equal__1_1(x,y,t,f,...) reduce_EagerCase2(integer_equal_,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),t,f,__VA_ARGS__)
 #define _integer_equal__1_P(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
 #define _integer_equal__1_N(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
 
@@ -268,20 +268,20 @@
 #define _order_maximum_integer_Integer_integer_Integer(x,y,...) reduce_Return((integer_compare_,x,y,(integer_Integer,y),(integer_Integer,x),(integer_Integer,x)),__VA_ARGS__)
 #define _order_minimum_integer_Integer_integer_Integer(x,y,...) reduce_Return((integer_compare_,x,y,(integer_Integer,x),(integer_Integer,x),(integer_Integer,y)),__VA_ARGS__)
 
-#define _integer_compare_(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare,_tupple_just1(x),_tupple_just1(y),_tupple_drop1(x),_tupple_drop1(y),lt,eq,gt,__VA_ARGS__)
+#define _integer_compare_(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),lt,eq,gt,__VA_ARGS__)
 
-#define _integer_compare_P_P(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare_,_tupple_just1(x),_tupple_just1(y),_tupple_drop1(x),_tupple_drop1(y),lt,eq,gt,__VA_ARGS__)
+#define _integer_compare_P_P(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare_,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),lt,eq,gt,__VA_ARGS__)
 #define _integer_compare_P_N(x,y,lt,eq,gt,...) reduce_Construct(gt,__VA_ARGS__)
 #define _integer_compare_N_P(x,y,lt,eq,gt,...) reduce_Construct(lt,__VA_ARGS__)
-#define _integer_compare_N_N(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare_,_tupple_just1(x),_tupple_just1(y),_tupple_drop1(x),_tupple_drop1(y),lt,eq,gt,__VA_ARGS__)
+#define _integer_compare_N_N(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare_,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),lt,eq,gt,__VA_ARGS__)
 
-#define _integer_compare__0_0(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare_,_tupple_just1(x),_tupple_just1(y),_tupple_drop1(x),_tupple_drop1(y),lt,eq,gt,__VA_ARGS__)
-#define _integer_compare__0_1(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare_,_tupple_just1(x),_tupple_just1(y),_tupple_drop1(x),_tupple_drop1(y),lt,lt,gt,__VA_ARGS__)
+#define _integer_compare__0_0(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare_,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),lt,eq,gt,__VA_ARGS__)
+#define _integer_compare__0_1(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare_,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),lt,lt,gt,__VA_ARGS__)
 #define _integer_compare__0_P(x,y,lt,eq,gt,...) reduce_Construct(gt,__VA_ARGS__)
 #define _integer_compare__0_N(x,y,lt,eq,gt,...) reduce_Construct(lt,__VA_ARGS__)
 
-#define _integer_compare__1_0(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare_,_tupple_just1(x),_tupple_just1(y),_tupple_drop1(x),_tupple_drop1(y),lt,gt,gt,__VA_ARGS__)
-#define _integer_compare__1_1(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare_,_tupple_just1(x),_tupple_just1(y),_tupple_drop1(x),_tupple_drop1(y),lt,eq,gt,__VA_ARGS__)
+#define _integer_compare__1_0(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare_,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),lt,gt,gt,__VA_ARGS__)
+#define _integer_compare__1_1(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare_,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),lt,eq,gt,__VA_ARGS__)
 #define _integer_compare__1_P(x,y,lt,eq,gt,...) reduce_Construct(gt,__VA_ARGS__)
 #define _integer_compare__1_N(x,y,lt,eq,gt,...) reduce_Construct(lt,__VA_ARGS__)
 
@@ -298,14 +298,14 @@
 
 #define _numeric_absolute_integer_Integer(x,...) reduce_Lazy1(integer_Integer,(integer_absolute_,x),__VA_ARGS__)
 
-#define _integer_absolute_(x,...)  reduce_EagerCase1(integer_absolute,_tupple_just1(x),x,__VA_ARGS__)
+#define _integer_absolute_(x,...)  reduce_EagerCase1(integer_absolute,_raw_just1(x),x,__VA_ARGS__)
 #define _integer_absolute_P(x,...) reduce_Construct(x,__VA_ARGS__)
 #define _integer_absolute_N(x,...) reduce_Eager(integer_subtract_,(P,P),x,__VA_ARGS__)
 
 
 #define _numeric_sign_integer_Integer(x,...) reduce_Lazy1(integer_Integer,(integer_sign_,x,(N,N),(P,P),(P,1,P)),__VA_ARGS__)
 
-#define _integer_sign_(x,n,z,p,...) reduce_EagerCase2(integer_sign,_tupple_just1(x),_tupple_just2(x),n,z,p,__VA_ARGS__)
+#define _integer_sign_(x,n,z,p,...) reduce_EagerCase2(integer_sign,_raw_just1(x),_raw_just2(x),n,z,p,__VA_ARGS__)
 #define _integer_sign_P_0(n,z,p,...) reduce_Construct(p,__VA_ARGS__)
 #define _integer_sign_P_1(n,z,p,...) reduce_Construct(p,__VA_ARGS__)
 #define _integer_sign_P_P(n,z,p,...) reduce_Construct(z,__VA_ARGS__)
