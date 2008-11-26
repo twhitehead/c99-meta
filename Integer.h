@@ -234,28 +234,28 @@
 
 #define _integer_equal_(x,y,t,f,...) reduce_EagerCase2(integer_equal,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),t,f,__VA_ARGS__)
 
-#define _integer_equal_P_P(x,y,t,f,...)  reduce_EagerCase2(integer_equal_,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),t,f,__VA_ARGS__)
+#define _integer_equal_P_P(x,y,t,f,...)  reduce_EagerCase2(integer_equal0,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),t,f,__VA_ARGS__)
 #define _integer_equal_P_N(x,y,t,f,...)  reduce_Construct(f,__VA_ARGS__)
 #define _integer_equal_N_P(x,y,t,f,...)  reduce_Construct(f,__VA_ARGS__)
-#define _integer_equal_N_N(x,y,t,f,...)  reduce_EagerCase2(integer_equal_,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),t,f,__VA_ARGS__)
+#define _integer_equal_N_N(x,y,t,f,...)  reduce_EagerCase2(integer_equal0,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),t,f,__VA_ARGS__)
 
-#define _integer_equal__0_0(x,y,t,f,...) reduce_EagerCase2(integer_equal_,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),t,f,__VA_ARGS__)
-#define _integer_equal__0_1(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
-#define _integer_equal__0_P(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
-#define _integer_equal__0_N(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
+#define _integer_equal0_0_0(x,y,t,f,...) reduce_EagerCase2(integer_equal0,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),t,f,__VA_ARGS__)
+#define _integer_equal0_0_1(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
+#define _integer_equal0_0_P(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
+#define _integer_equal0_0_N(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
 
-#define _integer_equal__1_0(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
-#define _integer_equal__1_1(x,y,t,f,...) reduce_EagerCase2(integer_equal_,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),t,f,__VA_ARGS__)
-#define _integer_equal__1_P(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
-#define _integer_equal__1_N(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
+#define _integer_equal0_1_0(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
+#define _integer_equal0_1_1(x,y,t,f,...) reduce_EagerCase2(integer_equal0,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),t,f,__VA_ARGS__)
+#define _integer_equal0_1_P(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
+#define _integer_equal0_1_N(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
 
-#define _integer_equal__P_0(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
-#define _integer_equal__P_1(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
-#define _integer_equal__P_P(x,y,t,f,...) reduce_Construct(t,__VA_ARGS__)
+#define _integer_equal0_P_0(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
+#define _integer_equal0_P_1(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
+#define _integer_equal0_P_P(x,y,t,f,...) reduce_Construct(t,__VA_ARGS__)
 
-#define _integer_equal__N_0(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
-#define _integer_equal__N_1(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
-#define _integer_equal__N_N(x,y,t,f,...) reduce_Construct(t,__VA_ARGS__)
+#define _integer_equal0_N_0(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
+#define _integer_equal0_N_1(x,y,t,f,...) reduce_Construct(f,__VA_ARGS__)
+#define _integer_equal0_N_N(x,y,t,f,...) reduce_Construct(t,__VA_ARGS__)
 
 
 #define _order_compare_integer_Integer_integer_Integer(x,y,...)      reduce_Return((integer_compare_,x,y,(order_LT),(order_EQ),(order_GT)),__VA_ARGS__)
@@ -270,28 +270,28 @@
 
 #define _integer_compare_(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),lt,eq,gt,__VA_ARGS__)
 
-#define _integer_compare_P_P(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare_,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),lt,eq,gt,__VA_ARGS__)
+#define _integer_compare_P_P(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare0,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),lt,eq,gt,__VA_ARGS__)
 #define _integer_compare_P_N(x,y,lt,eq,gt,...) reduce_Construct(gt,__VA_ARGS__)
 #define _integer_compare_N_P(x,y,lt,eq,gt,...) reduce_Construct(lt,__VA_ARGS__)
-#define _integer_compare_N_N(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare_,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),lt,eq,gt,__VA_ARGS__)
+#define _integer_compare_N_N(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare0,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),lt,eq,gt,__VA_ARGS__)
 
-#define _integer_compare__0_0(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare_,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),lt,eq,gt,__VA_ARGS__)
-#define _integer_compare__0_1(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare_,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),lt,lt,gt,__VA_ARGS__)
-#define _integer_compare__0_P(x,y,lt,eq,gt,...) reduce_Construct(gt,__VA_ARGS__)
-#define _integer_compare__0_N(x,y,lt,eq,gt,...) reduce_Construct(lt,__VA_ARGS__)
+#define _integer_compare0_0_0(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare0,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),lt,eq,gt,__VA_ARGS__)
+#define _integer_compare0_0_1(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare0,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),lt,lt,gt,__VA_ARGS__)
+#define _integer_compare0_0_P(x,y,lt,eq,gt,...) reduce_Construct(gt,__VA_ARGS__)
+#define _integer_compare0_0_N(x,y,lt,eq,gt,...) reduce_Construct(lt,__VA_ARGS__)
 
-#define _integer_compare__1_0(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare_,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),lt,gt,gt,__VA_ARGS__)
-#define _integer_compare__1_1(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare_,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),lt,eq,gt,__VA_ARGS__)
-#define _integer_compare__1_P(x,y,lt,eq,gt,...) reduce_Construct(gt,__VA_ARGS__)
-#define _integer_compare__1_N(x,y,lt,eq,gt,...) reduce_Construct(lt,__VA_ARGS__)
+#define _integer_compare0_1_0(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare0,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),lt,gt,gt,__VA_ARGS__)
+#define _integer_compare0_1_1(x,y,lt,eq,gt,...) reduce_EagerCase2(integer_compare0,_raw_just1(x),_raw_just1(y),_raw_drop1(x),_raw_drop1(y),lt,eq,gt,__VA_ARGS__)
+#define _integer_compare0_1_P(x,y,lt,eq,gt,...) reduce_Construct(gt,__VA_ARGS__)
+#define _integer_compare0_1_N(x,y,lt,eq,gt,...) reduce_Construct(lt,__VA_ARGS__)
 
-#define _integer_compare__P_0(x,y,lt,eq,gt,...) reduce_Construct(lt,__VA_ARGS__)
-#define _integer_compare__P_1(x,y,lt,eq,gt,...) reduce_Construct(lt,__VA_ARGS__)
-#define _integer_compare__P_P(x,y,lt,eq,gt,...) reduce_Construct(eq,__VA_ARGS__)
+#define _integer_compare0_P_0(x,y,lt,eq,gt,...) reduce_Construct(lt,__VA_ARGS__)
+#define _integer_compare0_P_1(x,y,lt,eq,gt,...) reduce_Construct(lt,__VA_ARGS__)
+#define _integer_compare0_P_P(x,y,lt,eq,gt,...) reduce_Construct(eq,__VA_ARGS__)
 
-#define _integer_compare__N_0(x,y,lt,eq,gt,...) reduce_Construct(gt,__VA_ARGS__)
-#define _integer_compare__N_1(x,y,lt,eq,gt,...) reduce_Construct(gt,__VA_ARGS__)
-#define _integer_compare__N_N(x,y,lt,eq,gt,...) reduce_Construct(eq,__VA_ARGS__)
+#define _integer_compare0_N_0(x,y,lt,eq,gt,...) reduce_Construct(gt,__VA_ARGS__)
+#define _integer_compare0_N_1(x,y,lt,eq,gt,...) reduce_Construct(gt,__VA_ARGS__)
+#define _integer_compare0_N_N(x,y,lt,eq,gt,...) reduce_Construct(eq,__VA_ARGS__)
 
 
 // Sign related stuff is a no brainer.
