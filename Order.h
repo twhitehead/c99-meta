@@ -14,32 +14,32 @@
 #include "Equal.h"
 
 
-#define _order_LT(...) reduce_Construct((order_LT),__VA_ARGS__)
-#define _order_EQ(...) reduce_Construct((order_EQ),__VA_ARGS__)
-#define _order_GT(...) reduce_Construct((order_GT),__VA_ARGS__)
+#define _order_LT(...) reduce_construct((order_LT),__VA_ARGS__)
+#define _order_EQ(...) reduce_construct((order_EQ),__VA_ARGS__)
+#define _order_GT(...) reduce_construct((order_GT),__VA_ARGS__)
 
 
-#define _order_compare(x,y,...)      reduce_LazyCase2(order_compare,x,y,__VA_ARGS__)
-#define _order_lesser(x,y,...)       reduce_LazyCase2(order_lesser,x,y,__VA_ARGS__)
-#define _order_lesserequal(x,y,...)  reduce_LazyCase2(order_lesserequal,x,y,__VA_ARGS__)
-#define _order_greaterequal(x,y,...) reduce_LazyCase2(order_greaterequal,x,y,__VA_ARGS__)
-#define _order_greater(x,y,...)      reduce_LazyCase2(order_greater,x,y,__VA_ARGS__)
-#define _order_maximum(x,y,...)      reduce_LazyCase2(order_maximum,x,y,__VA_ARGS__)
-#define _order_minimum(x,y,...)      reduce_LazyCase2(order_minimum,x,y,__VA_ARGS__)
+#define _order_compare(x,y,...)      reduce_caseReduce2(order_compare,x,y,__VA_ARGS__)
+#define _order_lesser(x,y,...)       reduce_caseReduce2(order_lesser,x,y,__VA_ARGS__)
+#define _order_lesserequal(x,y,...)  reduce_caseReduce2(order_lesserequal,x,y,__VA_ARGS__)
+#define _order_greaterequal(x,y,...) reduce_caseReduce2(order_greaterequal,x,y,__VA_ARGS__)
+#define _order_greater(x,y,...)      reduce_caseReduce2(order_greater,x,y,__VA_ARGS__)
+#define _order_maximum(x,y,...)      reduce_caseReduce2(order_maximum,x,y,__VA_ARGS__)
+#define _order_minimum(x,y,...)      reduce_caseReduce2(order_minimum,x,y,__VA_ARGS__)
 
 
-// #define _order_compare_TYPE_TYPE(x,y,...)                   reduce_LazyCase1(order_compare_TYPE_TYPE,(equal_equal_TYPE_TYPE,x,y),x,y,__VA_ARGS__)
-// #define _order_compare_TYPE_TYPE_bool_True(x,y,...)         reduce_Construct((order_EQ),__VA_ARGS__)
-// #define _order_compare_TYPE_TYPE_bool_False(x,y,...)        reduce_LazyCase1(order_compare_TYPE_TYPE_bool_False,(order_lesserequal_TYPE_TYPE,x,y),__VA_ARGS__)
-// #define _order_compare_TYPE_TYPE_bool_False_bool_True(...)  reduce_Construct((order_LT),__VA_ARGS__)
-// #define _order_compare_TYPE_TYPE_bool_False_bool_False(...) reduce_Construct((order_GT),__VA_ARGS__)
+// #define _order_compare_TYPE_TYPE(x,y,...)                   reduce_caseReduce1(order_compare_TYPE_TYPE,(equal_equal_TYPE_TYPE,x,y),x,y,__VA_ARGS__)
+// #define _order_compare_TYPE_TYPE_bool_True(x,y,...)         reduce_construct((order_EQ),__VA_ARGS__)
+// #define _order_compare_TYPE_TYPE_bool_False(x,y,...)        reduce_caseReduce1(order_compare_TYPE_TYPE_bool_False,(order_lesserequal_TYPE_TYPE,x,y),__VA_ARGS__)
+// #define _order_compare_TYPE_TYPE_bool_False_bool_True(...)  reduce_construct((order_LT),__VA_ARGS__)
+// #define _order_compare_TYPE_TYPE_bool_False_bool_False(...) reduce_construct((order_GT),__VA_ARGS__)
 //
-// #define _order_lesser_TYPE_TYPE(x,y,...)       reduce_Return((equal_equal,   (order_compare_TYPE_TYPE,x,y),order_LT),__VA_ARGS__)
-// #define _order_lesserequal_TYPE_TYPE(x,y,...)  reduce_Return((equal_notequal,(order_compare_TYPE_TYPE,x,y),order_GT),__VA_ARGS__)
-// #define _order_greaterequal_TYPE_TYPE(x,y,...) reduce_Return((equal_notequal,(order_compare_TYPE_TYPE,x,y),order_LT),__VA_ARGS__)
-// #define _order_greater_TYPE_TYPE(x,y,...)      reduce_Return((equal_equal,   (order_compare_TYPE_TYPE,x,y),order_GT),__VA_ARGS__)
-// #define _order_maximum_TYPE_TYPE(x,y,...)      reduce_Return((_if,(order_lesserequal_TYPE_TYPE,x,y),y,x)),__VA_ARGS__)
-// #define _order_minimum_TYPE_TYPE(x,y,...)      reduce_Return((_if,(order_lesserequal_TYPE_TYPE,x,y),x,y)),__VA_ARGS__)
+// #define _order_lesser_TYPE_TYPE(x,y,...)       reduce_reduce(equal_equal,   (order_compare_TYPE_TYPE,x,y),order_LT,__VA_ARGS__)
+// #define _order_lesserequal_TYPE_TYPE(x,y,...)  reduce_reduce(equal_notequal,(order_compare_TYPE_TYPE,x,y),order_GT,__VA_ARGS__)
+// #define _order_greaterequal_TYPE_TYPE(x,y,...) reduce_reduce(equal_notequal,(order_compare_TYPE_TYPE,x,y),order_LT,__VA_ARGS__)
+// #define _order_greater_TYPE_TYPE(x,y,...)      reduce_reduce(equal_equal,   (order_compare_TYPE_TYPE,x,y),order_GT,__VA_ARGS__)
+// #define _order_maximum_TYPE_TYPE(x,y,...)      reduce_reduce(_if,(order_lesserequal_TYPE_TYPE,x,y),y,x),__VA_ARGS__)
+// #define _order_minimum_TYPE_TYPE(x,y,...)      reduce_reduce(_if,(order_lesserequal_TYPE_TYPE,x,y),x,y),__VA_ARGS__)
 
 
 #ifndef ORDER_QUALIFIED_ONLY

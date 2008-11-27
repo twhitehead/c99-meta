@@ -15,40 +15,40 @@
 #include "Equal.h"
 
 
-#define _bool_True(...)  reduce_Construct((bool_True),__VA_ARGS__)
-#define _bool_False(...) reduce_Construct((bool_False),__VA_ARGS__)
+#define _bool_True(...)  reduce_construct((bool_True),__VA_ARGS__)
+#define _bool_False(...) reduce_construct((bool_False),__VA_ARGS__)
 
 
-#define _bool_if(b,t,f,...)          reduce_LazyCase1(bool_if,b,t,f,__VA_ARGS__)
+#define _bool_if(b,t,f,...)          reduce_caseReduce1(bool_if,b,t,f,__VA_ARGS__)
 #define _bool_if_bool_True(t,f,...)  reduce_Return(t,__VA_ARGS__)
 #define _bool_if_bool_False(t,f,...) reduce_Return(f,__VA_ARGS__)
 
-#define _bool_not(b,...)          reduce_LazyCase1(bool_not,b,__VA_ARGS__)
-#define _bool_not_bool_True(...)  reduce_Construct((bool_False),__VA_ARGS__)
-#define _bool_not_bool_False(...) reduce_Construct((bool_True),__VA_ARGS__)
+#define _bool_not(b,...)          reduce_caseReduce1(bool_not,b,__VA_ARGS__)
+#define _bool_not_bool_True(...)  reduce_construct((bool_False),__VA_ARGS__)
+#define _bool_not_bool_False(...) reduce_construct((bool_True),__VA_ARGS__)
 
-#define _bool_and(x,...)                    reduce_LazyCase1(bool_and,x,__VA_ARGS__)
-#define _bool_and_bool_True(y,...)          reduce_LazyCase1(bool_and_bool_True,y,__VA_ARGS__)
-#define _bool_and_bool_True_bool_True(...)  reduce_Construct((bool_True),__VA_ARGS__)
-#define _bool_and_bool_True_bool_False(...) reduce_Construct((bool_False),__VA_ARGS__)
-#define _bool_and_bool_False(y,...)         reduce_Construct((bool_False),__VA_ARGS__)
+#define _bool_and(x,...)                    reduce_caseReduce1(bool_and,x,__VA_ARGS__)
+#define _bool_and_bool_True(y,...)          reduce_caseReduce1(bool_and_bool_True,y,__VA_ARGS__)
+#define _bool_and_bool_True_bool_True(...)  reduce_construct((bool_True),__VA_ARGS__)
+#define _bool_and_bool_True_bool_False(...) reduce_construct((bool_False),__VA_ARGS__)
+#define _bool_and_bool_False(y,...)         reduce_construct((bool_False),__VA_ARGS__)
 
-#define _bool_or(x,...)                     reduce_LazyCase1(bool_or,x,__VA_ARGS__)
-#define _bool_or_bool_True(y,...)           reduce_Construct((bool_True),__VA_ARGS__)
-#define _bool_or_bool_False(y,...)          reduce_LazyCase1(bool_or_bool_True,y,__VA_ARGS__)
-#define _bool_or_bool_False_bool_True(...)  reduce_Construct((bool_True),__VA_ARGS__)
-#define _bool_or_bool_False_bool_False(...) reduce_Construct((bool_False),__VA_ARGS__)
+#define _bool_or(x,...)                     reduce_caseReduce1(bool_or,x,__VA_ARGS__)
+#define _bool_or_bool_True(y,...)           reduce_construct((bool_True),__VA_ARGS__)
+#define _bool_or_bool_False(y,...)          reduce_caseReduce1(bool_or_bool_True,y,__VA_ARGS__)
+#define _bool_or_bool_False_bool_True(...)  reduce_construct((bool_True),__VA_ARGS__)
+#define _bool_or_bool_False_bool_False(...) reduce_construct((bool_False),__VA_ARGS__)
 
 
-#define _equal_equal_bool_True_bool_True(...)   reduce_Construct((bool_True),__VA_ARGS__)
-#define _equal_equal_bool_True_bool_False(...)  reduce_Construct((bool_False),__VA_ARGS__)
-#define _equal_equal_bool_False_bool_True(...)  reduce_Construct((bool_False),__VA_ARGS__)
-#define _equal_equal_bool_False_bool_False(...) reduce_Construct((bool_True),__VA_ARGS__)
+#define _equal_equal_bool_True_bool_True(...)   reduce_construct((bool_True),__VA_ARGS__)
+#define _equal_equal_bool_True_bool_False(...)  reduce_construct((bool_False),__VA_ARGS__)
+#define _equal_equal_bool_False_bool_True(...)  reduce_construct((bool_False),__VA_ARGS__)
+#define _equal_equal_bool_False_bool_False(...) reduce_construct((bool_True),__VA_ARGS__)
 
-#define _equal_notequal_bool_True_bool_True(...)   reduce_Construct((bool_False),__VA_ARGS__)
-#define _equal_notequal_bool_True_bool_False(...)  reduce_Construct((bool_True),__VA_ARGS__)
-#define _equal_notequal_bool_False_bool_True(...)  reduce_Construct((bool_True),__VA_ARGS__)
-#define _equal_notequal_bool_False_bool_False(...) reduce_Construct((bool_False),__VA_ARGS__)
+#define _equal_notequal_bool_True_bool_True(...)   reduce_construct((bool_False),__VA_ARGS__)
+#define _equal_notequal_bool_True_bool_False(...)  reduce_construct((bool_True),__VA_ARGS__)
+#define _equal_notequal_bool_False_bool_True(...)  reduce_construct((bool_True),__VA_ARGS__)
+#define _equal_notequal_bool_False_bool_False(...) reduce_construct((bool_False),__VA_ARGS__)
 
 
 #ifndef BOOL_QUALIFIED_ONLY

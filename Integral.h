@@ -14,13 +14,13 @@
 #include "Reduce.h"
 
 
-#define _integral_quotient(x,y,...)  reduce_LazyCase2(integral_quotient,x,y,__VA_ARGS__)
-#define _integral_remainder(x,y,...) reduce_LazyCase2(integral_remainder,x,y,__VA_ARGS__)
-#define _integral_divide(x,y,...)    reduce_LazyCase2(integral_divide,x,y,__VA_ARGS__)
-#define _integral_modulus(x,y,...)   reduce_LazyCase2(integral_modulus,x,y,__VA_ARGS__)
+#define _integral_quotient(x,y,...)  reduce_caseReduce2(integral_quotient,x,y,__VA_ARGS__)
+#define _integral_remainder(x,y,...) reduce_caseReduce2(integral_remainder,x,y,__VA_ARGS__)
+#define _integral_divide(x,y,...)    reduce_caseReduce2(integral_divide,x,y,__VA_ARGS__)
+#define _integral_modulus(x,y,...)   reduce_caseReduce2(integral_modulus,x,y,__VA_ARGS__)
 
-#define _integral_quotientRemainder(x,y,...) reduce_LazyCase2(integral_quotientRemainder,x,y,__VA_ARGS__)
-#define _integral_divideModulus(x,y,...)     reduce_LazyCase2(integral_divideModulus,x,y,__VA_ARGS__)
+#define _integral_quotientRemainder(x,y,...) reduce_caseReduce2(integral_quotientRemainder,x,y,__VA_ARGS__)
+#define _integral_divideModulus(x,y,...)     reduce_caseReduce2(integral_divideModulus,x,y,__VA_ARGS__)
 
 
 #ifndef INTEGRAL_QUALIFIED_ONLY

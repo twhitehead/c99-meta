@@ -15,8 +15,8 @@
 #include "Bool.h"
 
 
-#define _equal_equal(x,y,...)    reduce_LazyCase2(equal_equal,x,y,__VA_ARGS__)
-#define _equal_notequal(x,y,...) reduce_LazyCase2(equal_notequal,x,y,__VA_ARGS__)
+#define _equal_equal(x,y,...)    reduce_caseReduce2(equal_equal,x,y,__VA_ARGS__)
+#define _equal_notequal(x,y,...) reduce_caseReduce2(equal_notequal,x,y,__VA_ARGS__)
 
 
 #ifndef EQUAL_QUALIFIED_ONLY

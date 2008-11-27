@@ -14,12 +14,12 @@
 #include "Reduce.h"
 
 
-#define _numeric_add(x,y,...)      reduce_LazyCase2(numeric_add,x,y,__VA_ARGS__)
-#define _numeric_subtract(x,y,...) reduce_LazyCase2(numeric_subtract,x,y,__VA_ARGS__)
-#define _numeric_multiply(x,y,...) reduce_LazyCase2(numeric_multiply,x,y,__VA_ARGS__)
-#define _numeric_absolute(x,...)   reduce_LazyCase1(numeric_absolute,x,__VA_ARGS__)
-#define _numeric_sign(x,...)       reduce_LazyCase1(numeric_sign,x,__VA_ARGS__)
-#define _numeric_negate(x,...)     reduce_LazyCase1(numeric_negate,x,__VA_ARGS__)
+#define _numeric_add(x,y,...)      reduce_caseReduce2(numeric_add,x,y,__VA_ARGS__)
+#define _numeric_subtract(x,y,...) reduce_caseReduce2(numeric_subtract,x,y,__VA_ARGS__)
+#define _numeric_multiply(x,y,...) reduce_caseReduce2(numeric_multiply,x,y,__VA_ARGS__)
+#define _numeric_absolute(x,...)   reduce_caseReduce1(numeric_absolute,x,__VA_ARGS__)
+#define _numeric_sign(x,...)       reduce_caseReduce1(numeric_sign,x,__VA_ARGS__)
+#define _numeric_negate(x,...)     reduce_caseReduce1(numeric_negate,x,__VA_ARGS__)
 
 
 #ifndef NUMERIC_QUALIFIED_ONLY
