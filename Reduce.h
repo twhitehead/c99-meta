@@ -131,21 +131,21 @@
 #define _reduce_LazyCase50(f,ft,x0,x1,x2,x3,y4,...) Recurse,(_raw_expand(x3),(reduce_LazyCase40,f,_raw_identifier2_(_,_raw_expandJust1(y4),ft),x0,x1,x2),_raw_expandDrop1Merge(_raw_expand(y4),__VA_ARGS__))
 
 
-#define reduce_Mixed(a,f,...)      Recurse,(_raw_identifier2_(reduce_Mixed,_,_raw_expandJust1(a)),_tupple_drop1(a),f,(reduce_Mixed2),__VA_ARGS__)
+#define reduce_Mixed(a,f,...)      Recurse,(_raw_identifier2_(reduce_Mixed,_,_raw_expandJust1(a)),_raw_drop1(a),f,(reduce_Mixed2),__VA_ARGS__)
 
-#define _reduce_Mixed(a,f,...)     Recurse,(_raw_identifier2_(reduce_Mixed,_,_raw_expandJust1(a)),_tupple_drop1(a),f,(reduce_Mixed2),__VA_ARGS__)
-#define _reduce_Mixed1(a,f,c,...)  Recurse,(_raw_identifier2_(reduce_Mixed,_,_raw_expandJust1(a)),_tupple_drop1(a),f,c,__VA_ARGS__)
+#define _reduce_Mixed(a,f,...)     Recurse,(_raw_identifier2_(reduce_Mixed,_,_raw_expandJust1(a)),_raw_drop1(a),f,(reduce_Mixed2),__VA_ARGS__)
+#define _reduce_Mixed1(a,f,c,...)  Recurse,(_raw_identifier2_(reduce_Mixed,_,_raw_expandJust1(a)),_raw_drop1(a),f,c,__VA_ARGS__)
 #define _reduce_Mixed2(f,ft,c,...) Recurse,(_raw_identifier1_(f,ft),_raw_expand(c))
 #define _reduce_Mixed_(a,f,c,...)  Recurse,(_raw_expandJust1(c),f,,(__VA_ARGS__),_raw_expandDrop1(c))
 
 #define _reduce_Mixed_E(a,f,c,x,...)     _reduce_Mixed1(a,f,(reduce_Mixed_E0,x,_raw_expand(c)),__VA_ARGS__)
-#define _reduce_Mixed_E0(f,ft,c,x,g,...) Recurse,(g,f,ft,_tupple_insert1((x),c),__VA_ARGS__)
+#define _reduce_Mixed_E0(f,ft,c,x,g,...) Recurse,(g,f,ft,_raw_insert1((x),c),__VA_ARGS__)
 #define _reduce_Mixed_EC(a,f,c,x,...)     _reduce_Mixed1(a,f,(reduce_Mixed_EC0,x,_raw_expand(c)),__VA_ARGS__)
 #define _reduce_Mixed_EC0(f,ft,c,x,g,...) Recurse,(g,f,_raw_identifier2_(_,_raw_expandJust1(x),ft),_raw_expandDrop1Merge(_raw_expand(x),_raw_expand(c)),__VA_ARGS__)
 
 #define _reduce_Mixed_L(a,f,c,x,...)     _reduce_Mixed1(a,f,(reduce_Mixed_L0,x,_raw_expand(c)),__VA_ARGS__)
 #define _reduce_Mixed_L0(f,ft,c,x,...)   Recurse,(_raw_expand(x),(reduce_Mixed_L1,f,ft,c),__VA_ARGS__)
-#define _reduce_Mixed_L1(f,ft,c,y,g,...) _##g(f,ft,_tupple_insert1((y),c),__VA_ARGS__)
+#define _reduce_Mixed_L1(f,ft,c,y,g,...) _##g(f,ft,_raw_insert1((y),c),__VA_ARGS__)
 
 #define _reduce_Mixed_LC(a,f,c,x,...)     _reduce_Mixed1(a,f,(reduce_Mixed_LC0,x,_raw_expand(c)),__VA_ARGS__)
 #define _reduce_Mixed_LC0(f,ft,c,x,...)   Recurse,(_raw_expand(x),(reduce_Mixed_LC1,f,ft,c),__VA_ARGS__)
