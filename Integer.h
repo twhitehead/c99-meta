@@ -27,17 +27,37 @@
 // The expectation behind this implementation is that standard use will revolve
 // around numbers close to zero (especially for non-addition or -subtraction).
 
-#define integer_N5 (integer_Integer,(N,1,1,0,N))
-#define integer_N4 (integer_Integer,(N,0,0,N))
-#define integer_N3 (integer_Integer,(N,1,0,N))
-#define integer_N2 (integer_Integer,(N,0,N))
-#define integer_N1 (integer_Integer,(N,N))
-#define integer_Z  (integer_Integer,(P,P))
-#define integer_P1 (integer_Integer,(P,1,P))
-#define integer_P2 (integer_Integer,(P,0,1,P))
-#define integer_P3 (integer_Integer,(P,1,1,P))
-#define integer_P4 (integer_Integer,(P,0,0,1,P))
-#define integer_P5 (integer_Integer,(P,1,0,1,P))
+#define integer_N15 (integer_Integer,(N,1,0,0,0,N))
+#define integer_N14 (integer_Integer,(N,0,1,0,0,N))
+#define integer_N13 (integer_Integer,(N,1,1,0,0,N))
+#define integer_N12 (integer_Integer,(N,0,0,1,0,N))
+#define integer_N11 (integer_Integer,(N,1,0,1,0,N))
+#define integer_N10 (integer_Integer,(N,0,1,1,0,N))
+#define integer_N9  (integer_Integer,(N,1,1,1,0,N))
+#define integer_N8  (integer_Integer,(N,0,0,0,N))
+#define integer_N7  (integer_Integer,(N,1,0,0,N))
+#define integer_N6  (integer_Integer,(N,0,1,0,N))
+#define integer_N5  (integer_Integer,(N,1,1,0,N))
+#define integer_N4  (integer_Integer,(N,0,0,N))
+#define integer_N3  (integer_Integer,(N,1,0,N))
+#define integer_N2  (integer_Integer,(N,0,N))
+#define integer_N1  (integer_Integer,(N,N))
+#define integer_Z   (integer_Integer,(P,P))
+#define integer_P1  (integer_Integer,(P,1,P))
+#define integer_P2  (integer_Integer,(P,0,1,P))
+#define integer_P3  (integer_Integer,(P,1,1,P))
+#define integer_P4  (integer_Integer,(P,0,0,1,P))
+#define integer_P5  (integer_Integer,(P,1,0,1,P))
+#define integer_P6  (integer_Integer,(P,0,1,1,P))
+#define integer_P7  (integer_Integer,(P,1,1,1,P))
+#define integer_P8  (integer_Integer,(P,0,0,0,1,P))
+#define integer_P9  (integer_Integer,(P,1,0,0,1,P))
+#define integer_P10 (integer_Integer,(P,0,1,0,1,P))
+#define integer_P11 (integer_Integer,(P,1,1,0,1,P))
+#define integer_P12 (integer_Integer,(P,0,0,1,1,P))
+#define integer_P13 (integer_Integer,(P,1,0,1,1,P))
+#define integer_P14 (integer_Integer,(P,0,1,1,1,P))
+#define integer_P15 (integer_Integer,(P,1,1,1,1,P))
 
 #define _integer_Integer(x,...) reduce_construct((integer_Integer,x),__VA_ARGS__)
 
@@ -329,17 +349,37 @@
 // The rest is all boilerplate.
 
 #ifndef INTEGER_QUALIFIED_ONLY
-  #define N5 integer_N5
-  #define N4 integer_N4
-  #define N3 integer_N3
-  #define N2 integer_N2
-  #define N1 integer_N1
-  #define Z  integer_Z
-  #define P1 integer_P1
-  #define P2 integer_P2
-  #define P3 integer_P3
-  #define P4 integer_P4
-  #define P5 integer_P5
+  #define N15 integer_N15
+  #define N14 integer_N14
+  #define N13 integer_N13
+  #define N12 integer_N12
+  #define N11 integer_N11
+  #define N10 integer_N10
+  #define N9  integer_N9
+  #define N8  integer_N8
+  #define N7  integer_N7
+  #define N6  integer_N6
+  #define N5  integer_N5
+  #define N4  integer_N4
+  #define N3  integer_N3
+  #define N2  integer_N2
+  #define N1  integer_N1
+  #define Z   integer_Z
+  #define P1  integer_P1
+  #define P2  integer_P2
+  #define P3  integer_P3
+  #define P4  integer_P4
+  #define P5  integer_P5
+  #define P6  integer_P6
+  #define P7  integer_P7
+  #define P8  integer_P8
+  #define P9  integer_P9
+  #define P10 integer_P10
+  #define P11 integer_P11
+  #define P12 integer_P12
+  #define P13 integer_P13
+  #define P14 integer_P14
+  #define P15 integer_P15
 
   #define Integer integer_Integer
 #endif // INTEGER_QUALIFIED_ONLY
