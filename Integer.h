@@ -355,7 +355,7 @@
 #define _show_showPrecedence_integer_Integer(i,x,...) reduce_reduce(bool_if,(bool_and,(equal_equal,(order_compare,i,integer_P13),(order_GT)),   \
                                                                                       (integer_sign_,x,(bool_True),(bool_False),(bool_False))), \
                                                                             (show_parenthesis),                                                 \
-                                                                            (reduce_return),                                                    \
+                                                                            (reduce_continue),                                                  \
                                                                     (show_show_integer_Integer,x),__VA_ARGS__)
 
 #define _integer_show_(  x,...)        reduce_caseReduce1(integer_show0,(integer_sign_,x                  ,(N),(0),(P)),x                                              ,__VA_ARGS__)

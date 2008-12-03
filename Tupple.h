@@ -28,15 +28,15 @@
 
 
 #define _tupple_first(x,...)                     reduce_caseReduce1(tupple_first,x,__VA_ARGS__)
-#define _tupple_first_tupple_Tupple2(x0,x1,...)  reduce_return(x0,__VA_ARGS__)
+#define _tupple_first_tupple_Tupple2(x0,x1,...)  reduce_continue(x0,__VA_ARGS__)
 
 #define _tupple_second(x,...)                    reduce_caseReduce1(tupple_first,x,__VA_ARGS__)
-#define _tupple_second_tupple_Tupple2(x0,x1,...) reduce_return(x1,__VA_ARGS__)
+#define _tupple_second_tupple_Tupple2(x0,x1,...) reduce_continue(x1,__VA_ARGS__)
 
-#define _tupple_curry(f,x0,x1,...) reduce_return(f,(tupple_Tupple2,x0,x1),__VA_ARGS__)
+#define _tupple_curry(f,x0,x1,...) reduce_continue(f,(tupple_Tupple2,x0,x1),__VA_ARGS__)
 
 #define _tupple_uncurry(f,x,...)                    reduce_caseReduce1(tupple_curry,x,f,__VA_ARGS__)
-#define _tupple_uncurry_tupple_Tupple2(x0,x1,f,...) reduce_return(f,x0,x1,__VA_ARGS__)
+#define _tupple_uncurry_tupple_Tupple2(x0,x1,f,...) reduce_continue(f,x0,x1,__VA_ARGS__)
 
 
 #define _show_show_tupple_Tupple0(...)                reduce_construct((show_Output,(())),__VA_ARGS__)

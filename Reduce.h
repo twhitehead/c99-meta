@@ -41,7 +41,7 @@
 //     continuation and call it), push ..._t1,...,..._tN, and tail call
 //     f_##t1##..._##tN.  This is like the STG's case expression.
 //
-//   Return(x,__VA_ARGS__)
+//   Continue(x,__VA_ARGS__)
 //
 //     Continue with x (expand x onto the stack and tail call it).  This is like
 //     the STG's function application.  It is more efficient, but maybe not
@@ -157,8 +157,8 @@
 #define _reduce_mixed2(     f,ft,c,...)     Recurse,(_raw_expandFuse2_(f,ft),_raw_expand(c))
 
 
-#define reduce_return( x,...) Recurse,(_raw_expand(x),__VA_ARGS__)
-#define _reduce_return(x,...) Recurse,(_raw_expand(x),__VA_ARGS__)
+#define reduce_continue( x,...) Recurse,(_raw_expand(x),__VA_ARGS__)
+#define _reduce_continue(x,...) Recurse,(_raw_expand(x),__VA_ARGS__)
 
 #define reduce_construct( x,f,...) Recurse,(_raw_expand(f),x,__VA_ARGS__)
 #define _reduce_construct(x,f,...) Recurse,(_raw_expand(f),x,__VA_ARGS__)
@@ -196,7 +196,7 @@
 
   #define mixed reduce_mixed
 
-  #define return    return_return
+  #define continue  return_continue
   #define construct reduce_construct
   #define output    reduce_output
   #define error     reduce_error

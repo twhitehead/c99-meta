@@ -34,7 +34,7 @@
 
 #define _list_append(xs,ys,...)             reduce_caseReduce1(list_append,xs,ys,__VA_ARGS__)
 #define _list_append_list_Cons(x,xs,ys,...) reduce_construct((list_Cons,x,(append,xs,ys)),__VA_ARGS__)
-#define _list_append_list_Nil(ys,...)       reduce_return(ys,__VA_ARGS__)
+#define _list_append_list_Nil(ys,...)       reduce_continue(ys,__VA_ARGS__)
 
 #define _list_filter(f,xs,...)                        reduce_caseReduce1(list_filter,xs,f,__VA_ARGS__)
 #define _list_filter_list_Cons(x,xs,f,...)            reduce_caseReduce1(list_filter_list_Cons,reduce_apply(f,x),f,x,xs,__VA_ARGS__)
@@ -45,17 +45,17 @@
 #define _list_concat(xss,...) reduce_reduce(list_foldr,append,(list_Nil),xss,__VA_ARGS__)
 
 #define _list_head(xs,...)             reduce_caseReduce1(list_head,xs,__VA_ARGS__)
-#define _list_head_list_Cons(x,xs,...) reduce_return(x,__VA_ARGS__)
+#define _list_head_list_Cons(x,xs,...) reduce_continue(x,__VA_ARGS__)
 #define _list_head_list_Nil(...)       reduce_error("list_head: empty list")
 
 #define _list_tail(xs,...)             reduce_caseReduce1(list_tail,xs,__VA_ARGS__)
-#define _list_tail_list_Cons(x,xs,...) reduce_return(xs,__VA_ARGS__)
+#define _list_tail_list_Cons(x,xs,...) reduce_continue(xs,__VA_ARGS__)
 #define _list_tail_list_Nil(...)       reduce_error("list_tail: empty list")
 
 #define _list_last(xs,...)                           reduce_caseReduce1(list_last,xs,__VA_ARGS__)
 #define _list_last_list_Cons(x,xs,...)               reduce_caseReduce1(list_last_list_Cons,xs,x,__VA_ARGS__)
 #define _list_last_list_Cons_list_Cons(x1,xs,x0,...) reduce_caseReduce1(list_last_list_Cons,xs,x1,__VA_ARGS__)
-#define _list_last_list_Cons_list_Nil(x0,...)        reduce_return(x0,__VA_ARGS__)
+#define _list_last_list_Cons_list_Nil(x0,...)        reduce_continue(x0,__VA_ARGS__)
 #define _list_last_list_Nil(...)                     reduce_error("list_last: empty list")
 
 #define _list_init(xs,...)                           reduce_caseReduce1(list_init,xs,__VA_ARGS__)
@@ -66,20 +66,20 @@
 
 #define _list_foldl(f,y,xs,...)             reduce_caseReduce1(list_foldl,xs,f,y,__VA_ARGS__)
 #define _list_foldl_list_Cons(x,xs,f,y,...) reduce_reduce(list_foldl,f,reduce_apply(f,y,x),xs,__VA_ARGS__)
-#define _list_foldl_list_Nil(f,y,...)       reduce_return(y,__VA_ARGS__)
+#define _list_foldl_list_Nil(f,y,...)       reduce_continue(y,__VA_ARGS__)
 
 #define _list_foldl1(f,xs,...)             reduce_caseReduce1(list_foldl1,xs,f,__VA_ARGS__)
 #define _list_foldl1_list_Cons(x,xs,f,...) reduce_reduce(list_foldl,f,x,xs,__VA_ARGS__)
 #define _list_foldl1_list_Nil(...)         reduce_error("list_foldl1: empty list")
 
 #define _list_foldr(f,y,xs,...)             reduce_caseReduce1(list_foldr,xs,f,y,__VA_ARGS__)
-#define _list_foldr_list_Cons(x,xs,f,y,...) reduce_return(f,x,(foldr,f,y,xs),__VA_ARGS__)
-#define _list_foldr_list_Nil(f,y,...)       reduce_return(y,__VA_ARGS__)
+#define _list_foldr_list_Cons(x,xs,f,y,...) reduce_continue(f,x,(foldr,f,y,xs),__VA_ARGS__)
+#define _list_foldr_list_Nil(f,y,...)       reduce_continue(y,__VA_ARGS__)
 
 #define _list_foldr1(f,xs,...)                           reduce_caseReduce1(list_foldr1,xs,f,__VA_ARGS__)
 #define _list_foldr1_list_Cons(x,xs,f,...)               reduce_caseReduce1(list_foldr1_list_Cons,xs,f,x,__VA_ARGS__)
-#define _list_foldr1_list_Cons_list_Cons(x1,xs,f,x0,...) reduce_return(f,x0,(list_foldr1_list_Cons,x1,xs,f),__VA_ARGS__)
-#define _list_foldr1_list_Cons_list_Nil(f,x0,...)        reduce_return(x0,__VA_ARGS__)
+#define _list_foldr1_list_Cons_list_Cons(x1,xs,f,x0,...) reduce_continue(f,x0,(list_foldr1_list_Cons,x1,xs,f),__VA_ARGS__)
+#define _list_foldr1_list_Cons_list_Nil(f,x0,...)        reduce_continue(x0,__VA_ARGS__)
 #define _list_foldr1_list_Nil(...)                       reduce_error("list_foldr1: empty list")
 
 
