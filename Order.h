@@ -42,6 +42,17 @@
 // #define _order_minimum_TYPE_TYPE(x,y,...)      reduce_reduce(_if,(order_lesserequal_TYPE_TYPE,x,y),x,y),__VA_ARGS__)
 
 
+#define _equal_equal_order_LT_order_LT(...)   reduce_construct((bool_True) ,__VA_ARGS__)
+#define _equal_equal_order_LT_order_EQ(...)   reduce_construct((bool_False),__VA_ARGS__)
+#define _equal_equal_order_LT_order_GT(...)   reduce_construct((bool_False),__VA_ARGS__)
+#define _equal_equal_order_EQ_order_LT(...)   reduce_construct((bool_False),__VA_ARGS__)
+#define _equal_equal_order_EQ_order_EQ(...)   reduce_construct((bool_True) ,__VA_ARGS__)
+#define _equal_equal_order_EQ_order_GT(...)   reduce_construct((bool_False),__VA_ARGS__)
+#define _equal_equal_order_GT_order_LT(...)   reduce_construct((bool_False),__VA_ARGS__)
+#define _equal_equal_order_GT_order_EQ(...)   reduce_construct((bool_False),__VA_ARGS__)
+#define _equal_equal_order_GT_order_GT(...)   reduce_construct((bool_True) ,__VA_ARGS__)
+
+
 #ifndef ORDER_QUALIFIED_ONLY
   #define compare      order_compare
   #define lesser       order_lesser
