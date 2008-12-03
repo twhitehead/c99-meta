@@ -20,8 +20,8 @@
 
 
 #define _bool_if(b,t,f,...)          reduce_caseReduce1(bool_if,b,t,f,__VA_ARGS__)
-#define _bool_if_bool_True(t,f,...)  reduce_Return(t,__VA_ARGS__)
-#define _bool_if_bool_False(t,f,...) reduce_Return(f,__VA_ARGS__)
+#define _bool_if_bool_True(t,f,...)  reduce_return(t,__VA_ARGS__)
+#define _bool_if_bool_False(t,f,...) reduce_return(f,__VA_ARGS__)
 
 #define _bool_not(b,...)          reduce_caseReduce1(bool_not,b,__VA_ARGS__)
 #define _bool_not_bool_True(...)  reduce_construct((bool_False),__VA_ARGS__)
