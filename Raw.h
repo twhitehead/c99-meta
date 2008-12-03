@@ -14,6 +14,9 @@
 
 #define _raw_expand_(...) __VA_ARGS__
 
+#define _raw_expandQuote_(...) _raw_expandQuote0(__VA_ARGS__)
+#define _raw_expandQuote0(...) #__VA_ARGS__
+
 #define _raw_expandJust1_(x0,...)             x0
 #define _raw_expandJust2_(x0,x1,...)          x1
 #define _raw_expandJust3_(x0,x1,x2,...)       x2
@@ -45,6 +48,8 @@
 
 
 #define _raw_expand(x) _raw_expand_ x
+
+#define _raw_expandQuote(x) _raw_expandQuote_ x
 
 #define _raw_expandJust1(x) _raw_expandJust1_ x
 #define _raw_expandJust2(x) _raw_expandJust2_ x
@@ -88,6 +93,8 @@
 #define _raw_expandFuse4(i0,i1,i2,i3)    _raw_expandFuse4_(_raw_expand_ i0,_raw_expand_ i1,_raw_expand_ i2,_raw_expand_ i3)
 #define _raw_expandFuse5(i0,i1,i2,i3,i4) _raw_expandFuse5_(_raw_expand_ i0,_raw_expand_ i1,_raw_expand_ i2,_raw_expand_ i3,_raw_expand_ i4)
 
+
+#define _raw_quote(x) (_raw_expandQuote_ x)
 
 #define _raw_just1(x) (_raw_expandJust1_ x)
 #define _raw_just2(x) (_raw_expandJust2_ x)
