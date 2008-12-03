@@ -16,12 +16,12 @@
 #include "Order.h"
 
 
-#define list_List0                 (list_Nil)
-#define list_List1(x0)             (list_Cons,x0,(list_Nil))
-#define list_List2(x0,x1)          (list_Cons,x0,(list_Cons,x1,(list_Nil)))
-#define list_List3(x0,x1,x2)       (list_Cons,x0,(list_Cons,x1,(list_Cons,x2,(list_Nil))))
-#define list_List4(x0,x1,x2,x3)    (list_Cons,x0,(list_Cons,x1,(list_Cons,x2,(list_Cons,x3,(list_Nil)))))
-#define list_List5(x0,x1,x2,x3,x4) (list_Cons,x0,(list_Cons,x1,(list_Cons,x2,(list_Cons,x3,(list_Cons,x4,(list_Nil))))))
+#define list_L0                 (list_Nil)
+#define list_L1(x0)             (list_Cons,x0,(list_Nil))
+#define list_L2(x0,x1)          (list_Cons,x0,(list_Cons,x1,(list_Nil)))
+#define list_L3(x0,x1,x2)       (list_Cons,x0,(list_Cons,x1,(list_Cons,x2,(list_Nil))))
+#define list_L4(x0,x1,x2,x3)    (list_Cons,x0,(list_Cons,x1,(list_Cons,x2,(list_Cons,x3,(list_Nil)))))
+#define list_L5(x0,x1,x2,x3,x4) (list_Cons,x0,(list_Cons,x1,(list_Cons,x2,(list_Cons,x3,(list_Cons,x4,(list_Nil))))))
 
 
 #define _list_Cons(x,xs,...) reduce_construct((list_Cons,x,xs),__VA_ARGS__)
