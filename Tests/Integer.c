@@ -7,1591 +7,1591 @@
   ------ equal ------
 
 eval(equal,N4,N4)
-="RESULT: ""(bool_True)"
+=bool_True
 
 eval(equal,N4,N3)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N4,N2)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N4,N1)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N4,Z)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N4,P1)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N4,P2)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N4,P3)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N4,P4)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N3,N4)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N3,N3)
-="RESULT: ""(bool_True)"
+=bool_True
 
 eval(equal,N3,N2)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N3,N1)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N3,Z)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N3,P1)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N3,P2)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N3,P3)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N3,P4)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N2,N4)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N2,N3)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N2,N2)
-="RESULT: ""(bool_True)"
+=bool_True
 
 eval(equal,N2,N1)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N2,Z)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N2,P1)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N2,P2)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N2,P3)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N2,P4)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N1,N4)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N1,N3)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N1,N2)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N1,N1)
-="RESULT: ""(bool_True)"
+=bool_True
 
 eval(equal,N1,Z)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N1,P1)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N1,P2)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N1,P3)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,N1,P4)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,Z,N4)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,Z,N3)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,Z,N2)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,Z,N1)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,Z,Z)
-="RESULT: ""(bool_True)"
+=bool_True
 
 eval(equal,Z,P1)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,Z,P2)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,Z,P3)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,Z,P4)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P1,N4)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P1,N3)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P1,N2)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P1,N1)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P1,Z)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P1,P1)
-="RESULT: ""(bool_True)"
+=bool_True
 
 eval(equal,P1,P2)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P1,P3)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P1,P4)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P2,N4)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P2,N3)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P2,N2)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P2,N1)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P2,Z)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P2,P1)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P2,P2)
-="RESULT: ""(bool_True)"
+=bool_True
 
 eval(equal,P2,P3)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P2,P4)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P3,N4)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P3,N3)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P3,N2)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P3,N1)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P3,Z)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P3,P1)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P3,P2)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P3,P3)
-="RESULT: ""(bool_True)"
+=bool_True
 
 eval(equal,P3,P4)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P4,N4)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P4,N3)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P4,N2)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P4,N1)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P4,Z)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P4,P1)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P4,P2)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P4,P3)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(equal,P4,P4)
-="RESULT: ""(bool_True)"
+=bool_True
 
 
   ------ compare ------
 
 eval(compare,N4,N4)
-="RESULT: ""(order_EQ)"
+=order_EQ
 
 eval(compare,N4,N3)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N4,N2)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N4,N1)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N4,Z)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N4,P1)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N4,P2)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N4,P3)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N4,P4)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N3,N4)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,N3,N3)
-="RESULT: ""(order_EQ)"
+=order_EQ
 
 eval(compare,N3,N2)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N3,N1)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N3,Z)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N3,P1)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N3,P2)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N3,P3)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N3,P4)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N2,N4)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,N2,N3)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,N2,N2)
-="RESULT: ""(order_EQ)"
+=order_EQ
 
 eval(compare,N2,N1)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N2,Z)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N2,P1)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N2,P2)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N2,P3)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N2,P4)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N1,N4)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,N1,N3)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,N1,N2)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,N1,N1)
-="RESULT: ""(order_EQ)"
+=order_EQ
 
 eval(compare,N1,Z)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N1,P1)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N1,P2)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N1,P3)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,N1,P4)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,Z,N4)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,Z,N3)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,Z,N2)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,Z,N1)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,Z,Z)
-="RESULT: ""(order_EQ)"
+=order_EQ
 
 eval(compare,Z,P1)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,Z,P2)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,Z,P3)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,Z,P4)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,P1,N4)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P1,N3)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P1,N2)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P1,N1)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P1,Z)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P1,P1)
-="RESULT: ""(order_EQ)"
+=order_EQ
 
 eval(compare,P1,P2)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,P1,P3)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,P1,P4)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,P2,N4)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P2,N3)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P2,N2)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P2,N1)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P2,Z)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P2,P1)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P2,P2)
-="RESULT: ""(order_EQ)"
+=order_EQ
 
 eval(compare,P2,P3)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,P2,P4)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,P3,N4)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P3,N3)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P3,N2)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P3,N1)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P3,Z)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P3,P1)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P3,P2)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P3,P3)
-="RESULT: ""(order_EQ)"
+=order_EQ
 
 eval(compare,P3,P4)
-="RESULT: ""(order_LT)"
+=order_LT
 
 eval(compare,P4,N4)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P4,N3)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P4,N2)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P4,N1)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P4,Z)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P4,P1)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P4,P2)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P4,P3)
-="RESULT: ""(order_GT)"
+=order_GT
 
 eval(compare,P4,P4)
-="RESULT: ""(order_EQ)"
+=order_EQ
 
 
   ------ lesser ------
 
 eval(lesser,Z,Z)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(lesser,Z,N1)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(lesser,N1,Z)
-="RESULT: ""(bool_True)"
+=bool_True
 
 
   ------ lesserequal ------
 
 eval(lesserequal,Z,N1)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(lesserequal,Z,Z)
-="RESULT: ""(bool_True)"
+=bool_True
 
 eval(lesserequal,N1,Z)
-="RESULT: ""(bool_True)"
+=bool_True
 
 
   ------ greaterequal ------
 
 eval(greaterequal,Z,N1)
-="RESULT: ""(bool_True)"
+=bool_True
 
 eval(greaterequal,Z,Z)
-="RESULT: ""(bool_True)"
+=bool_True
 
 eval(greaterequal,N1,Z)
-="RESULT: ""(bool_False)"
+=bool_False
 
 
   ------ greater ------
 
 eval(greater,Z,N1)
-="RESULT: ""(bool_True)"
+=bool_True
 
 eval(greater,Z,Z)
-="RESULT: ""(bool_False)"
+=bool_False
 
 eval(greater,N1,Z)
-="RESULT: ""(bool_False)"
+=bool_False
 
 
   ------ maximum ------
 
 eval(maximum,Z,N1)
-="RESULT: ""(integer_Integer,(P,P)"
+=0x0
 
 eval(maximum,Z,Z)
-="RESULT: ""(integer_Integer,(P,P))"
+=0x0
 
 eval(maximum,N1,Z)
-="RESULT: ""(integer_Integer,(P,P))"
+=0x0
 
 
   ------ minimum ------
 
 eval(minimum,Z,N1)
-="RESULT: ""(integer_Integer,(N,N))"
+=-0x1
 
 eval(minimum,N1,N1)
-="RESULT: ""(integer_Integer,(N,N))"
+=-0x1
 
 eval(minimum,N1,Z)
-="RESULT: ""(integer_Integer,(N,N))"
+=-0x1
 
 
-  ------ add ------
+  ------ numeric_add ------
 
-eval(add,N4,N4)
-="RESULT: ""(integer_Integer,(N,0,0,0,N))"
+eval(numeric_add,N4,N4)
+=-0x8
 
-eval(add,N4,N3)
-="RESULT: ""(integer_Integer,(N,1,0,0,N))"
+eval(numeric_add,N4,N3)
+=-0x7
 
-eval(add,N4,N2)
-="RESULT: ""(integer_Integer,(N,0,1,0,N))"
+eval(numeric_add,N4,N2)
+=-0x6
 
-eval(add,N4,N1)
-="RESULT: ""(integer_Integer,(N,1,1,0,N))"
+eval(numeric_add,N4,N1)
+=-0x5
 
-eval(add,N4,Z)
-="RESULT: ""(integer_Integer,(N,0,0,N))"
+eval(numeric_add,N4,Z)
+=-0x4
 
-eval(add,N4,P1)
-="RESULT: ""(integer_Integer,(N,1,0,N))"
+eval(numeric_add,N4,P1)
+=-0x3
 
-eval(add,N4,P2)
-="RESULT: ""(integer_Integer,(N,0,N))"
+eval(numeric_add,N4,P2)
+=-0x2
 
-eval(add,N4,P3)
-="RESULT: ""(integer_Integer,(N,N))"
+eval(numeric_add,N4,P3)
+=-0x1
 
-eval(add,N4,P4)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_add,N4,P4)
+=0x0
 
-eval(add,N3,N4)
-="RESULT: ""(integer_Integer,(N,1,0,0,N))"
+eval(numeric_add,N3,N4)
+=-0x7
 
-eval(add,N3,N3)
-="RESULT: ""(integer_Integer,(N,0,1,0,N))"
+eval(numeric_add,N3,N3)
+=-0x6
 
-eval(add,N3,N2)
-="RESULT: ""(integer_Integer,(N,1,1,0,N))"
+eval(numeric_add,N3,N2)
+=-0x5
 
-eval(add,N3,N1)
-="RESULT: ""(integer_Integer,(N,0,0,N))"
+eval(numeric_add,N3,N1)
+=-0x4
 
-eval(add,N3,Z)
-="RESULT: ""(integer_Integer,(N,1,0,N))"
+eval(numeric_add,N3,Z)
+=-0x3
 
-eval(add,N3,P1)
-="RESULT: ""(integer_Integer,(N,0,N))"
+eval(numeric_add,N3,P1)
+=-0x2
 
-eval(add,N3,P2)
-="RESULT: ""(integer_Integer,(N,N))"
+eval(numeric_add,N3,P2)
+=-0x1
 
-eval(add,N3,P3)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_add,N3,P3)
+=0x0
 
-eval(add,N3,P4)
-="RESULT: ""(integer_Integer,(P,1,P))"
+eval(numeric_add,N3,P4)
+=0x1
 
-eval(add,N2,N4)
-="RESULT: ""(integer_Integer,(N,0,1,0,N))"
+eval(numeric_add,N2,N4)
+=-0x6
 
-eval(add,N2,N3)
-="RESULT: ""(integer_Integer,(N,1,1,0,N))"
+eval(numeric_add,N2,N3)
+=-0x5
 
-eval(add,N2,N2)
-="RESULT: ""(integer_Integer,(N,0,0,N))"
+eval(numeric_add,N2,N2)
+=-0x4
 
-eval(add,N2,N1)
-="RESULT: ""(integer_Integer,(N,1,0,N))"
+eval(numeric_add,N2,N1)
+=-0x3
 
-eval(add,N2,Z)
-="RESULT: ""(integer_Integer,(N,0,N))"
+eval(numeric_add,N2,Z)
+=-0x2
 
-eval(add,N2,P1)
-="RESULT: ""(integer_Integer,(N,N))"
+eval(numeric_add,N2,P1)
+=-0x1
 
-eval(add,N2,P2)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_add,N2,P2)
+=0x0
 
-eval(add,N2,P3)
-="RESULT: ""(integer_Integer,(P,1,P))"
+eval(numeric_add,N2,P3)
+=0x1
 
-eval(add,N2,P4)
-="RESULT: ""(integer_Integer,(P,0,1,P))"
+eval(numeric_add,N2,P4)
+=0x2
 
-eval(add,N1,N4)
-="RESULT: ""(integer_Integer,(N,1,1,0,N))"
+eval(numeric_add,N1,N4)
+=-0x5
 
-eval(add,N1,N3)
-="RESULT: ""(integer_Integer,(N,0,0,N))"
+eval(numeric_add,N1,N3)
+=-0x4
 
-eval(add,N1,N2)
-="RESULT: ""(integer_Integer,(N,1,0,N))"
+eval(numeric_add,N1,N2)
+=-0x3
 
-eval(add,N1,N1)
-="RESULT: ""(integer_Integer,(N,0,N))"
+eval(numeric_add,N1,N1)
+=-0x2
 
-eval(add,N1,Z)
-="RESULT: ""(integer_Integer,(N,N))"
+eval(numeric_add,N1,Z)
+=-0x1
 
-eval(add,N1,P1)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_add,N1,P1)
+=0x0
 
-eval(add,N1,P2)
-="RESULT: ""(integer_Integer,(P,1,P))"
+eval(numeric_add,N1,P2)
+=0x1
 
-eval(add,N1,P3)
-="RESULT: ""(integer_Integer,(P,0,1,P))"
+eval(numeric_add,N1,P3)
+=0x2
 
-eval(add,N1,P4)
-="RESULT: ""(integer_Integer,(P,1,1,P))"
+eval(numeric_add,N1,P4)
+=0x3
 
-eval(add,Z,N4)
-="RESULT: ""(integer_Integer,(N,0,0,N))"
+eval(numeric_add,Z,N4)
+=-0x4
 
-eval(add,Z,N3)
-="RESULT: ""(integer_Integer,(N,1,0,N))"
+eval(numeric_add,Z,N3)
+=-0x3
 
-eval(add,Z,N2)
-="RESULT: ""(integer_Integer,(N,0,N))"
+eval(numeric_add,Z,N2)
+=-0x2
 
-eval(add,Z,N1)
-="RESULT: ""(integer_Integer,(N,N))"
+eval(numeric_add,Z,N1)
+=-0x1
 
-eval(add,Z,Z)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_add,Z,Z)
+=0x0
 
-eval(add,Z,P1)
-="RESULT: ""(integer_Integer,(P,1,P))"
+eval(numeric_add,Z,P1)
+=0x1
 
-eval(add,Z,P2)
-="RESULT: ""(integer_Integer,(P,0,1,P))"
+eval(numeric_add,Z,P2)
+=0x2
 
-eval(add,Z,P3)
-="RESULT: ""(integer_Integer,(P,1,1,P))"
+eval(numeric_add,Z,P3)
+=0x3
 
-eval(add,Z,P4)
-="RESULT: ""(integer_Integer,(P,0,0,1,P))"
+eval(numeric_add,Z,P4)
+=0x4
 
-eval(add,P1,N4)
-="RESULT: ""(integer_Integer,(N,1,0,N))"
+eval(numeric_add,P1,N4)
+=-0x3
 
-eval(add,P1,N3)
-="RESULT: ""(integer_Integer,(N,0,N))"
+eval(numeric_add,P1,N3)
+=-0x2
 
-eval(add,P1,N2)
-="RESULT: ""(integer_Integer,(N,N))"
+eval(numeric_add,P1,N2)
+=-0x1
 
-eval(add,P1,N1)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_add,P1,N1)
+=0x0
 
-eval(add,P1,Z)
-="RESULT: ""(integer_Integer,(P,1,P))"
+eval(numeric_add,P1,Z)
+=0x1
 
-eval(add,P1,P1)
-="RESULT: ""(integer_Integer,(P,0,1,P))"
+eval(numeric_add,P1,P1)
+=0x2
 
-eval(add,P1,P2)
-="RESULT: ""(integer_Integer,(P,1,1,P))"
+eval(numeric_add,P1,P2)
+=0x3
 
-eval(add,P1,P3)
-="RESULT: ""(integer_Integer,(P,0,0,1,P))"
+eval(numeric_add,P1,P3)
+=0x4
 
-eval(add,P1,P4)
-="RESULT: ""(integer_Integer,(P,1,0,1,P))"
+eval(numeric_add,P1,P4)
+=0x5
 
-eval(add,P2,N4)
-="RESULT: ""(integer_Integer,(N,0,N))"
+eval(numeric_add,P2,N4)
+=-0x2
 
-eval(add,P2,N3)
-="RESULT: ""(integer_Integer,(N,N))"
+eval(numeric_add,P2,N3)
+=-0x1
 
-eval(add,P2,N2)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_add,P2,N2)
+=0x0
 
-eval(add,P2,N1)
-="RESULT: ""(integer_Integer,(P,1,P))"
+eval(numeric_add,P2,N1)
+=0x1
 
-eval(add,P2,Z)
-="RESULT: ""(integer_Integer,(P,0,1,P))"
+eval(numeric_add,P2,Z)
+=0x2
 
-eval(add,P2,P1)
-="RESULT: ""(integer_Integer,(P,1,1,P))"
+eval(numeric_add,P2,P1)
+=0x3
 
-eval(add,P2,P2)
-="RESULT: ""(integer_Integer,(P,0,0,1,P))"
+eval(numeric_add,P2,P2)
+=0x4
 
-eval(add,P2,P3)
-="RESULT: ""(integer_Integer,(P,1,0,1,P))"
+eval(numeric_add,P2,P3)
+=0x5
 
-eval(add,P2,P4)
-="RESULT: ""(integer_Integer,(P,0,1,1,P))"
+eval(numeric_add,P2,P4)
+=0x6
 
-eval(add,P3,N4)
-="RESULT: ""(integer_Integer,(N,N))"
+eval(numeric_add,P3,N4)
+=-0x1
 
-eval(add,P3,N3)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_add,P3,N3)
+=0x0
 
-eval(add,P3,N2)
-="RESULT: ""(integer_Integer,(P,1,P))"
+eval(numeric_add,P3,N2)
+=0x1
 
-eval(add,P3,N1)
-="RESULT: ""(integer_Integer,(P,0,1,P))"
+eval(numeric_add,P3,N1)
+=0x2
 
-eval(add,P3,Z)
-="RESULT: ""(integer_Integer,(P,1,1,P))"
+eval(numeric_add,P3,Z)
+=0x3
 
-eval(add,P3,P1)
-="RESULT: ""(integer_Integer,(P,0,0,1,P))"
+eval(numeric_add,P3,P1)
+=0x4
 
-eval(add,P3,P2)
-="RESULT: ""(integer_Integer,(P,1,0,1,P))"
+eval(numeric_add,P3,P2)
+=0x5
 
-eval(add,P3,P3)
-="RESULT: ""(integer_Integer,(P,0,1,1,P))"
+eval(numeric_add,P3,P3)
+=0x6
 
-eval(add,P3,P4)
-="RESULT: ""(integer_Integer,(P,1,1,1,P))"
+eval(numeric_add,P3,P4)
+=0x7
 
-eval(add,P4,N4)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_add,P4,N4)
+=0x0
 
-eval(add,P4,N3)
-="RESULT: ""(integer_Integer,(P,1,P))"
+eval(numeric_add,P4,N3)
+=0x1
 
-eval(add,P4,N2)
-="RESULT: ""(integer_Integer,(P,0,1,P))"
+eval(numeric_add,P4,N2)
+=0x2
 
-eval(add,P4,N1)
-="RESULT: ""(integer_Integer,(P,1,1,P))"
+eval(numeric_add,P4,N1)
+=0x3
 
-eval(add,P4,Z)
-="RESULT: ""(integer_Integer,(P,0,0,1,P))"
+eval(numeric_add,P4,Z)
+=0x4
 
-eval(add,P4,P1)
-="RESULT: ""(integer_Integer,(P,1,0,1,P))"
+eval(numeric_add,P4,P1)
+=0x5
 
-eval(add,P4,P2)
-="RESULT: ""(integer_Integer,(P,0,1,1,P))"
+eval(numeric_add,P4,P2)
+=0x6
 
-eval(add,P4,P3)
-="RESULT: ""(integer_Integer,(P,1,1,1,P))"
+eval(numeric_add,P4,P3)
+=0x7
 
-eval(add,P4,P4)
-="RESULT: ""(integer_Integer,(P,0,0,0,1,P))"
+eval(numeric_add,P4,P4)
+=0x8
 
 
-  ------ subtract ------
+  ------ numeric_subtract ------
 
-eval(subtract,N4,N4)
-="RESULT: ""(integer_Integer,(P,P))"                             
+eval(numeric_subtract,N4,N4)
+=0x0
 
-eval(subtract,N4,N3)
-="RESULT: ""(integer_Integer,(N,N))"                             
+eval(numeric_subtract,N4,N3)
+=-0x1
 
-eval(subtract,N4,N2)
-="RESULT: ""(integer_Integer,(N,0,N))"                         
+eval(numeric_subtract,N4,N2)
+=-0x2
 
-eval(subtract,N4,N1)
-="RESULT: ""(integer_Integer,(N,1,0,N))"                     
+eval(numeric_subtract,N4,N1)
+=-0x3
 
-eval(subtract,N4,Z)
-="RESULT: ""(integer_Integer,(N,0,0,N))"                     
+eval(numeric_subtract,N4,Z)
+=-0x4
 
-eval(subtract,N4,P1)
-="RESULT: ""(integer_Integer,(N,1,1,0,N))"                     
+eval(numeric_subtract,N4,P1)
+=-0x5
 
-eval(subtract,N4,P2)
-="RESULT: ""(integer_Integer,(N,0,1,0,N))"                       
+eval(numeric_subtract,N4,P2)
+=-0x6
 
-eval(subtract,N4,P3)
-="RESULT: ""(integer_Integer,(N,1,0,0,N))"                       
+eval(numeric_subtract,N4,P3)
+=-0x7
 
-eval(subtract,N4,P4)
-="RESULT: ""(integer_Integer,(N,0,0,0,N))"                         
+eval(numeric_subtract,N4,P4)
+=-0x8
 
-eval(subtract,N3,N4)
-="RESULT: ""(integer_Integer,(P,1,P))"                           
+eval(numeric_subtract,N3,N4)
+=0x1
 
-eval(subtract,N3,N3)
-="RESULT: ""(integer_Integer,(P,P))"                             
+eval(numeric_subtract,N3,N3)
+=0x0
 
-eval(subtract,N3,N2)
-="RESULT: ""(integer_Integer,(N,N))"                           
+eval(numeric_subtract,N3,N2)
+=-0x1
 
-eval(subtract,N3,N1)
-="RESULT: ""(integer_Integer,(N,0,N))"                       
+eval(numeric_subtract,N3,N1)
+=-0x2
 
-eval(subtract,N3,Z)
-="RESULT: ""(integer_Integer,(N,1,0,N))"                     
+eval(numeric_subtract,N3,Z)
+=-0x3
 
-eval(subtract,N3,P1)
-="RESULT: ""(integer_Integer,(N,0,0,N))"                       
+eval(numeric_subtract,N3,P1)
+=-0x4
 
-eval(subtract,N3,P2)
-="RESULT: ""(integer_Integer,(N,1,1,0,N))"                       
+eval(numeric_subtract,N3,P2)
+=-0x5
 
-eval(subtract,N3,P3)
-="RESULT: ""(integer_Integer,(N,0,1,0,N))"                       
+eval(numeric_subtract,N3,P3)
+=-0x6
 
-eval(subtract,N3,P4)
-="RESULT: ""(integer_Integer,(N,1,0,0,N))"                         
+eval(numeric_subtract,N3,P4)
+=-0x7
 
-eval(subtract,N2,N4)
-="RESULT: ""(integer_Integer,(P,0,1,P))"                       
+eval(numeric_subtract,N2,N4)
+=0x2
 
-eval(subtract,N2,N3)
-="RESULT: ""(integer_Integer,(P,1,P))"                         
+eval(numeric_subtract,N2,N3)
+=0x1
 
-eval(subtract,N2,N2)
-="RESULT: ""(integer_Integer,(P,P))"                         
+eval(numeric_subtract,N2,N2)
+=0x0
 
-eval(subtract,N2,N1)
-="RESULT: ""(integer_Integer,(N,N))"                       
+eval(numeric_subtract,N2,N1)
+=-0x1
 
-eval(subtract,N2,Z)
-="RESULT: ""(integer_Integer,(N,0,N))"                     
+eval(numeric_subtract,N2,Z)
+=-0x2
 
-eval(subtract,N2,P1)
-="RESULT: ""(integer_Integer,(N,1,0,N))"                     
+eval(numeric_subtract,N2,P1)
+=-0x3
 
-eval(subtract,N2,P2)
-="RESULT: ""(integer_Integer,(N,0,0,N))"                       
+eval(numeric_subtract,N2,P2)
+=-0x4
 
-eval(subtract,N2,P3)
-="RESULT: ""(integer_Integer,(N,1,1,0,N))"                     
+eval(numeric_subtract,N2,P3)
+=-0x5
 
-eval(subtract,N2,P4)
-="RESULT: ""(integer_Integer,(N,0,1,0,N))"                       
+eval(numeric_subtract,N2,P4)
+=-0x6
 
-eval(subtract,N1,N4)
-="RESULT: ""(integer_Integer,(P,1,1,P))"                     
+eval(numeric_subtract,N1,N4)
+=0x3
 
-eval(subtract,N1,N3)
-="RESULT: ""(integer_Integer,(P,0,1,P))"                     
+eval(numeric_subtract,N1,N3)
+=0x2
 
-eval(subtract,N1,N2)
-="RESULT: ""(integer_Integer,(P,1,P))"                     
+eval(numeric_subtract,N1,N2)
+=0x1
 
-eval(subtract,N1,N1)
-="RESULT: ""(integer_Integer,(P,P))"                     
+eval(numeric_subtract,N1,N1)
+=0x0
 
-eval(subtract,N1,Z)
-="RESULT: ""(integer_Integer,(N,N))"                     
+eval(numeric_subtract,N1,Z)
+=-0x1
 
-eval(subtract,N1,P1)
-="RESULT: ""(integer_Integer,(N,0,N))"                     
+eval(numeric_subtract,N1,P1)
+=-0x2
 
-eval(subtract,N1,P2)
-="RESULT: ""(integer_Integer,(N,1,0,N))"                     
+eval(numeric_subtract,N1,P2)
+=-0x3
 
-eval(subtract,N1,P3)
-="RESULT: ""(integer_Integer,(N,0,0,N))"                     
+eval(numeric_subtract,N1,P3)
+=-0x4
 
-eval(subtract,N1,P4)
-="RESULT: ""(integer_Integer,(N,1,1,0,N))"                     
+eval(numeric_subtract,N1,P4)
+=-0x5
 
-eval(subtract,Z,N4)
-="RESULT: ""(integer_Integer,(P,0,0,1,P))"                   
+eval(numeric_subtract,Z,N4)
+=0x4
 
-eval(subtract,Z,N3)
-="RESULT: ""(integer_Integer,(P,1,1,P))"                     
+eval(numeric_subtract,Z,N3)
+=0x3
 
-eval(subtract,Z,N2)
-="RESULT: ""(integer_Integer,(P,0,1,P))"                   
+eval(numeric_subtract,Z,N2)
+=0x2
 
-eval(subtract,Z,N1)
-="RESULT: ""(integer_Integer,(P,1,P))"                   
+eval(numeric_subtract,Z,N1)
+=0x1
 
-eval(subtract,Z,Z)
-="RESULT: ""(integer_Integer,(P,P))"                     
+eval(numeric_subtract,Z,Z)
+=0x0
 
-eval(subtract,Z,P1)
-="RESULT: ""(integer_Integer,(N,N))"                       
+eval(numeric_subtract,Z,P1)
+=-0x1
 
-eval(subtract,Z,P2)
-="RESULT: ""(integer_Integer,(N,0,N))"                       
+eval(numeric_subtract,Z,P2)
+=-0x2
 
-eval(subtract,Z,P3)
-="RESULT: ""(integer_Integer,(N,1,0,N))"                     
+eval(numeric_subtract,Z,P3)
+=-0x3
 
-eval(subtract,Z,P4)
-="RESULT: ""(integer_Integer,(N,0,0,N))"                       
+eval(numeric_subtract,Z,P4)
+=-0x4
 
-eval(subtract,P1,N4)
-="RESULT: ""(integer_Integer,(P,1,0,1,P))"                     
+eval(numeric_subtract,P1,N4)
+=0x5
 
-eval(subtract,P1,N3)
-="RESULT: ""(integer_Integer,(P,0,0,1,P))"                     
+eval(numeric_subtract,P1,N3)
+=0x4
 
-eval(subtract,P1,N2)
-="RESULT: ""(integer_Integer,(P,1,1,P))"                     
+eval(numeric_subtract,P1,N2)
+=0x3
 
-eval(subtract,P1,N1)
-="RESULT: ""(integer_Integer,(P,0,1,P))"                   
+eval(numeric_subtract,P1,N1)
+=0x2
 
-eval(subtract,P1,Z)
-="RESULT: ""(integer_Integer,(P,1,P))"                     
+eval(numeric_subtract,P1,Z)
+=0x1
 
-eval(subtract,P1,P1)
-="RESULT: ""(integer_Integer,(P,P))"                         
+eval(numeric_subtract,P1,P1)
+=0x0
 
-eval(subtract,P1,P2)
-="RESULT: ""(integer_Integer,(N,N))"                           
+eval(numeric_subtract,P1,P2)
+=-0x1
 
-eval(subtract,P1,P3)
-="RESULT: ""(integer_Integer,(N,0,N))"                         
+eval(numeric_subtract,P1,P3)
+=-0x2
 
-eval(subtract,P1,P4)
-="RESULT: ""(integer_Integer,(N,1,0,N))"                         
+eval(numeric_subtract,P1,P4)
+=-0x3
 
-eval(subtract,P2,N4)
-="RESULT: ""(integer_Integer,(P,0,1,1,P))"                       
+eval(numeric_subtract,P2,N4)
+=0x6
 
-eval(subtract,P2,N3)
-="RESULT: ""(integer_Integer,(P,1,0,1,P))"                       
+eval(numeric_subtract,P2,N3)
+=0x5
 
-eval(subtract,P2,N2)
-="RESULT: ""(integer_Integer,(P,0,0,1,P))"                     
+eval(numeric_subtract,P2,N2)
+=0x4
 
-eval(subtract,P2,N1)
-="RESULT: ""(integer_Integer,(P,1,1,P))"                     
+eval(numeric_subtract,P2,N1)
+=0x3
 
-eval(subtract,P2,Z)
-="RESULT: ""(integer_Integer,(P,0,1,P))"                     
+eval(numeric_subtract,P2,Z)
+=0x2
 
-eval(subtract,P2,P1)
-="RESULT: ""(integer_Integer,(P,1,P))"                         
+eval(numeric_subtract,P2,P1)
+=0x1
 
-eval(subtract,P2,P2)
-="RESULT: ""(integer_Integer,(P,P))"                             
+eval(numeric_subtract,P2,P2)
+=0x0
 
-eval(subtract,P2,P3)
-="RESULT: ""(integer_Integer,(N,N))"                             
+eval(numeric_subtract,P2,P3)
+=-0x1
 
-eval(subtract,P2,P4)
-="RESULT: ""(integer_Integer,(N,0,N))"
+eval(numeric_subtract,P2,P4)
+=-0x2
 
-eval(subtract,P3,N4)
-="RESULT: ""(integer_Integer,(P,1,1,1,P))"
+eval(numeric_subtract,P3,N4)
+=0x7
 
-eval(subtract,P3,N3)
-="RESULT: ""(integer_Integer,(P,0,1,1,P))"
+eval(numeric_subtract,P3,N3)
+=0x6
 
-eval(subtract,P3,N2)
-="RESULT: ""(integer_Integer,(P,1,0,1,P))"
+eval(numeric_subtract,P3,N2)
+=0x5
 
-eval(subtract,P3,N1)
-="RESULT: ""(integer_Integer,(P,0,0,1,P))"
+eval(numeric_subtract,P3,N1)
+=0x4
 
-eval(subtract,P3,Z)
-="RESULT: ""(integer_Integer,(P,1,1,P))"
+eval(numeric_subtract,P3,Z)
+=0x3
 
-eval(subtract,P3,P1)
-="RESULT: ""(integer_Integer,(P,0,1,P))"
+eval(numeric_subtract,P3,P1)
+=0x2
 
-eval(subtract,P3,P2)
-="RESULT: ""(integer_Integer,(P,1,P))"
+eval(numeric_subtract,P3,P2)
+=0x1
 
-eval(subtract,P3,P3)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_subtract,P3,P3)
+=0x0
 
-eval(subtract,P3,P4)
-="RESULT: ""(integer_Integer,(N,N))"
+eval(numeric_subtract,P3,P4)
+=-0x1
 
-eval(subtract,P4,N4)
-="RESULT: ""(integer_Integer,(P,0,0,0,1,P))"
+eval(numeric_subtract,P4,N4)
+=0x8
 
-eval(subtract,P4,N3)
-="RESULT: ""(integer_Integer,(P,1,1,1,P))"
+eval(numeric_subtract,P4,N3)
+=0x7
 
-eval(subtract,P4,N2)
-="RESULT: ""(integer_Integer,(P,0,1,1,P))"
+eval(numeric_subtract,P4,N2)
+=0x6
 
-eval(subtract,P4,N1)
-="RESULT: ""(integer_Integer,(P,1,0,1,P))"
+eval(numeric_subtract,P4,N1)
+=0x5
 
-eval(subtract,P4,Z)
-="RESULT: ""(integer_Integer,(P,0,0,1,P))"
+eval(numeric_subtract,P4,Z)
+=0x4
 
-eval(subtract,P4,P1)
-="RESULT: ""(integer_Integer,(P,1,1,P))"
+eval(numeric_subtract,P4,P1)
+=0x3
 
-eval(subtract,P4,P2)
-="RESULT: ""(integer_Integer,(P,0,1,P))"
+eval(numeric_subtract,P4,P2)
+=0x2
 
-eval(subtract,P4,P3)
-="RESULT: ""(integer_Integer,(P,1,P))"
+eval(numeric_subtract,P4,P3)
+=0x1
 
-eval(subtract,P4,P4)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_subtract,P4,P4)
+=0x0
 
 
-  ------ multiply ------
+  ------ numeric_multiply ------
 
-eval(multiply,N4,N4)
-="RESULT: ""(integer_Integer,(P,0,0,0,0,1,P))"
+eval(numeric_multiply,N4,N4)
+=0x10
 
-eval(multiply,N4,N3)
-="RESULT: ""(integer_Integer,(P,0,0,1,1,P))"
+eval(numeric_multiply,N4,N3)
+=0xc
 
-eval(multiply,N4,N2)
-="RESULT: ""(integer_Integer,(P,0,0,0,1,P))"
+eval(numeric_multiply,N4,N2)
+=0x8
 
-eval(multiply,N4,N1)
-="RESULT: ""(integer_Integer,(P,0,0,1,P))"
+eval(numeric_multiply,N4,N1)
+=0x4
 
-eval(multiply,N4,Z)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_multiply,N4,Z)
+=0x0
 
-eval(multiply,N4,P1)
-="RESULT: ""(integer_Integer,(N,0,0,N))"
+eval(numeric_multiply,N4,P1)
+=-0x4
 
-eval(multiply,N4,P2)
-="RESULT: ""(integer_Integer,(N,0,0,0,N))"
+eval(numeric_multiply,N4,P2)
+=-0x8
 
-eval(multiply,N4,P3)
-="RESULT: ""(integer_Integer,(N,0,0,1,0,N))"
+eval(numeric_multiply,N4,P3)
+=-0xc
 
-eval(multiply,N4,P4)
-="RESULT: ""(integer_Integer,(N,0,0,0,0,N))"
+eval(numeric_multiply,N4,P4)
+=-0x10
 
-eval(multiply,N3,N4)
-="RESULT: ""(integer_Integer,(P,0,0,1,1,P))"
+eval(numeric_multiply,N3,N4)
+=0xc
 
-eval(multiply,N3,N3)
-="RESULT: ""(integer_Integer,(P,1,0,0,1,P))"
+eval(numeric_multiply,N3,N3)
+=0x9
 
-eval(multiply,N3,N2)
-="RESULT: ""(integer_Integer,(P,0,1,1,P))"
+eval(numeric_multiply,N3,N2)
+=0x6
 
-eval(multiply,N3,N1)
-="RESULT: ""(integer_Integer,(P,1,1,P))"
+eval(numeric_multiply,N3,N1)
+=0x3
 
-eval(multiply,N3,Z)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_multiply,N3,Z)
+=0x0
 
-eval(multiply,N3,P1)
-="RESULT: ""(integer_Integer,(N,1,0,N))"
+eval(numeric_multiply,N3,P1)
+=-0x3
 
-eval(multiply,N3,P2)
-="RESULT: ""(integer_Integer,(N,0,1,0,N))"
+eval(numeric_multiply,N3,P2)
+=-0x6
 
-eval(multiply,N3,P3)
-="RESULT: ""(integer_Integer,(N,1,1,1,0,N))"
+eval(numeric_multiply,N3,P3)
+=-0x9
 
-eval(multiply,N3,P4)
-="RESULT: ""(integer_Integer,(N,0,0,1,0,N))"
+eval(numeric_multiply,N3,P4)
+=-0xc
 
-eval(multiply,N2,N4)
-="RESULT: ""(integer_Integer,(P,0,0,0,1,P))"
+eval(numeric_multiply,N2,N4)
+=0x8
 
-eval(multiply,N2,N3)
-="RESULT: ""(integer_Integer,(P,0,1,1,P))"
+eval(numeric_multiply,N2,N3)
+=0x6
 
-eval(multiply,N2,N2)
-="RESULT: ""(integer_Integer,(P,0,0,1,P))"
+eval(numeric_multiply,N2,N2)
+=0x4
 
-eval(multiply,N2,N1)
-="RESULT: ""(integer_Integer,(P,0,1,P))"
+eval(numeric_multiply,N2,N1)
+=0x2
 
-eval(multiply,N2,Z)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_multiply,N2,Z)
+=0x0
 
-eval(multiply,N2,P1)
-="RESULT: ""(integer_Integer,(N,0,N))"
+eval(numeric_multiply,N2,P1)
+=-0x2
 
-eval(multiply,N2,P2)
-="RESULT: ""(integer_Integer,(N,0,0,N))"
+eval(numeric_multiply,N2,P2)
+=-0x4
 
-eval(multiply,N2,P3)
-="RESULT: ""(integer_Integer,(N,0,1,0,N))"
+eval(numeric_multiply,N2,P3)
+=-0x6
 
-eval(multiply,N2,P4)
-="RESULT: ""(integer_Integer,(N,0,0,0,N))"
+eval(numeric_multiply,N2,P4)
+=-0x8
 
-eval(multiply,N1,N4)
-="RESULT: ""(integer_Integer,(P,0,0,1,P))"
+eval(numeric_multiply,N1,N4)
+=0x4
 
-eval(multiply,N1,N3)
-="RESULT: ""(integer_Integer,(P,1,1,P))"
+eval(numeric_multiply,N1,N3)
+=0x3
 
-eval(multiply,N1,N2)
-="RESULT: ""(integer_Integer,(P,0,1,P))"
+eval(numeric_multiply,N1,N2)
+=0x2
 
-eval(multiply,N1,N1)
-="RESULT: ""(integer_Integer,(P,1,P))"
+eval(numeric_multiply,N1,N1)
+=0x1
 
-eval(multiply,N1,Z)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_multiply,N1,Z)
+=0x0
 
-eval(multiply,N1,P1)
-="RESULT: ""(integer_Integer,(N,N))"
+eval(numeric_multiply,N1,P1)
+=-0x1
 
-eval(multiply,N1,P2)
-="RESULT: ""(integer_Integer,(N,0,N))"
+eval(numeric_multiply,N1,P2)
+=-0x2
 
-eval(multiply,N1,P3)
-="RESULT: ""(integer_Integer,(N,1,0,N))"
+eval(numeric_multiply,N1,P3)
+=-0x3
 
-eval(multiply,N1,P4)
-="RESULT: ""(integer_Integer,(N,0,0,N))"
+eval(numeric_multiply,N1,P4)
+=-0x4
 
-eval(multiply,Z,N4)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_multiply,Z,N4)
+=0x0
 
-eval(multiply,Z,N3)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_multiply,Z,N3)
+=0x0
 
-eval(multiply,Z,N2)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_multiply,Z,N2)
+=0x0
 
-eval(multiply,Z,N1)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_multiply,Z,N1)
+=0x0
 
-eval(multiply,Z,Z)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_multiply,Z,Z)
+=0x0
 
-eval(multiply,Z,P1)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_multiply,Z,P1)
+=0x0
 
-eval(multiply,Z,P2)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_multiply,Z,P2)
+=0x0
 
-eval(multiply,Z,P3)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_multiply,Z,P3)
+=0x0
 
-eval(multiply,Z,P4)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_multiply,Z,P4)
+=0x0
 
-eval(multiply,P1,N4)
-="RESULT: ""(integer_Integer,(N,0,0,N))"
+eval(numeric_multiply,P1,N4)
+=-0x4
 
-eval(multiply,P1,N3)
-="RESULT: ""(integer_Integer,(N,1,0,N))"
+eval(numeric_multiply,P1,N3)
+=-0x3
 
-eval(multiply,P1,N2)
-="RESULT: ""(integer_Integer,(N,0,N))"
+eval(numeric_multiply,P1,N2)
+=-0x2
 
-eval(multiply,P1,N1)
-="RESULT: ""(integer_Integer,(N,N))"
+eval(numeric_multiply,P1,N1)
+=-0x1
 
-eval(multiply,P1,Z)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_multiply,P1,Z)
+=0x0
 
-eval(multiply,P1,P1)
-="RESULT: ""(integer_Integer,(P,1,P))"
+eval(numeric_multiply,P1,P1)
+=0x1
 
-eval(multiply,P1,P2)
-="RESULT: ""(integer_Integer,(P,0,1,P))"
+eval(numeric_multiply,P1,P2)
+=0x2
 
-eval(multiply,P1,P3)
-="RESULT: ""(integer_Integer,(P,1,1,P))"
+eval(numeric_multiply,P1,P3)
+=0x3
 
-eval(multiply,P1,P4)
-="RESULT: ""(integer_Integer,(P,0,0,1,P))"
+eval(numeric_multiply,P1,P4)
+=0x4
 
-eval(multiply,P2,N4)
-="RESULT: ""(integer_Integer,(N,0,0,0,N))"
+eval(numeric_multiply,P2,N4)
+=-0x8
 
-eval(multiply,P2,N3)
-="RESULT: ""(integer_Integer,(N,0,1,0,N))"
+eval(numeric_multiply,P2,N3)
+=-0x6
 
-eval(multiply,P2,N2)
-="RESULT: ""(integer_Integer,(N,0,0,N))"
+eval(numeric_multiply,P2,N2)
+=-0x4
 
-eval(multiply,P2,N1)
-="RESULT: ""(integer_Integer,(N,0,N))"
+eval(numeric_multiply,P2,N1)
+=-0x2
 
-eval(multiply,P2,Z)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_multiply,P2,Z)
+=0x0
 
-eval(multiply,P2,P1)
-="RESULT: ""(integer_Integer,(P,0,1,P))"
+eval(numeric_multiply,P2,P1)
+=0x2
 
-eval(multiply,P2,P2)
-="RESULT: ""(integer_Integer,(P,0,0,1,P))"
+eval(numeric_multiply,P2,P2)
+=0x4
 
-eval(multiply,P2,P3)
-="RESULT: ""(integer_Integer,(P,0,1,1,P))"
+eval(numeric_multiply,P2,P3)
+=0x6
 
-eval(multiply,P2,P4)
-="RESULT: ""(integer_Integer,(P,0,0,0,1,P))"
+eval(numeric_multiply,P2,P4)
+=0x8
 
-eval(multiply,P3,N4)
-="RESULT: ""(integer_Integer,(N,0,0,1,0,N))"
+eval(numeric_multiply,P3,N4)
+=-0xc
 
-eval(multiply,P3,N3)
-="RESULT: ""(integer_Integer,(N,1,1,1,0,N))"
+eval(numeric_multiply,P3,N3)
+=-0x9
 
-eval(multiply,P3,N2)
-="RESULT: ""(integer_Integer,(N,0,1,0,N))"
+eval(numeric_multiply,P3,N2)
+=-0x6
 
-eval(multiply,P3,N1)
-="RESULT: ""(integer_Integer,(N,1,0,N))"
+eval(numeric_multiply,P3,N1)
+=-0x3
 
-eval(multiply,P3,Z)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_multiply,P3,Z)
+=0x0
 
-eval(multiply,P3,P1)
-="RESULT: ""(integer_Integer,(P,1,1,P))"
+eval(numeric_multiply,P3,P1)
+=0x3
 
-eval(multiply,P3,P2)
-="RESULT: ""(integer_Integer,(P,0,1,1,P))"
+eval(numeric_multiply,P3,P2)
+=0x6
 
-eval(multiply,P3,P3)
-="RESULT: ""(integer_Integer,(P,1,0,0,1,P))"
+eval(numeric_multiply,P3,P3)
+=0x9
 
-eval(multiply,P3,P4)
-="RESULT: ""(integer_Integer,(P,0,0,1,1,P))"
+eval(numeric_multiply,P3,P4)
+=0xc
 
-eval(multiply,P4,N4)
-="RESULT: ""(integer_Integer,(N,0,0,0,0,N))"
+eval(numeric_multiply,P4,N4)
+=-0x10
 
-eval(multiply,P4,N3)
-="RESULT: ""(integer_Integer,(N,0,0,1,0,N))"
+eval(numeric_multiply,P4,N3)
+=-0xc
 
-eval(multiply,P4,N2)
-="RESULT: ""(integer_Integer,(N,0,0,0,N))"
+eval(numeric_multiply,P4,N2)
+=-0x8
 
-eval(multiply,P4,N1)
-="RESULT: ""(integer_Integer,(N,0,0,N))"
+eval(numeric_multiply,P4,N1)
+=-0x4
 
-eval(multiply,P4,Z)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_multiply,P4,Z)
+=0x0
 
-eval(multiply,P4,P1)
-="RESULT: ""(integer_Integer,(P,0,0,1,P))"
+eval(numeric_multiply,P4,P1)
+=0x4
 
-eval(multiply,P4,P2)
-="RESULT: ""(integer_Integer,(P,0,0,0,1,P))"
+eval(numeric_multiply,P4,P2)
+=0x8
 
-eval(multiply,P4,P3)
-="RESULT: ""(integer_Integer,(P,0,0,1,1,P))"
+eval(numeric_multiply,P4,P3)
+=0xc
 
-eval(multiply,P4,P4)
-="RESULT: ""(integer_Integer,(P,0,0,0,0,1,P))"
+eval(numeric_multiply,P4,P4)
+=0x10
 
 
-  ------ absolute ------
+  ------ numeric_absolute ------
 
-eval(absolute,N1)
-="RESULT: ""(integer_Integer,(P,1,P))"
+eval(numeric_absolute,N1)
+=0x1
 
-eval(absolute,Z)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_absolute,Z)
+=0x0
 
-eval(absolute,P1)
-="RESULT: ""(integer_Integer,(P,1,P))"
+eval(numeric_absolute,P1)
+=0x1
 
 
-  ------ sign ------
+  ------ numeric_sign ------
 
-eval(sign,N3)
-="RESULT: ""(integer_Integer,(N,N))"
+eval(numeric_sign,N3)
+=-0x1
 
-eval(sign,N2)
-="RESULT: ""(integer_Integer,(N,N))"
+eval(numeric_sign,N2)
+=-0x1
 
-eval(sign,N1)
-="RESULT: ""(integer_Integer,(N,N))"
+eval(numeric_sign,N1)
+=-0x1
 
-eval(sign,Z)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_sign,Z)
+=0x0
 
-eval(sign,P1)
-="RESULT: ""(integer_Integer,(P,1,P))"
+eval(numeric_sign,P1)
+=0x1
 
-eval(sign,P2)
-="RESULT: ""(integer_Integer,(P,1,P))"
+eval(numeric_sign,P2)
+=0x1
 
 
-  ------ negate ------
+  ------ numeric_negate ------
 
-eval(negate,N1)
-="RESULT: ""(integer_Integer,(P,1,P))"
+eval(numeric_negate,N1)
+=0x1
 
-eval(negate,Z)
-="RESULT: ""(integer_Integer,(P,P))"
+eval(numeric_negate,Z)
+=0x0
 
-eval(negate,P1)
-="RESULT: ""(integer_Integer,(N,N))"
+eval(numeric_negate,P1)
+=-0x1
 
 
   ------ quotientRemainder ------
 
 eval(quotientRemainder,N4,N4)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,1,P)),(integer_Integer,(P,P)))"
+=(0x1,0x0)
 
 eval(quotientRemainder,N4,N3)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,1,P)),(integer_Integer,(N,N)))"
+=(0x1,-0x1)
 
 eval(quotientRemainder,N4,N2)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,0,1,P)),(integer_Integer,(P,P)))"
+=(0x2,0x0)
 
 eval(quotientRemainder,N4,N1)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,0,0,1,P)),(integer_Integer,(P,P)))"
+=(0x4,0x0)
 
 eval(quotientRemainder,N4,Z)
-="ERROR: ""\"integer_quotientRemainder_: division by zero\""
+=ERROR: "integer_quotientRemainder_: division by zero"
 
 eval(quotientRemainder,N4,P1)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(N,0,0,N)),(integer_Integer,(P,P)))"
+=(-0x4,0x0)
 
 eval(quotientRemainder,N4,P2)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(N,0,N)),(integer_Integer,(P,P)))"
+=(-0x2,0x0)
 
 eval(quotientRemainder,N4,P3)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(N,N)),(integer_Integer,(N,N)))"
+=(-0x1,-0x1)
 
 eval(quotientRemainder,N4,P4)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(N,N)),(integer_Integer,(P,P)))"
+=(-0x1,0x0)
 
 eval(quotientRemainder,N3,N4)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(N,1,0,N)))"
+=(0x0,-0x3)
 
 eval(quotientRemainder,N3,N3)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,1,P)),(integer_Integer,(P,P)))"
+=(0x1,0x0)
 
 eval(quotientRemainder,N3,N2)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,1,P)),(integer_Integer,(N,N)))"
+=(0x1,-0x1)
 
 eval(quotientRemainder,N3,N1)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,1,1,P)),(integer_Integer,(P,P)))"
+=(0x3,0x0)
 
 eval(quotientRemainder,N3,Z)
-="ERROR: ""\"integer_quotientRemainder_: division by zero\""
+=ERROR: "integer_quotientRemainder_: division by zero"
 
 eval(quotientRemainder,N3,P1)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(N,1,0,N)),(integer_Integer,(P,P)))"
+=(-0x3,0x0)
 
 eval(quotientRemainder,N3,P2)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(N,N)),(integer_Integer,(N,N)))"
+=(-0x1,-0x1)
 
 eval(quotientRemainder,N3,P3)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(N,N)),(integer_Integer,(P,P)))"
+=(-0x1,0x0)
 
 eval(quotientRemainder,N3,P4)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(N,1,0,N)))"
+=(0x0,-0x3)
 
 eval(quotientRemainder,N2,N4)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(N,0,N)))"
+=(0x0,-0x2)
 
 eval(quotientRemainder,N2,N3)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(N,0,N)))"
+=(0x0,-0x2)
 
 eval(quotientRemainder,N2,N2)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,1,P)),(integer_Integer,(P,P)))"
+=(0x1,0x0)
 
 eval(quotientRemainder,N2,N1)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,0,1,P)),(integer_Integer,(P,P)))"
+=(0x2,0x0)
 
 eval(quotientRemainder,N2,Z)
-="ERROR: ""\"integer_quotientRemainder_: division by zero\""
+=ERROR: "integer_quotientRemainder_: division by zero"
 
 eval(quotientRemainder,N2,P1)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(N,0,N)),(integer_Integer,(P,P)))"
+=(-0x2,0x0)
 
 eval(quotientRemainder,N2,P2)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(N,N)),(integer_Integer,(P,P)))"
+=(-0x1,0x0)
 
 eval(quotientRemainder,N2,P3)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(N,0,N)))"
+=(0x0,-0x2)
 
 eval(quotientRemainder,N2,P4)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(N,0,N)))"
+=(0x0,-0x2)
 
 eval(quotientRemainder,N1,N4)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(N,N)))"
+=(0x0,-0x1)
 
 eval(quotientRemainder,N1,N3)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(N,N)))"
+=(0x0,-0x1)
 
 eval(quotientRemainder,N1,N2)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(N,N)))"
+=(0x0,-0x1)
 
 eval(quotientRemainder,N1,N1)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,1,P)),(integer_Integer,(P,P)))"
+=(0x1,0x0)
 
 eval(quotientRemainder,N2,Z)
-="ERROR: ""\"integer_quotientRemainder_: division by zero\""
+=ERROR: "integer_quotientRemainder_: division by zero"
 
 eval(quotientRemainder,N1,P1)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(N,N)),(integer_Integer,(P,P)))"
+=(-0x1,0x0)
 
 eval(quotientRemainder,N1,P2)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(N,N)))"
+=(0x0,-0x1)
 
 eval(quotientRemainder,N1,P3)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(N,N)))"
+=(0x0,-0x1)
 
 eval(quotientRemainder,N1,P4)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(N,N)))"
+=(0x0,-0x1)
 
 eval(quotientRemainder,Z,N4)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(P,P)))"
+=(0x0,0x0)
 
 eval(quotientRemainder,Z,N3)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(P,P)))"
+=(0x0,0x0)
 
 eval(quotientRemainder,Z,N2)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(P,P)))"
+=(0x0,0x0)
 
 eval(quotientRemainder,Z,N1)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(P,P)))"
+=(0x0,0x0)
 
 eval(quotientRemainder,N2,Z)
-="ERROR: ""\"integer_quotientRemainder_: division by zero\""
+=ERROR: "integer_quotientRemainder_: division by zero"
 
 eval(quotientRemainder,Z,P1)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(P,P)))"
+=(0x0,0x0)
 
 eval(quotientRemainder,Z,P2)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(P,P)))"
+=(0x0,0x0)
 
 eval(quotientRemainder,Z,P3)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(P,P)))"
+=(0x0,0x0)
 
 eval(quotientRemainder,Z,P4)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(P,P)))"
+=(0x0,0x0)
 
 eval(quotientRemainder,P1,N4)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(P,1,P)))"
+=(0x0,0x1)
 
 eval(quotientRemainder,P1,N3)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(P,1,P)))"
+=(0x0,0x1)
 
 eval(quotientRemainder,P1,N2)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(P,1,P)))"
+=(0x0,0x1)
 
 eval(quotientRemainder,P1,N1)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(N,N)),(integer_Integer,(P,P)))"
+=(-0x1,0x0)
 
 eval(quotientRemainder,N2,Z)
-="ERROR: ""\"integer_quotientRemainder_: division by zero\""
+=ERROR: "integer_quotientRemainder_: division by zero"
 
 eval(quotientRemainder,P1,P1)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,1,P)),(integer_Integer,(P,P)))"
+=(0x1,0x0)
 
 eval(quotientRemainder,P1,P2)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(P,1,P)))"
+=(0x0,0x1)
 
 eval(quotientRemainder,P1,P3)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(P,1,P)))"
+=(0x0,0x1)
 
 eval(quotientRemainder,P1,P4)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(P,1,P)))"
+=(0x0,0x1)
 
 eval(quotientRemainder,P2,N4)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(P,0,1,P)))"
+=(0x0,0x2)
 
 eval(quotientRemainder,P2,N3)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(P,0,1,P)))"
+=(0x0,0x2)
 
 eval(quotientRemainder,P2,N2)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(N,N)),(integer_Integer,(P,P)))"
+=(-0x1,0x0)
 
 eval(quotientRemainder,P2,N1)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(N,0,N)),(integer_Integer,(P,P)))"
+=(-0x2,0x0)
 
 eval(quotientRemainder,N2,Z)
-="ERROR: ""\"integer_quotientRemainder_: division by zero\""
+=ERROR: "integer_quotientRemainder_: division by zero"
 
 eval(quotientRemainder,P2,P1)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,0,1,P)),(integer_Integer,(P,P)))"
+=(0x2,0x0)
 
 eval(quotientRemainder,P2,P2)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,1,P)),(integer_Integer,(P,P)))"
+=(0x1,0x0)
 
 eval(quotientRemainder,P2,P3)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(P,0,1,P)))"
+=(0x0,0x2)
 
 eval(quotientRemainder,P2,P4)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(P,0,1,P)))"
+=(0x0,0x2)
 
 eval(quotientRemainder,P3,N4)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(P,1,1,P)))"
+=(0x0,0x3)
 
 eval(quotientRemainder,P3,N3)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(N,N)),(integer_Integer,(P,P)))"
+=(-0x1,0x0)
 
 eval(quotientRemainder,P3,N2)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(N,N)),(integer_Integer,(P,1,P)))"
+=(-0x1,0x1)
 
 eval(quotientRemainder,P3,N1)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(N,1,0,N)),(integer_Integer,(P,P)))"
+=(-0x3,0x0)
 
 eval(quotientRemainder,N2,Z)
-="ERROR: ""\"integer_quotientRemainder_: division by zero\""
+=ERROR: "integer_quotientRemainder_: division by zero"
 
 eval(quotientRemainder,P3,P1)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,1,1,P)),(integer_Integer,(P,P)))"
+=(0x3,0x0)
 
 eval(quotientRemainder,P3,P2)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,1,P)),(integer_Integer,(P,1,P)))"
+=(0x1,0x1)
 
 eval(quotientRemainder,P3,P3)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,1,P)),(integer_Integer,(P,P)))"
+=(0x1,0x0)
 
 eval(quotientRemainder,P3,P4)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,P)),(integer_Integer,(P,1,1,P)))"
+=(0x0,0x3)
 
 eval(quotientRemainder,P4,N4)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(N,N)),(integer_Integer,(P,P)))"
+=(-0x1,0x0)
 
 eval(quotientRemainder,P4,N3)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(N,N)),(integer_Integer,(P,1,P)))"
+=(-0x1,0x1)
 
 eval(quotientRemainder,P4,N2)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(N,0,N)),(integer_Integer,(P,P)))"
+=(-0x2,0x0)
 
 eval(quotientRemainder,P4,N1)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(N,0,0,N)),(integer_Integer,(P,P)))"
+=(-0x4,0x0)
 
 eval(quotientRemainder,N2,Z)
-="ERROR: ""\"integer_quotientRemainder_: division by zero\""
+=ERROR: "integer_quotientRemainder_: division by zero"
 
 eval(quotientRemainder,P4,P1)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,0,0,1,P)),(integer_Integer,(P,P)))"
+=(0x4,0x0)
 
 eval(quotientRemainder,P4,P2)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,0,1,P)),(integer_Integer,(P,P)))"
+=(0x2,0x0)
 
 eval(quotientRemainder,P4,P3)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,1,P)),(integer_Integer,(P,1,P)))"
+=(0x1,0x1)
 
 eval(quotientRemainder,P4,P4)
-="RESULT: ""(tupple_Tupple2,(integer_Integer,(P,1,P)),(integer_Integer,(P,P)))"
+=(0x1,0x0)
