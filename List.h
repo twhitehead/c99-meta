@@ -29,7 +29,7 @@
 
 
 #define _list_map(f,xs,...)             reduce_caseReduce1(list_map,xs,f,__VA_ARGS__)
-#define _list_map_list_Cons(x,xs,f,...) reduce_construct((list_Cons,(f,x),(map,f,xs)),__VA_ARGS__)
+#define _list_map_list_Cons(x,xs,f,...) reduce_construct((list_Cons,reduce_apply(f,x),(map,f,xs)),__VA_ARGS__)
 #define _list_map_list_Nil(f,...)       reduce_construct((list_Nil),__VA_ARGS__)
 
 #define _list_append(xs,ys,...)             reduce_caseReduce1(list_append,xs,ys,__VA_ARGS__)
@@ -37,7 +37,7 @@
 #define _list_append_list_Nil(ys,...)       reduce_return(ys,__VA_ARGS__)
 
 #define _list_filter(f,xs,...)                        reduce_caseReduce1(list_filter,xs,f,__VA_ARGS__)
-#define _list_filter_list_Cons(x,xs,f,...)            reduce_caseReduce1(list_filter_list_Cons,(f,x),f,x,xs,__VA_ARGS__)
+#define _list_filter_list_Cons(x,xs,f,...)            reduce_caseReduce1(list_filter_list_Cons,reduce_apply(f,x),f,x,xs,__VA_ARGS__)
 #define _list_filter_list_Cons_bool_True(f,x,xs,...)  reduce_construct((list_Cons,x,(filter,f,xs)),__VA_ARGS__)
 #define _list_filter_list_Cons_bool_False(f,x,xs,...) reduce_reduce(list_filter,f,xs,__VA_ARGS__)
 #define _list_filter_list_Nil(f,...)                  reduce_construct((list_Nil),__VA_ARGS__)
@@ -65,7 +65,7 @@
 #define _list_init_list_Nil(...)                     reduce_error("list_init: empty list")
 
 #define _list_foldl(f,y,xs,...)             reduce_caseReduce1(list_foldl,xs,f,y,__VA_ARGS__)
-#define _list_foldl_list_Cons(x,xs,f,y,...) reduce_reduce(list_foldl,f,(f,y,x),xs,__VA_ARGS__)
+#define _list_foldl_list_Cons(x,xs,f,y,...) reduce_reduce(list_foldl,f,reduce_apply(f,y,x),xs,__VA_ARGS__)
 #define _list_foldl_list_Nil(f,y,...)       reduce_return(y,__VA_ARGS__)
 
 #define _list_foldl1(f,xs,...)             reduce_caseReduce1(list_foldl1,xs,f,__VA_ARGS__)
