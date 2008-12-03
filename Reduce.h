@@ -164,8 +164,8 @@
 #define reduce_output( o,f,...) Output,o,(_raw_expand(f),__VA_ARGS__)
 #define _reduce_output(o,f,...) Output,o,(_raw_expand(f),__VA_ARGS__)
 
-#define reduce_error( o,...) Quit,("ERROR: "#o)
-#define _reduce_error(o,...) Quit,("ERROR: "#o)
+#define reduce_error( o,...) Quit,(ERROR: o)
+#define _reduce_error(o,...) Quit,(ERROR: o)
 
 
 #ifndef REDUCE_QUALIFIED_ONLY
