@@ -131,28 +131,28 @@
 #define _reduce_caseReduce50(f,ft,x0,x1,x2,x3,y4,...) Recurse,(_raw_expand(x3),(reduce_caseReduce40,f,_raw_expandFuse3_(_,_raw_expandJust1(y4),ft),x0,x1,x2),_raw_expandDrop1Merge(_raw_expand(y4),__VA_ARGS__))
 
 
-#define reduce_reduceMixed(    a,f,...)           Recurse,(_raw_expandFuse3_(reduce_reduceMixed1,_,_raw_expandJust1(a)),_raw_drop1(a),f,(reduce_reduceMixed2),__VA_ARGS__)
-#define _reduce_reduceMixed(   a,f,...)           Recurse,(_raw_expandFuse3_(reduce_reduceMixed1,_,_raw_expandJust1(a)),_raw_drop1(a),f,(reduce_reduceMixed2),__VA_ARGS__)
+#define reduce_mixed(    a,f,...)           Recurse,(_raw_expandFuse3_(reduce_mixed1,_,_raw_expandJust1(a)),_raw_drop1(a),f,(reduce_mixed2),__VA_ARGS__)
+#define _reduce_mixed(   a,f,...)           Recurse,(_raw_expandFuse3_(reduce_mixed1,_,_raw_expandJust1(a)),_raw_drop1(a),f,(reduce_mixed2),__VA_ARGS__)
 
-#define _reduce_reduceMixed1(  a,f,c,...)         Recurse,(_raw_expandFuse3_(reduce_reduceMixed1,_,_raw_expandJust1(a)),_raw_drop1(a),f,c              ,__VA_ARGS__)
+#define _reduce_mixed1(  a,f,c,...)         Recurse,(_raw_expandFuse3_(reduce_mixed1,_,_raw_expandJust1(a)),_raw_drop1(a),f,c              ,__VA_ARGS__)
 
-#define _reduce_reduceMixed1_( a,f,c,...)         Recurse,(_raw_expandJust1(c),f,,(__VA_ARGS__),_raw_expandDrop1(c))
+#define _reduce_mixed1_( a,f,c,...)         Recurse,(_raw_expandJust1(c),f,,(__VA_ARGS__),_raw_expandDrop1(c))
 
-#define _reduce_reduceMixed1_I(a,f,c,x,...)       _reduce_reduceMixed1(a,f,(reduce_reduceMixed1_I0,x,_raw_expand(c)),__VA_ARGS__)
-#define _reduce_reduceMixed1_I0( f,ft,c,x,g,...)  Recurse,(g,f,ft                                         ,_raw_insert1((x),c)                                 ,__VA_ARGS__)
+#define _reduce_mixed1_I(a,f,c,x,...)       _reduce_mixed1(a,f,(reduce_mixed1_I0,x,_raw_expand(c)),__VA_ARGS__)
+#define _reduce_mixed1_I0( f,ft,c,x,g,...)  Recurse,(g,f,ft                                         ,_raw_insert1((x),c)                                 ,__VA_ARGS__)
 
-#define _reduce_reduceMixed1_R(a,f,   c,x,...)    _reduce_reduceMixed1(a,f,(reduce_reduceMixed1_R0,x,_raw_expand(c)),__VA_ARGS__)
-#define _reduce_reduceMixed1_R0( f,ft,c,x,...)    Recurse,(_raw_expand(x),(reduce_reduceMixed1_R1, f,ft,c),__VA_ARGS__)
-#define _reduce_reduceMixed1_R1( f,ft,c,y,g,...)  _##g(      f,ft                                         ,_raw_insert1((y),c)                           ,__VA_ARGS__)
+#define _reduce_mixed1_R(a,f,   c,x,...)    _reduce_mixed1(a,f,(reduce_mixed1_R0,x,_raw_expand(c)),__VA_ARGS__)
+#define _reduce_mixed1_R0( f,ft,c,x,...)    Recurse,(_raw_expand(x),(reduce_mixed1_R1, f,ft,c),__VA_ARGS__)
+#define _reduce_mixed1_R1( f,ft,c,y,g,...)  _##g(      f,ft                                         ,_raw_insert1((y),c)                           ,__VA_ARGS__)
 
-#define _reduce_reduceMixed1_C(a,f,   c,x,...)    _reduce_reduceMixed1(a,f,(reduce_reduceMixed1_C0,x,_raw_expand(c)),__VA_ARGS__)
-#define _reduce_reduceMixed1_C0( f,ft,c,x,g,...)  Recurse,(g,f,_raw_expandFuse3_(_,_raw_expandJust1(x),ft),_raw_expandDrop1Merge(_raw_expand(x),_raw_expand(c)),__VA_ARGS__)
+#define _reduce_mixed1_C(a,f,   c,x,...)    _reduce_mixed1(a,f,(reduce_mixed1_C0,x,_raw_expand(c)),__VA_ARGS__)
+#define _reduce_mixed1_C0( f,ft,c,x,g,...)  Recurse,(g,f,_raw_expandFuse3_(_,_raw_expandJust1(x),ft),_raw_expandDrop1Merge(_raw_expand(x),_raw_expand(c)),__VA_ARGS__)
 
-#define _reduce_reduceMixed1_CR(a,f,   c,x,...)   _reduce_reduceMixed1(a,f,(reduce_reduceMixed1_CR0,x,_raw_expand(c)),__VA_ARGS__)
-#define _reduce_reduceMixed1_CR0( f,ft,c,x,...)   Recurse,(_raw_expand(x),(reduce_reduceMixed1_CR1,f,ft,c),__VA_ARGS__)
-#define _reduce_reduceMixed1_CR1( f,ft,c,y,g,...) _##g(      f,_raw_expandFuse3_(_,_raw_expandJust1(y),ft),_raw_expandDrop1Merge(_raw_expand(y),_raw_expand(c)),__VA_ARGS__)
+#define _reduce_mixed1_CR(a,f,   c,x,...)   _reduce_mixed1(a,f,(reduce_mixed1_CR0,x,_raw_expand(c)),__VA_ARGS__)
+#define _reduce_mixed1_CR0( f,ft,c,x,...)   Recurse,(_raw_expand(x),(reduce_mixed1_CR1,f,ft,c),__VA_ARGS__)
+#define _reduce_mixed1_CR1( f,ft,c,y,g,...) _##g(      f,_raw_expandFuse3_(_,_raw_expandJust1(y),ft),_raw_expandDrop1Merge(_raw_expand(y),_raw_expand(c)),__VA_ARGS__)
 
-#define _reduce_reduceMixed2(     f,ft,c,...)     Recurse,(_raw_expandFuse2_(f,ft),_raw_expand(c))
+#define _reduce_mixed2(     f,ft,c,...)     Recurse,(_raw_expandFuse2_(f,ft),_raw_expand(c))
 
 
 #define reduce_return( x,...) Recurse,(_raw_expand(x),__VA_ARGS__)
@@ -191,7 +191,7 @@
   #define caseReduce4 reduce_caseReduce4
   #define caseReduce5 reduce_caseReduce5
 
-  #define reduceMixed reduce_reduceMixed
+  #define mixed reduce_mixed
 
   #define return    return_return
   #define construct reduce_construct
