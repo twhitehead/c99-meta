@@ -33,10 +33,11 @@
 #define _tupple_second(x,...) reduce_caseReduce1(tupple_first,x,__VA_ARGS__)
 #define _tupple_second_tupple_Tupple2(x0,x1,...) reduce_return(x1,__VA_ARGS__)
 
-#define _tupple_curry(f,x,...) reduce_caseReduce1(tupple_curry,x,f,__VA_ARGS__)
-#define _tupple_curry_tupple_Tupple2(x0,x1,f,...) reduce_return(f,x0,x1,__VA_ARGS__)
+#define _tupple_curry(f,x0,x1,...) reduce_return(f,(tupple_Tupple2,x0,x1),__VA_ARGS__)
 
-#define _tupple_uncurry(f,x0,x1,...) reduce_return(f,(tupple_Tupple2,x0,x1),__VA_ARGS__)
+#define _tupple_uncurry(f,x,...) reduce_caseReduce1(tupple_curry,x,f,__VA_ARGS__)
+#define _tupple_uncurry_tupple_Tupple2(x0,x1,f,...) reduce_return(f,x0,x1,__VA_ARGS__)
+
 
 
 #ifndef TUPPLE_QUALIFIED_ONLY
