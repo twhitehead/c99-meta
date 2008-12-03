@@ -12,18 +12,6 @@
 #define RAW_H_INCLUDED
 
 
-#define _raw_identifier1_(...)               _raw_identifier10(__VA_ARGS__)
-#define _raw_identifier10(i0,i1)             i0##i1
-#define _raw_identifier2_(...)               _raw_identifier20(__VA_ARGS__)
-#define _raw_identifier20(i0,i1,i2)          i0##i1##i2
-#define _raw_identifier3_(...)               _raw_identifier30(__VA_ARGS__)
-#define _raw_identifier30(i0,i1,i2,i3)       i0##i1##i2##i3
-#define _raw_identifier4_(...)               _raw_identifier40(__VA_ARGS__)
-#define _raw_identifier40(i0,i1,i2,i3,i4)    i0##i1##2##i3##i4
-#define _raw_identifier5_(...)               _raw_identifier50(__VA_ARGS__)
-#define _raw_identifier50(i0,i1,i2,i3,i4,i5) i0##i1##i2##i3##i4##i5
-
-
 #define _raw_expand_(...) __VA_ARGS__
 
 #define _raw_expandJust1_(x0,...)             x0
@@ -43,6 +31,17 @@
 #define _raw_expandDrop3_(x0,x1,x2,...)       __VA_ARGS__
 #define _raw_expandDrop4_(x0,x1,x2,x3,...)    __VA_ARGS__
 #define _raw_expandDrop5_(x0,x1,x2,x3,x4,...) __VA_ARGS__
+
+#define _raw_expandFuse1_(...)             _raw_expandFuse10(__VA_ARGS__)
+#define _raw_expandFuse10(i0)              i0
+#define _raw_expandFuse2_(...)             _raw_expandFuse20(__VA_ARGS__)
+#define _raw_expandFuse20(i0,i1)           i0##i1
+#define _raw_expandFuse3_(...)             _raw_expandFuse30(__VA_ARGS__)
+#define _raw_expandFuse30(i0,i1,i2)        i0##i1##i2
+#define _raw_expandFuse4_(...)             _raw_expandFuse40(__VA_ARGS__)
+#define _raw_expandFuse40(i0,i1,i2,i3)     i0##i1##i2##i3
+#define _raw_expandFuse5_(...)             _raw_expandFuse50(__VA_ARGS__)
+#define _raw_expandFuse50(i0,i1,i2,i3,i4)  i0##i1##i2##i3##i4
 
 
 #define _raw_expand(x) _raw_expand_ x
@@ -65,7 +64,6 @@
 #define _raw_expandDrop4(x) _raw_expandDrop1_ x
 #define _raw_expandDrop5(x) _raw_expandDrop1_ x
 
-
 #define _raw_expandJust1Merge(...) _raw_expandJust1_(__VA_ARGS__)
 #define _raw_expandJust2Merge(...) _raw_expandJust2_(__VA_ARGS__)
 #define _raw_expandJust3Merge(...) _raw_expandJust3_(__VA_ARGS__)
@@ -83,6 +81,12 @@
 #define _raw_expandDrop3Merge(...) _raw_expandDrop3_(__VA_ARGS__)
 #define _raw_expandDrop4Merge(...) _raw_expandDrop4_(__VA_ARGS__)
 #define _raw_expandDrop5Merge(...) _raw_expandDrop5_(__VA_ARGS__)
+
+#define _raw_expandFuse1(i0)             _raw_expandFuse1_(_raw_expand_ i0)
+#define _raw_expandFuse2(i0,i1)          _raw_expandFuse2_(_raw_expand_ i0,_raw_expand_ i1)
+#define _raw_expandFuse3(i0,i1,i2)       _raw_expandFuse3_(_raw_expand_ i0,_raw_expand_ i1,_raw_expand_ i2)
+#define _raw_expandFuse4(i0,i1,i2,i3)    _raw_expandFuse4_(_raw_expand_ i0,_raw_expand_ i1,_raw_expand_ i2,_raw_expand_ i3)
+#define _raw_expandFuse5(i0,i1,i2,i3,i4) _raw_expandFuse5_(_raw_expand_ i0,_raw_expand_ i1,_raw_expand_ i2,_raw_expand_ i3,_raw_expand_ i4)
 
 
 #define _raw_just1(x) (_raw_expandJust1_ x)
@@ -102,6 +106,12 @@
 #define _raw_drop3(x) (_raw_expandDrop3_ x)
 #define _raw_drop4(x) (_raw_expandDrop4_ x)
 #define _raw_drop5(x) (_raw_expandDrop5_ x)
+
+#define _raw_fuse1(i0)             (_raw_expandFuse1_(_raw_expand_ i0))
+#define _raw_fuse2(i0,i1)          (_raw_expandFuse2_(_raw_expand_ i0,_raw_expand_ i1))
+#define _raw_fuse3(i0,i1,i2)       (_raw_expandFuse3_(_raw_expand_ i0,_raw_expand_ i1,_raw_expand_ i2))
+#define _raw_fuse4(i0,i1,i2,i3)    (_raw_expandFuse4_(_raw_expand_ i0,_raw_expand_ i1,_raw_expand_ i2,_raw_expand_ i3))
+#define _raw_fuse5(i0,i1,i2,i3,i4) (_raw_expandFuse5_(_raw_expand_ i0,_raw_expand_ i1,_raw_expand_ i2,_raw_expand_ i3,_raw_expand_ i4))
 
 
 #define _raw_just1Merge(...) (_raw_expandJust1_(__VA_ARGS__))
