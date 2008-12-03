@@ -74,6 +74,9 @@
 #define _reduce_eval1(x,_) Quit,("RESULT: "#x)
 
 
+#define reduce_apply(f,...) (_raw_expand(f),__VA_ARGS__)
+
+
 #define reduce_reduce(...)  Recurse,(__VA_ARGS__)
 #define _reduce_reduce(...) Recurse,(__VA_ARGS__)
 
@@ -170,6 +173,7 @@
 
 #ifndef REDUCE_QUALIFIED_ONLY
   #define eval   reduce_eval
+  #define apply  reduce_apply
 
   #define reduce reduce_reduce
 
