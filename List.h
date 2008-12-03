@@ -98,12 +98,12 @@
 
 
 #ifndef LIST_QUALIFIED_ONLY
-  #define List0 list_List0
-  #define List1 list_List1
-  #define List2 list_List2
-  #define List3 list_List3
-  #define List4 list_List4
-  #define List5 list_List5
+  #define L0 list_L0
+  #define L1 list_L1
+  #define L2 list_L2
+  #define L3 list_L3
+  #define L4 list_L4
+  #define L5 list_L5
 
   #define Cons list_Cons
   #define Nil  list_Nil
