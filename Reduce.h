@@ -69,9 +69,8 @@
 // and duplicating some reductions is much less).
 
 
-#define reduce_eval(...)   recurse_recurse(__VA_ARGS__,(reduce_eval0))
-#define _reduce_eval0(...) _reduce_eval1(__VA_ARGS__)
-#define _reduce_eval1(x,_) Quit,("RESULT: "#x)
+#define reduce_eval(...)                recurse_recurse(reduce_caseReduce1,reduce_eval,(show,(__VA_ARGS__)))
+#define _reduce_eval_show_Output(o,...) Quit,o
 
 
 #define reduce_apply(f,...) (_raw_expand(f),__VA_ARGS__)
