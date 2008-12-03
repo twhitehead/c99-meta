@@ -78,7 +78,7 @@
 
 #define _list_foldr1(f,xs,...)                           reduce_caseReduce1(list_foldr1,xs,f,__VA_ARGS__)
 #define _list_foldr1_list_Cons(x,xs,f,...)               reduce_caseReduce1(list_foldr1_list_Cons,xs,f,x,__VA_ARGS__)
-#define _list_foldr1_list_Cons_list_Cons(x1,xs,f,x0,...) reduce_return(f,x0,(foldr1_list_Cons,x1,xs,f),__VA_ARGS__)
+#define _list_foldr1_list_Cons_list_Cons(x1,xs,f,x0,...) reduce_return(f,x0,(list_foldr1_list_Cons,x1,xs,f),__VA_ARGS__)
 #define _list_foldr1_list_Cons_list_Nil(f,x0,...)        reduce_return(x0,__VA_ARGS__)
 #define _list_foldr1_list_Nil(...)                       reduce_error("list_foldr1: empty list")
 
