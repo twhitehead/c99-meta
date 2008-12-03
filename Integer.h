@@ -15,8 +15,10 @@
 #include "Reduce.h"
 #include "Equal.h"
 #include "Order.h"
+#include "Bool.h"
 #include "Numeric.h"
 #include "Integral.h"
+#include "Show.h"
 
 
 // This implements the integers.  They are stored in two's complement as
@@ -345,6 +347,67 @@
 #define _integer_sign_N_0(n,z,p,...) reduce_construct(n,__VA_ARGS__)
 #define _integer_sign_N_1(n,z,p,...) reduce_construct(n,__VA_ARGS__)
 #define _integer_sign_N_N(n,z,p,...) reduce_construct(n,__VA_ARGS__)
+
+
+// Show stuff
+
+#define _show_show_integer_Integer(x,...)             reduce_reduce1(show_Output,(integer_show_,x),__VA_ARGS__)
+#define _show_showPrecedence_integer_Integer(i,x,...) reduce_reduce(bool_if,(bool_and,(equal_equal,(order_compare,i,integer_P13),(order_GT)),   \
+                                                                                      (integer_sign_,x,(bool_True),(bool_False),(bool_False))), \
+                                                                            (show_parenthesis),                                                 \
+                                                                            (reduce_return),                                                    \
+                                                                    (show_show_integer_Integer,x),__VA_ARGS__)
+
+#define _integer_show_(  x,...)        reduce_caseReduce1(integer_show0,(integer_sign_,x                  ,(N),(0),(P)),x                                              ,__VA_ARGS__)
+#define _integer_show0_N(x,...)        reduce_reduce1(integer_show2_N,(reduce_reduce1,integer_show1,(reduce_reduce1,integer_show_hex_,(integer_negate_,x)),()),__VA_ARGS__)
+#define _integer_show0_0(x,...)        reduce_construct((0x0)              ,__VA_ARGS__)
+#define _integer_show0_P(x,...)        reduce_reduce1(integer_show2_P,(reduce_reduce1,integer_show1,(               integer_show_hex_,x                  ),()),__VA_ARGS__)
+
+#define _integer_show1(  x,o,...)      reduce_caseReduce1(integer_show1,(integer_sign_,_raw_expandJust2(x),(N),(0),(P)),_raw_expandJust2(x),_raw_fuse2(_raw_just1(x),o),__VA_ARGS__)
+#define _integer_show1_0(x,o,...)      reduce_construct(o                  ,__VA_ARGS__)
+#define _integer_show1_P(x,o,...)      reduce_reduce1(                                integer_show1,(               integer_show_hex_,x                  ),o  ,__VA_ARGS__)
+
+#define _integer_show2_N(o,...)        reduce_construct(_raw_fuse2((-0x),o),__VA_ARGS__)
+#define _integer_show2_P(o,...)        reduce_construct(_raw_fuse2( (0x),o),__VA_ARGS__)
+
+#define _integer_show_hex_(  x,...)    reduce_case1(integer_show_hex0,_raw_just2(x),x                                ,__VA_ARGS__)
+
+#define _integer_show_hex0_N(x,...)    reduce_case1(integer_show_hex4,(1111)             ,x              ,__VA_ARGS__)
+#define _integer_show_hex0_0(x,...)    reduce_case1(integer_show_hex1,_raw_just3(x),_raw_delete2(x),(0)              ,__VA_ARGS__)
+#define _integer_show_hex0_1(x,...)    reduce_case1(integer_show_hex1,_raw_just3(x),_raw_delete2(x),(1)              ,__VA_ARGS__)
+#define _integer_show_hex0_P(x,...)    reduce_case1(integer_show_hex4,(0000)             ,x              ,__VA_ARGS__)
+
+#define _integer_show_hex1_N(x,o,...)  reduce_case1(integer_show_hex4,_raw_fuse2(o,(111)),x              ,__VA_ARGS__)
+#define _integer_show_hex1_0(x,o,...)  reduce_case1(integer_show_hex2,_raw_just3(x),_raw_delete2(x),_raw_fuse2(o,(0)),__VA_ARGS__)
+#define _integer_show_hex1_1(x,o,...)  reduce_case1(integer_show_hex2,_raw_just3(x),_raw_delete2(x),_raw_fuse2(o,(1)),__VA_ARGS__)
+#define _integer_show_hex1_P(x,o,...)  reduce_case1(integer_show_hex4,_raw_fuse2(o,(000)),x              ,__VA_ARGS__)
+
+#define _integer_show_hex2_N(x,o,...)  reduce_case1(integer_show_hex4,_raw_fuse2(o,(11)) ,x              ,__VA_ARGS__)
+#define _integer_show_hex2_0(x,o,...)  reduce_case1(integer_show_hex3,_raw_just3(x),_raw_delete2(x),_raw_fuse2(o,(0)),__VA_ARGS__)
+#define _integer_show_hex2_1(x,o,...)  reduce_case1(integer_show_hex3,_raw_just3(x),_raw_delete2(x),_raw_fuse2(o,(1)),__VA_ARGS__)
+#define _integer_show_hex2_P(x,o,...)  reduce_case1(integer_show_hex4,_raw_fuse2(o,(00)) ,x              ,__VA_ARGS__)
+
+#define _integer_show_hex3_N(x,o,...)  reduce_case1(integer_show_hex4,_raw_fuse2(o,(1))  ,x              ,__VA_ARGS__)
+#define _integer_show_hex3_0(x,o,...)  reduce_case1(integer_show_hex4,_raw_fuse2(o,(0))  ,_raw_delete2(x),__VA_ARGS__)
+#define _integer_show_hex3_1(x,o,...)  reduce_case1(integer_show_hex4,_raw_fuse2(o,(1))  ,_raw_delete2(x),__VA_ARGS__)
+#define _integer_show_hex3_P(x,o,...)  reduce_case1(integer_show_hex4,_raw_fuse2(o,(0))  ,x              ,__VA_ARGS__)
+
+#define _integer_show_hex4_0000(x,...) reduce_construct((0,x),__VA_ARGS__)
+#define _integer_show_hex4_1000(x,...) reduce_construct((1,x),__VA_ARGS__)
+#define _integer_show_hex4_0100(x,...) reduce_construct((2,x),__VA_ARGS__)
+#define _integer_show_hex4_1100(x,...) reduce_construct((3,x),__VA_ARGS__)
+#define _integer_show_hex4_0010(x,...) reduce_construct((4,x),__VA_ARGS__)
+#define _integer_show_hex4_1010(x,...) reduce_construct((5,x),__VA_ARGS__)
+#define _integer_show_hex4_0110(x,...) reduce_construct((6,x),__VA_ARGS__)
+#define _integer_show_hex4_1110(x,...) reduce_construct((7,x),__VA_ARGS__)
+#define _integer_show_hex4_0001(x,...) reduce_construct((8,x),__VA_ARGS__)
+#define _integer_show_hex4_1001(x,...) reduce_construct((9,x),__VA_ARGS__)
+#define _integer_show_hex4_0101(x,...) reduce_construct((a,x),__VA_ARGS__)
+#define _integer_show_hex4_1101(x,...) reduce_construct((b,x),__VA_ARGS__)
+#define _integer_show_hex4_0011(x,...) reduce_construct((c,x),__VA_ARGS__)
+#define _integer_show_hex4_1011(x,...) reduce_construct((d,x),__VA_ARGS__)
+#define _integer_show_hex4_0111(x,...) reduce_construct((e,x),__VA_ARGS__)
+#define _integer_show_hex4_1111(x,...) reduce_construct((f,x),__VA_ARGS__)
 
 
 // The rest is all boilerplate.

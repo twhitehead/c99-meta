@@ -39,6 +39,21 @@
 #define _tupple_uncurry_tupple_Tupple2(x0,x1,f,...) reduce_return(f,x0,x1,__VA_ARGS__)
 
 
+#define _show_show_tupple_Tupple0(...)                reduce_construct((show_Output,(())),__VA_ARGS__)
+#define _show_show_tupple_Tupple1(x0,...)             reduce_reduce(show_parenthesis,                (show_show,x0)                                                                                                                ,__VA_ARGS__)
+#define _show_show_tupple_Tupple2(x0,x1,...)          reduce_reduce(show_parenthesis,(show_joinComma,(show_show,x0),(show_show,x1)                                                                                                ),__VA_ARGS__)
+#define _show_show_tupple_Tupple3(x0,x1,x2,...)       reduce_reduce(show_parenthesis,(show_joinComma,(show_show,x0),(show_joinComma,(show_show,x1),(show_show,x2)                                                                )),__VA_ARGS__)
+#define _show_show_tupple_Tupple4(x0,x1,x2,x3,...)    reduce_reduce(show_parenthesis,(show_joinComma,(show_show,x0),(show_joinComma,(show_show,x1),(show_joinComma,(show_show,x1),(show_show,x2)                                ))),__VA_ARGS__)
+#define _show_show_tupple_Tupple5(x0,x1,x2,x3,x4,...) reduce_reduce(show_parenthesis,(show_joinComma,(show_show,x0),(show_joinComma,(show_show,x1),(show_joinComma,(show_show,x1),(show_joinComma,(show_show,x1),(show_show,x2))))),__VA_ARGS__)
+
+#define _show_showPrecedence_tupple_Tupple0(...)                reduce_construct((show_Output,(())),__VA_ARGS__)
+#define _show_showPrecedence_tupple_Tupple1(x0,...)             reduce_reduce(show_parenthesis,                (show_show,x0)                                                                                                                ,__VA_ARGS__)
+#define _show_showPrecedence_tupple_Tupple2(x0,x1,...)          reduce_reduce(show_parenthesis,(show_joinComma,(show_show,x0),(show_show,x1)                                                                                                ),__VA_ARGS__)
+#define _show_showPrecedence_tupple_Tupple3(x0,x1,x2,...)       reduce_reduce(show_parenthesis,(show_joinComma,(show_show,x0),(show_joinComma,(show_show,x1),(show_show,x2)                                                                )),__VA_ARGS__)
+#define _show_showPrecedence_tupple_Tupple4(x0,x1,x2,x3,...)    reduce_reduce(show_parenthesis,(show_joinComma,(show_show,x0),(show_joinComma,(show_show,x1),(show_joinComma,(show_show,x1),(show_show,x2)                                ))),__VA_ARGS__)
+#define _show_showPrecedence_tupple_Tupple5(x0,x1,x2,x3,x4,...) reduce_reduce(show_parenthesis,(show_joinComma,(show_show,x0),(show_joinComma,(show_show,x1),(show_joinComma,(show_show,x1),(show_joinComma,(show_show,x1),(show_show,x2))))),__VA_ARGS__)
+
+
 
 #ifndef TUPPLE_QUALIFIED_ONLY
   #define T0 tupple_T0

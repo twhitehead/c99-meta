@@ -53,6 +53,15 @@
 #define _equal_equal_order_GT_order_GT(...)   reduce_construct((bool_True) ,__VA_ARGS__)
 
 
+#define _show_show_order_LT(...) reduce_construct((show_Output,(order_LT)),__VA_ARGS__)
+#define _show_show_order_EQ(...) reduce_construct((show_Output,(order_EQ)),__VA_ARGS__)
+#define _show_show_order_GT(...) reduce_construct((show_Output,(order_GT)),__VA_ARGS__)
+
+#define _show_showPrecedence_order_LT(...) reduce_construct((show_Output,(order_LT)),__VA_ARGS__)
+#define _show_showPrecedence_order_EQ(...) reduce_construct((show_Output,(order_EQ)),__VA_ARGS__)
+#define _show_showPrecedence_order_GT(...) reduce_construct((show_Output,(order_GT)),__VA_ARGS__)
+
+
 #ifndef ORDER_QUALIFIED_ONLY
   #define LT order_LT
   #define EQ order_EQ

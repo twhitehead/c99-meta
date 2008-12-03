@@ -51,6 +51,13 @@
 #define _equal_notequal_bool_False_bool_False(...) reduce_construct((bool_False),__VA_ARGS__)
 
 
+#define _show_show_bool_True(...)  reduce_construct((show_Output,(bool_True) ),__VA_ARGS__)
+#define _show_show_bool_False(...) reduce_construct((show_Output,(bool_False)),__VA_ARGS__)
+
+#define _show_showPrecedence_bool_True(...)  reduce_construct((show_Output,(bool_True) ),__VA_ARGS__)
+#define _show_showPrecedence_bool_False(...) reduce_construct((show_Output,(bool_False)),__VA_ARGS__)
+
+
 #ifndef BOOL_QUALIFIED_ONLY
   #define True  bool_True
   #define False bool_False

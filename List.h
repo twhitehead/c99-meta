@@ -97,6 +97,13 @@
 #define _order_compare_list_Nil_list_Nil(...)                  reduce_construct((order_EQ),__VA_ARGS__)
 
 
+#define _show_show_list_Cons(x,xs,...) reduce_reduce(show_braces,(foldr1,(show_joinComma),(list_map,(show_show),(list_Cons,x,xs))),__VA_ARGS__)
+#define _show_show_list_Nil(...)       reduce_construct((show_Output,({})),__VA_ARGS__)
+
+#define _show_showPrecedence_list_Cons(x,xs,...) reduce_reduce(show_braces,(foldr1,(show_joinComma),(list_map,(show_show),(list_Cons,x,xs))),__VA_ARGS__)
+#define _show_showPrecedence_list_Nil(...)       reduce_construct((show_Output,({})),__VA_ARGS__)
+
+
 #ifndef LIST_QUALIFIED_ONLY
   #define L0 list_L0
   #define L1 list_L1
