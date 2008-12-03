@@ -124,9 +124,10 @@
 // as there may still be leading digits to prune.
 
 #define _numeric_subtract_integer_Integer_integer_Integer(x,y,...) reduce_reduce1(integer_Integer,(integer_subtract_,x,y),__VA_ARGS__)
-#define _numeric_negate_integer_Integer(x,...)                     reduce_reduce1(integer_Integer,(integer_subtract_,(P,P),x),__VA_ARGS__)
+#define _numeric_negate_integer_Integer(x,...)                     reduce_reduce1(integer_Integer,(integer_negate_,x),__VA_ARGS__)
 
 #define _integer_subtract_(x,y,...) reduce_case3(integer_subtract,_raw_just2(x),_raw_just2(y),(0),(I),(I),(I),_raw_drop2(x),_raw_drop2(y),_raw_just1(x),_raw_just1(y),__VA_ARGS__)
+#define _integer_negate_(x,...)     _integer_subtract_((P,P),x,__VA_ARGS__)
 
 #define _integer_subtract_0_0_0(z,zp,zn,x,y,...)       reduce_case3(integer_subtract,_raw_just1(x),_raw_just1(y),(0),_raw_concatenate2(z,(0)),zp,_raw_concatenate2(z,(0)),_raw_drop1(x),_raw_drop1(y),__VA_ARGS__)
 #define _integer_subtract_0_0_1(z,zp,zn,x,y,...)       reduce_case3(integer_subtract,_raw_just1(x),_raw_just1(y),(1),_raw_concatenate2(z,(1)),_raw_concatenate2(z,(1)),zn,_raw_drop1(x),_raw_drop1(y),__VA_ARGS__)
@@ -332,7 +333,7 @@
 
 #define _integer_absolute_(x,...)  reduce_case1(integer_absolute,_raw_just1(x),x,__VA_ARGS__)
 #define _integer_absolute_P(x,...) reduce_construct(x,__VA_ARGS__)
-#define _integer_absolute_N(x,...) reduce_reduce(integer_subtract_,(P,P),x,__VA_ARGS__)
+#define _integer_absolute_N(x,...) reduce_reduce(integer_negate_,x,__VA_ARGS__)
 
 
 #define _numeric_sign_integer_Integer(x,...) reduce_reduce1(integer_Integer,(integer_sign_,x,(N,N),(P,P),(P,1,P)),__VA_ARGS__)
