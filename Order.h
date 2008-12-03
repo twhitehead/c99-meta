@@ -54,6 +54,10 @@
 
 
 #ifndef ORDER_QUALIFIED_ONLY
+  #define LT order_LT
+  #define EQ order_EQ
+  #define GT order_GT
+
   #define compare      order_compare
   #define lesser       order_lesser
   #define lesserequal  order_lesserequal
