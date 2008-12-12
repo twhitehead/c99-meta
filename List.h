@@ -58,11 +58,11 @@
 #define _list_last_list_Cons_list_Nil(x0,...)        reduce_continue(x0,__VA_ARGS__)
 #define _list_last_list_Nil(...)                     reduce_error("list_last: empty list")
 
-#define _list_init(xs,...)                           reduce_caseReduce1(list_init,xs,__VA_ARGS__)
-#define _list_init_list_Cons(x,xs,...)               reduce_caseReduce1(list_init_list_Cons,xs,x,__VA_ARGS__)
-#define _list_init_list_Cons_list_Cons(x1,xs,x0,...) reduce_construct((list_Cons,x0,(init_list_Cons,x1,xs)),__VA_ARGS__)
-#define _list_init_list_Cons_list_Nil(x0,...)        reduce_construct((list_Nil),__VA_ARGS__)
-#define _list_init_list_Nil(...)                     reduce_error("list_init: empty list")
+#define _list_initial(xs,...)                           reduce_caseReduce1(list_initial,xs,__VA_ARGS__)
+#define _list_initial_list_Cons(x,xs,...)               reduce_caseReduce1(list_initial_list_Cons,xs,x,__VA_ARGS__)
+#define _list_initial_list_Cons_list_Cons(x1,xs,x0,...) reduce_construct((list_Cons,x0,(list_initial,(list_Cons,x1,xs))),__VA_ARGS__)
+#define _list_initial_list_Cons_list_Nil(x0,...)        reduce_construct((list_Nil),__VA_ARGS__)
+#define _list_initial_list_Nil(...)                     reduce_error("list_initial: empty list")
 
 #define _list_foldl(f,y,xs,...)             reduce_caseReduce1(list_foldl,xs,f,y,__VA_ARGS__)
 #define _list_foldl_list_Cons(x,xs,f,y,...) reduce_reduce(list_foldl,f,reduce_apply(f,y,x),xs,__VA_ARGS__)
@@ -122,7 +122,7 @@
   #define head   list_head
   #define tail   list_tail
   #define last   list_last
-  #define init   list_init
+  #define initial list_initial
   #define foldl  list_foldl
   #define foldl1 list_foldl1
   #define foldr  list_foldr
