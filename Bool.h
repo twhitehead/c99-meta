@@ -35,7 +35,7 @@
 
 #define _bool_or(x,...)                     reduce_caseReduce1(bool_or,x,__VA_ARGS__)
 #define _bool_or_bool_True(y,...)           reduce_construct((bool_True),__VA_ARGS__)
-#define _bool_or_bool_False(y,...)          reduce_caseReduce1(bool_or_bool_True,y,__VA_ARGS__)
+#define _bool_or_bool_False(y,...)          reduce_caseReduce1(bool_or_bool_False,y,__VA_ARGS__)
 #define _bool_or_bool_False_bool_True(...)  reduce_construct((bool_True),__VA_ARGS__)
 #define _bool_or_bool_False_bool_False(...) reduce_construct((bool_False),__VA_ARGS__)
 
