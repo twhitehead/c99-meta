@@ -46,12 +46,14 @@
 #define _show_quote(o,...)             reduce_caseReduce1(show_quote,o,__VA_ARGS__)
 #define _show_quote_show_Output(o,...) reduce_construct((show_Output,_raw_quote(o)),__VA_ARGS__)
 
+#define _show_joinComma(o0,o1,...)                         reduce_caseReduce2(show_joinComma,o0,o1,__VA_ARGS__)
+#define _show_joinComma_show_Output_show_Output(o0,o1,...) reduce_construct((show_Output,(_raw_expand(o0),_raw_expand(o1))),__VA_ARGS__)
 
-#define _show_joinComma( o0,o1,...)                          reduce_caseReduce2(show_joinComma0 ,o0,o1,__VA_ARGS__)
-#define _show_joinComma0_show_Output_show_Output( o0,o1,...) reduce_construct((show_Output,(_raw_expand(o0),_raw_expand(o1))),__VA_ARGS__)
+#define _show_joinSpace(o0,o1,...)                         reduce_caseReduce2(show_joinSpace,o0,o1,__VA_ARGS__)
+#define _show_joinSpace_show_Output_show_Output(o0,o1,...) reduce_construct((show_Output,(_raw_expand(o0) _raw_expand(o1))),__VA_ARGS__)
 
-#define _show_joinSpace( o0,o1,...)                          reduce_caseReduce2(show_joinSpace0 ,o0,o1,__VA_ARGS__)
-#define _show_joinSpace0_show_Output_show_Output( o0,o1,...) reduce_construct((show_Output,(_raw_expand(o0) _raw_expand(o1))),__VA_ARGS__)
+#define _show_joinApply(o0,o1,...)                         reduce_caseReduce2(show_joinApply,o0,o1,__VA_ARGS__)
+#define _show_joinApply_show_Output_show_Output(o0,o1,...) reduce_construct((show_Output,(_raw_expand(o0)o1)),__VA_ARGS__)
 
 
 #define _show_show(x,...)             reduce_caseReduce1(show_show,x,__VA_ARGS__)
