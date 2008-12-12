@@ -42,7 +42,7 @@
 #define _list_filter_list_Cons_bool_False(f,x,xs,...) reduce_reduce(list_filter,f,xs,__VA_ARGS__)
 #define _list_filter_list_Nil(f,...)                  reduce_construct((list_Nil),__VA_ARGS__)
 
-#define _list_concat(xss,...) reduce_reduce(list_foldr,append,(list_Nil),xss,__VA_ARGS__)
+#define _list_concat(xss,...) reduce_reduce(list_foldr,(list_append),(list_Nil),xss,__VA_ARGS__)
 
 #define _list_head(xs,...)             reduce_caseReduce1(list_head,xs,__VA_ARGS__)
 #define _list_head_list_Cons(x,xs,...) reduce_continue(x,__VA_ARGS__)
