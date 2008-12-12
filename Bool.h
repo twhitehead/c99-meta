@@ -15,6 +15,10 @@
 #include "Equal.h"
 
 
+#define bool_T (bool_True)
+#define bool_F (bool_False)
+
+
 #define _bool_True(...)  reduce_construct((bool_True),__VA_ARGS__)
 #define _bool_False(...) reduce_construct((bool_False),__VA_ARGS__)
 
@@ -59,6 +63,9 @@
 
 
 #ifndef BOOL_QUALIFIED_ONLY
+  #define T bool_T
+  #define F bool_F
+
   #define True  bool_True
   #define False bool_False
 
