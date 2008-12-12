@@ -35,7 +35,7 @@
 
 #define _tupple_curry(f,x0,x1,...) reduce_continue(f,(tupple_Tupple2,x0,x1),__VA_ARGS__)
 
-#define _tupple_uncurry(f,x,...)                    reduce_caseReduce1(tupple_curry,x,f,__VA_ARGS__)
+#define _tupple_uncurry(f,x,...)                    reduce_caseReduce1(tupple_uncurry,x,f,__VA_ARGS__)
 #define _tupple_uncurry_tupple_Tupple2(x0,x1,f,...) reduce_continue(f,x0,x1,__VA_ARGS__)
 
 
