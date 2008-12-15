@@ -141,7 +141,7 @@
 #define _reduce_mixed1_( a,f,c,...)         Recurse,(_raw_expandJust1(c),f,,(__VA_ARGS__),_raw_expandDrop1(c))
 
 #define _reduce_mixed1_I(a,f,c,x,...)       _reduce_mixed1(a,f,(reduce_mixed1_I0,x,_raw_expand(c)),__VA_ARGS__)
-#define _reduce_mixed1_I0( f,ft,c,x,g,...)  Recurse,(g,f,ft                                         ,_raw_insert1((x),c)                                 ,__VA_ARGS__)
+#define _reduce_mixed1_I0( f,ft,c,x,g,...)  Recurse,(g,f,ft                                         ,_raw_insert1((x),c)                           ,__VA_ARGS__)
 
 #define _reduce_mixed1_R(a,f,   c,x,...)    _reduce_mixed1(a,f,(reduce_mixed1_R0,x,_raw_expand(c)),__VA_ARGS__)
 #define _reduce_mixed1_R0( f,ft,c,x,...)    Recurse,(_raw_expand(x),(reduce_mixed1_R1, f,ft,c),__VA_ARGS__)
