@@ -15,7 +15,7 @@
 #include "Equal.h"
 #include "Order.h"
 #include "Maybe.h"
-#include "Tupple.h"
+#include "Tuple.h"
 #include "Bool.h"
 #include "Integer.h"
 #include "Function.h"
@@ -148,7 +148,7 @@
 #define _list_drop_order_GT_list_Cons(x,xs,i,...) reduce_reduce(list_drop,(numeric_subtract,i,P1),xs,__VA_ARGS__)
 #define _list_drop_order_GT_list_Nil(      i,...) reduce_construct((list_Nil),__VA_ARGS__)
 
-#define _list_splitAt(i,xs,...) reduce_construct((tupple_Tupple2,(list_take,i,xs),(list_drop,i,xs)),__VA_ARGS__)
+#define _list_splitAt(i,xs,...) reduce_construct((tuple_Tuple2,(list_take,i,xs),(list_drop,i,xs)),__VA_ARGS__)
 
 #define _list_takeWhile(c,xs,...)                        reduce_caseReduce1(list_takeWhile,xs,c,__VA_ARGS__)
 #define _list_takeWhile_list_Cons(x,xs,c,...)            reduce_caseReduce1(list_takeWhile_list_Cons,reduce_apply(c,x),c,x,xs,__VA_ARGS__)
@@ -162,9 +162,9 @@
 #define _list_dropWhile_list_Cons_bool_False(c,x,xs,...) reduce_construct((list_Cons,x,xs),__VA_ARGS__)
 #define _list_dropWhile_list_Nil(      c,...)            reduce_construct((list_Nil),__VA_ARGS__)
 
-#define _list_span(c,xs,...) reduce_construct((tupple_Tupple2,(list_takeWhile,c,xs),(list_dropWhile,c,xs)),__VA_ARGS__)
+#define _list_span(c,xs,...) reduce_construct((tuple_Tuple2,(list_takeWhile,c,xs),(list_dropWhile,c,xs)),__VA_ARGS__)
 
-#define _list_break(c,xs,...) reduce_construct((tupple_Tupple2,(list_takeWhile,(function_compose,(bool_not),c),xs),(list_dropWhile,(function_compose,(bool_not),c),xs)),__VA_ARGS__)
+#define _list_break(c,xs,...) reduce_construct((tuple_Tuple2,(list_takeWhile,(function_compose,(bool_not),c),xs),(list_dropWhile,(function_compose,(bool_not),c),xs)),__VA_ARGS__)
 
 #define _list_reverse(xs,...)                reduce_caseReduce1(list_reverse,xs,(list_Nil)      ,__VA_ARGS__)
 #define _list_reverse_list_Cons(x,xs,ys,...) reduce_caseReduce1(list_reverse,xs,(list_Cons,x,ys),__VA_ARGS__)
@@ -179,10 +179,10 @@
 #define _list_element(   x,xs,...) reduce_reduce(list_any,(equal_equal   ,x),xs,__VA_ARGS__)
 #define _list_notelement(x,xs,...) reduce_reduce(list_all,(equal_notequal,x),xs,__VA_ARGS__)
 
-#define _list_lookup(k,xs,...)                                reduce_caseReduce1(list_lookup,xs,k,__VA_ARGS__)
-#define _list_lookup_list_Cons(x,xs,k,...)                    reduce_caseReduce1(list_lookup_list_Cons,x,xs,k,__VA_ARGS__)
-#define _list_lookup_list_Cons_tupple_Tupple2(xk,xv,xs,k,...) reduce_reduce(bool_if,(equal_equal,xk,k),(maybe_Just,xv),(list_lookup,k,xs),__VA_ARGS__)
-#define _list_lookup_list_Nil(k,...)                          reduce_construct((maybe_Nothing),__VA_ARGS__)
+#define _list_lookup(k,xs,...)                              reduce_caseReduce1(list_lookup,xs,k,__VA_ARGS__)
+#define _list_lookup_list_Cons(x,xs,k,...)                  reduce_caseReduce1(list_lookup_list_Cons,x,xs,k,__VA_ARGS__)
+#define _list_lookup_list_Cons_tuple_Tuple2(xk,xv,xs,k,...) reduce_reduce(bool_if,(equal_equal,xk,k),(maybe_Just,xv),(list_lookup,k,xs),__VA_ARGS__)
+#define _list_lookup_list_Nil(k,...)                        reduce_construct((maybe_Nothing),__VA_ARGS__)
 
 #define _list_sum(    xs,...) reduce_reduce(list_foldl,(numeric_add)     ,integer_Z ,xs,__VA_ARGS__)
 #define _list_product(xs,...) reduce_reduce(list_foldl,(numeric_multiply),integer_P1,xs,__VA_ARGS__)
@@ -190,8 +190,8 @@
 #define _list_maximum(xs,...) reduce_reduce(list_foldl1,(order_maximum),xs,__VA_ARGS__)
 #define _list_minimum(xs,...) reduce_reduce(list_foldl1,(order_minimum),xs,__VA_ARGS__)
 
-#define _list_zip( xs,ys,...)   reduce_reduce(list_zipWith ,(tupple_Tupple2),xs,ys   ,__VA_ARGS__)
-#define _list_zip3(xs,ys,zs,...) reduce_reduce(list_zipWith3,(tupple_Tupple3),xs,ys,zs,__VA_ARGS__)
+#define _list_zip( xs,ys,...)    reduce_reduce(list_zipWith ,(tuple_Tuple2),xs,ys   ,__VA_ARGS__)
+#define _list_zip3(xs,ys,zs,...) reduce_reduce(list_zipWith3,(tuple_Tuple3),xs,ys,zs,__VA_ARGS__)
 
 #define _list_zipWith(f,xs,ys,...)                         reduce_caseReduce2(list_zipWith,xs,ys,f,__VA_ARGS__)
 #define _list_zipWith_list_Cons_list_Cons(x,xs,y,ys,f,...) reduce_construct((list_Cons,reduce_apply(f,x,y),(list_zipWith,f,xs,ys)),__VA_ARGS__)
@@ -209,11 +209,11 @@
 #define _list_zipWith3_list_Nil_list_Nil_list_Cons(            z,zs,f,...) reduce_construct((list_Nil),__VA_ARGS__)
 #define _list_zipWith3_list_Nil_list_Nil_list_Nil(                  f,...) reduce_construct((list_Nil),__VA_ARGS__)
 
-#define _list_unzip(xs,...)                                      reduce_reduce(list_foldr,(reduce_caseReduce2,list_unzip),(tupple_Tupple2,(list_Nil),(list_Nil)),xs,__VA_ARGS__)
-#define _list_unzip_tupple_Tupple2_tupple_Tupple2(x,y,xs,ys,...) reduce_construct((tupple_Tupple2,(list_Cons,x,xs),(list_Cons,y,ys)),__VA_ARGS__)
+#define _list_unzip(xs,...)                                  reduce_reduce(list_foldr,(reduce_caseReduce2,list_unzip),(tuple_Tuple2,(list_Nil),(list_Nil)),xs,__VA_ARGS__)
+#define _list_unzip_tuple_Tuple2_tuple_Tuple2(x,y,xs,ys,...) reduce_construct((tuple_Tuple2,(list_Cons,x,xs),(list_Cons,y,ys)),__VA_ARGS__)
 
-#define _list_unzip3(xs,...)                                           reduce_reduce(list_foldr,(reduce_caseReduce2,list_unzip3),(tupple_Tupple3,(list_Nil),(list_Nil),(list_Nil)),xs,__VA_ARGS__)
-#define _list_unzip3_tupple_Tupple3_tupple_Tupple3(x,y,z,xs,ys,zs,...) reduce_construct((tupple_Tupple3,(list_Cons,x,xs),(list_Cons,y,ys),(list_Cons,z,zs)),__VA_ARGS__)
+#define _list_unzip3(xs,...)                                       reduce_reduce(list_foldr,(reduce_caseReduce2,list_unzip3),(tuple_Tuple3,(list_Nil),(list_Nil),(list_Nil)),xs,__VA_ARGS__)
+#define _list_unzip3_tuple_Tuple3_tuple_Tuple3(x,y,z,xs,ys,zs,...) reduce_construct((tuple_Tuple3,(list_Cons,x,xs),(list_Cons,y,ys),(list_Cons,z,zs)),__VA_ARGS__)
 
 
 #define _equal_equal_list_Cons_list_Cons(x,xs,y,ys,...) reduce_reduce(bool_and,(equal_equal,x,y),(equal_equal,xs,ys),__VA_ARGS__)

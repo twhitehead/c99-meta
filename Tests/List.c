@@ -378,36 +378,36 @@ eval(concat,L3(L2(P1,P2),L0,L3(P3,P4,P5)))
 
 -------- zipWith ------
 
- eval(zipWith,(Tupple2),L3(P2,P3,P4),L4(P1,P2,P3,P4))
+ eval(zipWith,(Tuple2),L3(P2,P3,P4),L4(P1,P2,P3,P4))
 ={(0x2,0x1),(0x3,0x4),(0x4,0x5)}
 
- eval(zipWith,(Tupple2),L4(P2,P3,P4,P5),L3(P1,P2,P3))
+ eval(zipWith,(Tuple2),L4(P2,P3,P4,P5),L3(P1,P2,P3))
 ={(0x2,0x1),(0x3,0x4),(0x4,0x5)}
 
- eval(zipWith,(Tupple2),L4(P2,P3,P4,P5),L4(P1,P2,P3,P4))
+ eval(zipWith,(Tuple2),L4(P2,P3,P4,P5),L4(P1,P2,P3,P4))
 ={(0x2,0x1),(0x3,0x4),(0x4,0x5),(0x5,0x4)}
 
  ------- zipWith3 ------
 
- eval(zipWith3,(Tupple3),L3(P3,P4,P5),L3(P2,P3,P4),L4(P1,P2,P3,P4))
+ eval(zipWith3,(Tuple3),L3(P3,P4,P5),L3(P2,P3,P4),L4(P1,P2,P3,P4))
 ={(0x3,0x2,0x1),(0x4,0x3,0x2),(0x5,0x4,0x3)}
 
- eval(zipWith3,(Tupple3),L3(P3,P4,P5),L4(P2,P3,P4,P5),L3(P1,P2,P3))
+ eval(zipWith3,(Tuple3),L3(P3,P4,P5),L4(P2,P3,P4,P5),L3(P1,P2,P3))
 ={(0x3,0x2,0x1),(0x4,0x3,0x2),(0x5,0x4,0x3)}
 
- eval(zipWith3,(Tupple3),L3(P3,P4,P5),L4(P2,P3,P4,P5),L4(P1,P2,P3,P4))
+ eval(zipWith3,(Tuple3),L3(P3,P4,P5),L4(P2,P3,P4,P5),L4(P1,P2,P3,P4))
 ={(0x3,0x2,0x1),(0x4,0x3,0x2),(0x5,0x4,0x3)}
 
- eval(zipWith3,(Tupple3),L4(P3,P4,P5,P6),L3(P2,P3,P4),L3(P1,P2,P3))
+ eval(zipWith3,(Tuple3),L4(P3,P4,P5,P6),L3(P2,P3,P4),L3(P1,P2,P3))
 ={(0x3,0x2,0x1),(0x4,0x3,0x2),(0x5,0x4,0x3)}
 
- eval(zipWith3,(Tupple3),L4(P3,P4,P5,P6),L3(P2,P3,P4),L4(P1,P2,P3,P4))
+ eval(zipWith3,(Tuple3),L4(P3,P4,P5,P6),L3(P2,P3,P4),L4(P1,P2,P3,P4))
 ={(0x3,0x2,0x1),(0x4,0x3,0x2),(0x5,0x4,0x3)}
 
- eval(zipWith3,(Tupple3),L4(P3,P4,P5,P6),L4(P2,P3,P4,P5),L3(P1,P2,P3))
+ eval(zipWith3,(Tuple3),L4(P3,P4,P5,P6),L4(P2,P3,P4,P5),L3(P1,P2,P3))
 ={(0x3,0x2,0x1),(0x4,0x3,0x2),(0x5,0x4,0x3)}
 
- eval(zipWith3,(Tupple3),L4(P3,P4,P5,P6),L4(P2,P3,P4,P5),L4(P1,P2,P3,P4))
+ eval(zipWith3,(Tuple3),L4(P3,P4,P5,P6),L4(P2,P3,P4,P5),L4(P1,P2,P3,P4))
 ={(0x3,0x2,0x1),(0x4,0x3,0x2),(0x5,0x4,0x3),(0x6,0x5,0x4)}
 
  ------- unzip ------

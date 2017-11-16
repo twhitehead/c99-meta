@@ -11,7 +11,7 @@
 #ifndef INTEGER_H_INCLUDED
 #define INTEGER_H_INCLUDED
 
-#include "Tupple.h"
+#include "Tuple.h"
 #include "Reduce.h"
 #include "Equal.h"
 #include "Order.h"
@@ -217,7 +217,7 @@
 #define _integral_quotientRemainder_integer_Integer_integer_Integer(x,y,...)  reduce_reduce1(integer_quotientRemainder_wrap,(integer_quotientRemainder_,x,y),__VA_ARGS__)
 
 #define _integer_quotientRemainder_(x,y,...) reduce_caseReduce2(integer_quotientRemainder,(integer_sign_,x,(N),(P),(P)),(integer_sign_,y,(N),(0),(P)),x,y,__VA_ARGS__)
-#define _integer_quotientRemainder_wrap(y,...) reduce_construct((tupple_Tupple2,(integer_Integer,_raw_expandJust1(y)),(integer_Integer,_raw_expandJust2(y))),__VA_ARGS__)
+#define _integer_quotientRemainder_wrap(y,...) reduce_construct((tuple_Tuple2,(integer_Integer,_raw_expandJust1(y)),(integer_Integer,_raw_expandJust2(y))),__VA_ARGS__)
 
 #define _integer_quotientRemainder_N_N(x,y,...) reduce_reduce2(integer_quotientRemainder0,(integer_subtract_,(N,N),y),(reduce_reduce1,integer_quotientRemainder_reverse,(integer_subtract_,x,(P,1,P))),(P,P),y,integer_add_,integer_subtract_,0,1,__VA_ARGS__)
 #define _integer_quotientRemainder_N_0(x,y,...) reduce_error("integer_quotientRemainder_: division by zero")
