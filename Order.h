@@ -76,4 +76,4 @@
   #define minimum      order_minimum
 #endif // ORDER_QUALIFIED_ONLY
 
-#endif // EQUAL_H_INCLUDED
+#endif // ORDER_H_INCLUDED
