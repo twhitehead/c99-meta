@@ -196,7 +196,7 @@
 
   #define mixed reduce_mixed
 
-  #define continue  return_continue
+  #define continue  reduce_continue
   #define construct reduce_construct
   #define output    reduce_output
   #define error     reduce_error
