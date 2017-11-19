@@ -30,7 +30,7 @@
 #define _tuple_first(x,...)                   reduce_caseReduce1(tuple_first,x,__VA_ARGS__)
 #define _tuple_first_tuple_Tuple2(x0,x1,...)  reduce_continue(x0,__VA_ARGS__)
 
-#define _tuple_second(x,...)                  reduce_caseReduce1(tuple_first,x,__VA_ARGS__)
+#define _tuple_second(x,...)                  reduce_caseReduce1(tuple_second,x,__VA_ARGS__)
 #define _tuple_second_tuple_Tuple2(x0,x1,...) reduce_continue(x1,__VA_ARGS__)
 
 #define _tuple_curry(f,x0,x1,...) reduce_continue(f,(tuple_Tuple2,x0,x1),__VA_ARGS__)
