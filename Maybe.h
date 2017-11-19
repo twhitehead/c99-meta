@@ -9,7 +9,7 @@
 //---------------------------------------------------------------------------//
 
 #ifndef MAYBE_H_INCLUDED
-#define BAYBE_H_INCLUDED
+#define MAYBE_H_INCLUDED
 
 #include "Reduce.h"
 
