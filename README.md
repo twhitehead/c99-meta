@@ -27,6 +27,7 @@ eval(map,(add,P1),L2(P1,P2))
 
 (i.e., the equivalent to the Haskell `map (+ 1) [1,2]`).
 
+See [Tests/Goldbach.c](Tests/Goldbach.c) for a more complex example.
 
 # More details
 
