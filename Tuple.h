@@ -69,6 +69,11 @@
   #define Tuple3 tuple_Tuple3
   #define Tuple4 tuple_Tuple4
   #define Tuple5 tuple_Tuple5
+
+  #define first   tuple_first
+  #define second  tuple_second
+  #define curry   tuple_curry
+  #define uncurry tuple_uncurry
 #endif // TUPPLE_QUALIFIED_ONLY
 
 #endif // TUPPLE_H_INCLUDED
